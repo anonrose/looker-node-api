@@ -1,0 +1,41 @@
+# LookerApi31Reference.DBConnection
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **String** | Name of the connection. Also used as the unique identifier | [optional] 
+**dialect** | [**Dialect**](Dialect.md) | (Read-only) SQL Dialect details | [optional] 
+**snippets** | [**[Snippet]**](Snippet.md) | SQL Runner snippets for this connection | [optional] 
+**host** | **String** | Host name/address of server | [optional] 
+**port** | **String** | Port number on server | [optional] 
+**username** | **String** | Username for server authentication | [optional] 
+**password** | **String** | (Write-Only) Password for server authentication | [optional] 
+**usesOauth** | **Boolean** | Whether the connection uses OAuth for authentication. | [optional] 
+**certificate** | **String** | (Write-Only) Base64 encoded Certificate body for server authentication (when appropriate for dialect). | [optional] 
+**fileType** | **String** | (Write-Only) Certificate keyfile type - .json or .p12 | [optional] 
+**database** | **String** | Database name | [optional] 
+**dbTimezone** | **String** | Time zone of database | [optional] 
+**queryTimezone** | **String** | Timezone to use in queries | [optional] 
+**schema** | **String** | Scheme name | [optional] 
+**maxConnections** | **Number** | Maximum number of concurrent connection to use | [optional] 
+**maxBillingGigabytes** | **String** | Maximum size of query in GBs (BigQuery only, can be a user_attribute name) | [optional] 
+**ssl** | **Boolean** | Use SSL/TLS when connecting to server | [optional] 
+**verifySsl** | **Boolean** | Verify the SSL | [optional] 
+**tmpDbName** | **String** | Name of temporary database (if used) | [optional] 
+**jdbcAdditionalParams** | **String** | Additional params to add to JDBC connection string | [optional] 
+**poolTimeout** | **Number** | Pool Timeout | [optional] 
+**dialectName** | **String** | (Read/Write) SQL Dialect name | [optional] 
+**createdAt** | **String** | Creation date for this connection | [optional] 
+**userId** | **String** | Id of user who last modified this connection configuration | [optional] 
+**example** | **Boolean** | Is this an example connection | [optional] 
+**userDbCredentials** | **Boolean** | (Limited access feature) Are per user db credentials enabled. Enabling will remove previously set username and password | [optional] 
+**userAttributeFields** | **[String]** | Fields whose values map to user attribute names | [optional] 
+**maintenanceCron** | **String** | Cron string specifying when maintenance such as PDT trigger checks and drops should be performed | [optional] 
+**lastRegenAt** | **String** | Unix timestamp at start of last completed PDT trigger check process | [optional] 
+**lastReapAt** | **String** | Unix timestamp at start of last completed PDT reap process | [optional] 
+**sqlRunnerPrecacheTables** | **Boolean** | Precache tables in the SQL Runner | [optional] 
+**afterConnectStatements** | **String** | SQL statements (semicolon separated) to issue after connecting to the database. Requires &#x60;custom_after_connect_statements&#x60; license feature | [optional] 
+**pdtContextOverride** | [**DBConnectionOverride**](DBConnectionOverride.md) | db_connection_override for this connection in the &#x60;pdt&#x60; maintenance context | [optional] 
+**can** | **{String: Boolean}** | Operations the current user is able to perform on this object | [optional] 
+
+

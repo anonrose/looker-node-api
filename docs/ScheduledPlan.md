@@ -1,0 +1,40 @@
+# LookerApi31Reference.ScheduledPlan
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **Number** | Unique Id | [optional] 
+**name** | **String** | Name | [optional] 
+**createdAt** | **Date** | Date and time when ScheduledPlan was created | [optional] 
+**updatedAt** | **Date** | Date and time when ScheduledPlan was last updated | [optional] 
+**title** | **String** | Title | [optional] 
+**userId** | **Number** | User Id which owns this ScheduledPlan | [optional] 
+**user** | [**UserPublic**](UserPublic.md) | User who owns this ScheduledPlan | [optional] 
+**runAsRecipient** | **Boolean** | Whether schedule is ran as recipient (only applicable for email recipients) | [optional] 
+**enabled** | **Boolean** | Whether the ScheduledPlan is enabled | [optional] 
+**nextRunAt** | **Date** | When the ScheduledPlan will next run (null if running once) | [optional] 
+**lastRunAt** | **Date** | When the ScheduledPlan was last run | [optional] 
+**lookId** | **Number** | Id of a look | [optional] 
+**dashboardId** | **Number** | Id of a dashboard | [optional] 
+**lookmlDashboardId** | **String** | Id of a LookML dashboard | [optional] 
+**filtersString** | **String** | Query string to run look or dashboard with | [optional] 
+**dashboardFilters** | **String** | (DEPRECATED) Alias for filters_string field | [optional] 
+**requireResults** | **Boolean** | Delivery should occur if running the dashboard or look returns results | [optional] 
+**requireNoResults** | **Boolean** | Delivery should occur if the dashboard look does not return results | [optional] 
+**requireChange** | **Boolean** | Delivery should occur if data have changed since the last run | [optional] 
+**sendAllResults** | **Boolean** | Will run an unlimited query and send all results. | [optional] 
+**crontab** | **String** | Vixie-Style crontab specification when to run | [optional] 
+**datagroup** | **String** | Name of a datagroup; if specified will run when datagroup triggered (can&#39;t be used with cron string) | [optional] 
+**timezone** | **String** | Timezone for interpreting the specified crontab (default is Looker instance timezone) | [optional] 
+**queryId** | **String** | Query id | [optional] 
+**scheduledPlanDestination** | [**[ScheduledPlanDestination]**](ScheduledPlanDestination.md) | Scheduled plan destinations | [optional] 
+**runOnce** | **Boolean** | Whether the plan in question should only be run once (usually for testing) | [optional] 
+**includeLinks** | **Boolean** | Whether links back to Looker should be included in this ScheduledPlan | [optional] 
+**pdfPaperSize** | **String** | The size of paper a PDF should be rendered for | [optional] 
+**pdfLandscape** | **Boolean** | Whether the paper should be landscape | [optional] 
+**embed** | **Boolean** | Whether this schedule is in an embed context or not | [optional] 
+**colorTheme** | **String** | Color scheme of the dashboard if applicable | [optional] 
+**longTables** | **Boolean** | Whether or not to expand table vis to full length | [optional] 
+**can** | **{String: Boolean}** | Operations the current user is able to perform on this object | [optional] 
+
+
