@@ -77,7 +77,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [LegacyFeature];
@@ -118,7 +118,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Locale];
@@ -159,7 +159,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Timezone];
@@ -200,7 +200,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = BackupConfiguration;
@@ -248,7 +248,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LegacyFeature;
@@ -295,7 +295,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = BackupConfiguration;
@@ -349,7 +349,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LegacyFeature;
@@ -396,7 +396,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = WhitelabelConfiguration;
@@ -441,7 +441,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ApiVersion;
@@ -486,7 +486,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = WhitelabelConfiguration;

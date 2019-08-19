@@ -77,7 +77,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Workspace];
@@ -125,7 +125,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Workspace;

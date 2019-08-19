@@ -81,7 +81,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardBase];
@@ -125,7 +125,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -171,7 +171,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -222,7 +222,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -268,7 +268,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -320,7 +320,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -372,7 +372,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardElement];
@@ -424,7 +424,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardFilter];
@@ -476,7 +476,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardLayout];
@@ -528,7 +528,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -580,7 +580,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -632,7 +632,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -684,7 +684,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayoutComponent;
@@ -736,7 +736,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardLayoutComponent];
@@ -784,7 +784,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -832,7 +832,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -880,7 +880,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -928,7 +928,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -988,7 +988,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -1045,7 +1045,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardElement];
@@ -1122,7 +1122,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Dashboard];
@@ -1180,7 +1180,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ['Number'];
@@ -1234,7 +1234,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -1292,7 +1292,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -1350,7 +1350,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -1408,7 +1408,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -1466,7 +1466,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayoutComponent;

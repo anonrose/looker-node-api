@@ -83,7 +83,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
       var returnType = AccessToken;
@@ -131,7 +131,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = AccessToken;
@@ -172,7 +172,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2'];
+      var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
