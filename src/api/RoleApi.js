@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new RoleApi. 
+   * Constructs a new RoleApi.
    * @alias module:api/RoleApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Get All Model Sets
-     * ### Get information about all model sets. 
+     * ### Get information about all model sets.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {module:api/RoleApi~allModelSetsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -81,7 +81,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ModelSet];
@@ -103,7 +103,7 @@
 
     /**
      * Get All Permission Sets
-     * ### Get information about all permission sets. 
+     * ### Get information about all permission sets.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {module:api/RoleApi~allPermissionSetsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -126,7 +126,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [PermissionSet];
@@ -148,7 +148,7 @@
 
     /**
      * Get All Permissions
-     * ### Get all supported permissions. 
+     * ### Get all supported permissions.
      * @param {module:api/RoleApi~allPermissionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Permission>}
      */
@@ -167,7 +167,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Permission];
@@ -189,7 +189,7 @@
 
     /**
      * Get All Roles
-     * ### Get information about all roles. 
+     * ### Get information about all roles.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {Array.<Number>} opts.ids Optional list of ids to get specific roles.
@@ -217,7 +217,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Role];
@@ -239,7 +239,7 @@
 
     /**
      * Create Model Set
-     * ### Create a model set with the specified information. Model sets are used by Roles. 
+     * ### Create a model set with the specified information. Model sets are used by Roles.
      * @param {Object} opts Optional parameters
      * @param {module:model/ModelSet} opts.body ModelSet
      * @param {module:api/RoleApi~createModelSetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -261,7 +261,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ModelSet;
@@ -283,7 +283,7 @@
 
     /**
      * Create Permission Set
-     * ### Create a permission set with the specified information. Permission sets are used by Roles. 
+     * ### Create a permission set with the specified information. Permission sets are used by Roles.
      * @param {Object} opts Optional parameters
      * @param {module:model/PermissionSet} opts.body Permission Set
      * @param {module:api/RoleApi~createPermissionSetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -305,7 +305,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PermissionSet;
@@ -327,7 +327,7 @@
 
     /**
      * Create Role
-     * ### Create a role with the specified information. 
+     * ### Create a role with the specified information.
      * @param {Object} opts Optional parameters
      * @param {module:model/Role} opts.body Role
      * @param {module:api/RoleApi~createRoleCallback} callback The callback function, accepting three arguments: error, data, response
@@ -349,7 +349,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Role;
@@ -371,7 +371,7 @@
 
     /**
      * Delete Model Set
-     * ### Delete the model set with a specific id. 
+     * ### Delete the model set with a specific id.
      * @param {Number} modelSetId id of model set
      * @param {module:api/RoleApi~deleteModelSetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -397,7 +397,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -419,7 +419,7 @@
 
     /**
      * Delete Permission Set
-     * ### Delete the permission set with a specific id. 
+     * ### Delete the permission set with a specific id.
      * @param {Number} permissionSetId Id of permission set
      * @param {module:api/RoleApi~deletePermissionSetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -445,7 +445,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -467,7 +467,7 @@
 
     /**
      * Delete Role
-     * ### Delete the role with a specific id. 
+     * ### Delete the role with a specific id.
      * @param {Number} roleId id of role
      * @param {module:api/RoleApi~deleteRoleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -493,7 +493,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -515,7 +515,7 @@
 
     /**
      * Get Model Set
-     * ### Get information about the model set with a specific id. 
+     * ### Get information about the model set with a specific id.
      * @param {Number} modelSetId Id of model set
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -545,7 +545,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ModelSet;
@@ -567,7 +567,7 @@
 
     /**
      * Get Permission Set
-     * ### Get information about the permission set with a specific id. 
+     * ### Get information about the permission set with a specific id.
      * @param {Number} permissionSetId Id of permission set
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -597,7 +597,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PermissionSet;
@@ -619,7 +619,7 @@
 
     /**
      * Get Role
-     * ### Get information about the role with a specific id. 
+     * ### Get information about the role with a specific id.
      * @param {Number} roleId id of role
      * @param {module:api/RoleApi~roleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Role}
@@ -645,7 +645,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Role;
@@ -667,7 +667,7 @@
 
     /**
      * Get Role Groups
-     * ### Get information about all the groups with the role that has a specific id. 
+     * ### Get information about all the groups with the role that has a specific id.
      * @param {Number} roleId id of role
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -697,7 +697,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Group];
@@ -719,7 +719,7 @@
 
     /**
      * Get Role Users
-     * ### Get information about all the users with the role that has a specific id. 
+     * ### Get information about all the users with the role that has a specific id.
      * @param {Number} roleId id of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -751,7 +751,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [User];
@@ -773,7 +773,7 @@
 
     /**
      * Update Role Groups
-     * ### Set all groups for a role, removing all existing group associations from that role. 
+     * ### Set all groups for a role, removing all existing group associations from that role.
      * @param {Number} roleId Id of Role
      * @param {Array.<module:model/Number>} body Array of Group Ids
      * @param {module:api/RoleApi~setRoleGroupsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -805,7 +805,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Group];
@@ -827,7 +827,7 @@
 
     /**
      * Update Role Users
-     * ### Set all the users of the role with a specific id. 
+     * ### Set all the users of the role with a specific id.
      * @param {Number} roleId id of role
      * @param {Array.<module:model/Number>} body array of user ids for role
      * @param {module:api/RoleApi~setRoleUsersCallback} callback The callback function, accepting three arguments: error, data, response
@@ -859,7 +859,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [User];
@@ -881,7 +881,7 @@
 
     /**
      * Update Model Set
-     * ### Update information about the model set with a specific id. 
+     * ### Update information about the model set with a specific id.
      * @param {Number} modelSetId id of model set
      * @param {module:model/ModelSet} body ModelSet
      * @param {module:api/RoleApi~updateModelSetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -913,7 +913,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ModelSet;
@@ -935,7 +935,7 @@
 
     /**
      * Update Permission Set
-     * ### Update information about the permission set with a specific id. 
+     * ### Update information about the permission set with a specific id.
      * @param {Number} permissionSetId id of permission set
      * @param {module:model/PermissionSet} body Permission Set
      * @param {module:api/RoleApi~updatePermissionSetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -967,7 +967,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PermissionSet;
@@ -989,7 +989,7 @@
 
     /**
      * Update Role
-     * ### Update information about the role with a specific id. 
+     * ### Update information about the role with a specific id.
      * @param {Number} roleId id of role
      * @param {module:model/Role} body Role
      * @param {module:api/RoleApi~updateRoleCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1021,7 +1021,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Role;

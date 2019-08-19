@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new ProjectApi. 
+   * Constructs a new ProjectApi.
    * @alias module:api/ProjectApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Get All Git Branches
-     * ### Get All Git Branches  Returns a list of git branches in the project repository 
+     * ### Get All Git Branches  Returns a list of git branches in the project repository
      * @param {String} projectId Project Id
      * @param {module:api/ProjectApi~allGitBranchesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/GitBranch>}
@@ -84,7 +84,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [GitBranch];
@@ -106,7 +106,7 @@
 
     /**
      * Get All Git Connection Tests
-     * ### Get All Git Connection Tests  Returns a list of tests which can be run against a project&#39;s (or the dependency project for the provided remote_url) git connection. Call [Run Git Connection Test](#!/Project/run_git_connection_test) to execute each test in sequence.  Tests are ordered by increasing specificity. Tests should be run in the order returned because later tests require functionality tested by tests earlier in the test list.  For example, a late-stage test for write access is meaningless if connecting to the git server (an early test) is failing. 
+     * ### Get All Git Connection Tests  Returns a list of tests which can be run against a project&#39;s (or the dependency project for the provided remote_url) git connection. Call [Run Git Connection Test](#!/Project/run_git_connection_test) to execute each test in sequence.  Tests are ordered by increasing specificity. Tests should be run in the order returned because later tests require functionality tested by tests earlier in the test list.  For example, a late-stage test for write access is meaningless if connecting to the git server (an early test) is failing.
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.remoteUrl (Optional: leave blank for root project) The remote url for remote dependency to test.
@@ -136,7 +136,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [GitConnectionTest];
@@ -158,7 +158,7 @@
 
     /**
      * Get All Project Files
-     * ### Get All Project Files  Returns a list of the files in the project 
+     * ### Get All Project Files  Returns a list of the files in the project
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -188,7 +188,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ProjectFile];
@@ -210,7 +210,7 @@
 
     /**
      * Get All Projects
-     * ### Get All Projects  Returns all projects visible to the current user 
+     * ### Get All Projects  Returns all projects visible to the current user
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
      * @param {module:api/ProjectApi~allProjectsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -233,7 +233,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Project];
@@ -255,7 +255,7 @@
 
     /**
      * Checkout New Git Branch
-     * ### Create and Checkout a Git Branch  Creates and checks out a new branch in the given project repository Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Optionally specify a branch name, tag name or commit SHA as the start point in the ref field.   If no ref is specified, HEAD of the current branch will be used as the start point for the new branch.  
+     * ### Create and Checkout a Git Branch  Creates and checks out a new branch in the given project repository Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Optionally specify a branch name, tag name or commit SHA as the start point in the ref field.   If no ref is specified, HEAD of the current branch will be used as the start point for the new branch.
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {module:model/GitBranch} opts.body Git Branch
@@ -284,7 +284,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = GitBranch;
@@ -306,7 +306,7 @@
 
     /**
      * Create Deploy Key
-     * ### Create Git Deploy Key  Create a public/private key pair for authenticating ssh git requests from Looker to a remote git repository for a particular Looker project.  Returns the public key of the generated ssh key pair.  Copy this public key to your remote git repository&#39;s ssh keys configuration so that the remote git service can validate and accept git requests from the Looker server. 
+     * ### Create Git Deploy Key  Create a public/private key pair for authenticating ssh git requests from Looker to a remote git repository for a particular Looker project.  Returns the public key of the generated ssh key pair.  Copy this public key to your remote git repository&#39;s ssh keys configuration so that the remote git service can validate and accept git requests from the Looker server.
      * @param {String} projectId Project Id
      * @param {module:api/ProjectApi~createGitDeployKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -332,7 +332,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text/plain'];
       var returnType = 'String';
@@ -354,7 +354,7 @@
 
     /**
      * Create Project
-     * ### Create A Project  dev mode required. - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  &#x60;name&#x60; is required. &#x60;git_remote_url&#x60; is not allowed. To configure Git for the newly created project, follow the instructions in &#x60;update_project&#x60;.  
+     * ### Create A Project  dev mode required. - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  &#x60;name&#x60; is required. &#x60;git_remote_url&#x60; is not allowed. To configure Git for the newly created project, follow the instructions in &#x60;update_project&#x60;.
      * @param {Object} opts Optional parameters
      * @param {module:model/Project} opts.body Project
      * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
@@ -376,7 +376,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Project;
@@ -398,7 +398,7 @@
 
     /**
      * Delete a Git Branch
-     * ### Delete the specified Git Branch  Delete git branch specified in branch_name path param from local and remote of specified project repository 
+     * ### Delete the specified Git Branch  Delete git branch specified in branch_name path param from local and remote of specified project repository
      * @param {String} projectId Project Id
      * @param {String} branchName Branch Name
      * @param {module:api/ProjectApi~deleteGitBranchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -431,7 +431,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -453,7 +453,7 @@
 
     /**
      * Delete Repository Credential
-     * ### Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required. 
+     * ### Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.
      * @param {String} rootProjectId Root Project Id
      * @param {String} credentialId Credential Id
      * @param {module:api/ProjectApi~deleteRepositoryCredentialCallback} callback The callback function, accepting three arguments: error, data, response
@@ -486,7 +486,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -508,7 +508,7 @@
 
     /**
      * Deploy To Production
-     * ### Deploy LookML from this Development Mode Project to Production  Git must have been configured, must be in dev mode and deploy permission required  Deploy is a two / three step process 1. Push commits in current branch of dev mode project to the production branch (origin/master).    Note a. This step is skipped in read-only projects.    Note b. If this step is unsuccessful for any reason (e.g. rejected non-fastforward because production branch has              commits not in current branch), subsequent steps will be skipped. 2. If this is the first deploy of this project, create the production project with git repository. 3. Pull the production branch into the production project.  
+     * ### Deploy LookML from this Development Mode Project to Production  Git must have been configured, must be in dev mode and deploy permission required  Deploy is a two / three step process 1. Push commits in current branch of dev mode project to the production branch (origin/master).    Note a. This step is skipped in read-only projects.    Note b. If this step is unsuccessful for any reason (e.g. rejected non-fastforward because production branch has              commits not in current branch), subsequent steps will be skipped. 2. If this is the first deploy of this project, create the production project with git repository. 3. Pull the production branch into the production project.
      * @param {String} projectId Id of project
      * @param {module:api/ProjectApi~deployToProductionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -534,7 +534,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -556,7 +556,7 @@
 
     /**
      * Find a Git Branch
-     * ### Get the specified Git Branch  Returns the git branch specified in branch_name path param if it exists in the given project repository 
+     * ### Get the specified Git Branch  Returns the git branch specified in branch_name path param if it exists in the given project repository
      * @param {String} projectId Project Id
      * @param {String} branchName Branch Name
      * @param {module:api/ProjectApi~findGitBranchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -589,7 +589,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = GitBranch;
@@ -611,7 +611,7 @@
 
     /**
      * Get All Repository Credentials
-     * ### Get all Repository Credentials for a project  &#x60;root_project_id&#x60; is required. 
+     * ### Get all Repository Credentials for a project  &#x60;root_project_id&#x60; is required.
      * @param {String} rootProjectId Root Project Id
      * @param {module:api/ProjectApi~getAllRepositoryCredentialsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/RepositoryCredential>}
@@ -637,7 +637,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [RepositoryCredential];
@@ -659,7 +659,7 @@
 
     /**
      * Get Active Git Branch
-     * ### Get the Current Git Branch  Returns the git branch currently checked out in the given project repository 
+     * ### Get the Current Git Branch  Returns the git branch currently checked out in the given project repository
      * @param {String} projectId Project Id
      * @param {module:api/ProjectApi~gitBranchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GitBranch}
@@ -685,7 +685,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = GitBranch;
@@ -707,7 +707,7 @@
 
     /**
      * Git Deploy Key
-     * ### Git Deploy Key  Returns the ssh public key previously created for a project&#39;s git repository. 
+     * ### Git Deploy Key  Returns the ssh public key previously created for a project&#39;s git repository.
      * @param {String} projectId Project Id
      * @param {module:api/ProjectApi~gitDeployKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -733,7 +733,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text/plain'];
       var returnType = 'String';
@@ -755,7 +755,7 @@
 
     /**
      * Get Manifest
-     * ### Get A Projects Manifest object  Returns the project with the given project id 
+     * ### Get A Projects Manifest object  Returns the project with the given project id
      * @param {String} projectId Project Id
      * @param {module:api/ProjectApi~manifestCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Manifest}
@@ -781,7 +781,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Manifest;
@@ -803,7 +803,7 @@
 
     /**
      * Get Project
-     * ### Get A Project  Returns the project with the given project id 
+     * ### Get A Project  Returns the project with the given project id
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -833,7 +833,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Project;
@@ -855,7 +855,7 @@
 
     /**
      * Get Project File
-     * ### Get Project File Info  Returns information about a file in the project 
+     * ### Get Project File Info  Returns information about a file in the project
      * @param {String} projectId Project Id
      * @param {String} fileId File Id
      * @param {Object} opts Optional parameters
@@ -892,7 +892,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ProjectFile;
@@ -914,7 +914,7 @@
 
     /**
      * Cached Project Validation Results
-     * ### Get Cached Project Validation Results  Returns the cached results of a previous project validation calculation, if any. Returns http status 204 No Content if no validation results exist.  Validating the content of all the files in a project can be computationally intensive for large projects. Use this API to simply fetch the results of the most recent project validation rather than revalidating the entire project from scratch.  A value of &#x60;\&quot;stale\&quot;: true&#x60; in the response indicates that the project has changed since the cached validation results were computed. The cached validation results may no longer reflect the current state of the project. 
+     * ### Get Cached Project Validation Results  Returns the cached results of a previous project validation calculation, if any. Returns http status 204 No Content if no validation results exist.  Validating the content of all the files in a project can be computationally intensive for large projects. Use this API to simply fetch the results of the most recent project validation rather than revalidating the entire project from scratch.  A value of &#x60;\&quot;stale\&quot;: true&#x60; in the response indicates that the project has changed since the cached validation results were computed. The cached validation results may no longer reflect the current state of the project.
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -944,7 +944,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ProjectValidationCache;
@@ -966,7 +966,7 @@
 
     /**
      * Get Project Workspace
-     * ### Get Project Workspace  Returns information about the state of the project files in the currently selected workspace 
+     * ### Get Project Workspace  Returns information about the state of the project files in the currently selected workspace
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -996,7 +996,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ProjectWorkspace;
@@ -1018,7 +1018,7 @@
 
     /**
      * Reset To Production
-     * ### Reset a project to the revision of the project that is in production.  **DANGER** this will delete any changes that have not been pushed to a remote repository. 
+     * ### Reset a project to the revision of the project that is in production.  **DANGER** this will delete any changes that have not been pushed to a remote repository.
      * @param {String} projectId Id of project
      * @param {module:api/ProjectApi~resetProjectToProductionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -1044,7 +1044,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1066,7 +1066,7 @@
 
     /**
      * Reset To Remote
-     * ### Reset a project development branch to the revision of the project that is on the remote.  **DANGER** this will delete any changes that have not been pushed to a remote repository. 
+     * ### Reset a project development branch to the revision of the project that is on the remote.  **DANGER** this will delete any changes that have not been pushed to a remote repository.
      * @param {String} projectId Id of project
      * @param {module:api/ProjectApi~resetProjectToRemoteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -1092,7 +1092,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1114,7 +1114,7 @@
 
     /**
      * Run Git Connection Test
-     * ### Run a git connection test  Run the named test on the git service used by this project (or the dependency project for the provided remote_url) and return the result. This is intended to help debug git connections when things do not work properly, to give more helpful information about why a git url is not working with Looker.  Tests should be run in the order they are returned by [Get All Git Connection Tests](#!/Project/all_git_connection_tests). 
+     * ### Run a git connection test  Run the named test on the git service used by this project (or the dependency project for the provided remote_url) and return the result. This is intended to help debug git connections when things do not work properly, to give more helpful information about why a git url is not working with Looker.  Tests should be run in the order they are returned by [Get All Git Connection Tests](#!/Project/all_git_connection_tests).
      * @param {String} projectId Project Id
      * @param {String} testId Test Id
      * @param {Object} opts Optional parameters
@@ -1151,7 +1151,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = GitConnectionTestResult;
@@ -1173,7 +1173,7 @@
 
     /**
      * Update Project Git Branch
-     * ### Checkout and/or reset --hard an existing Git Branch  Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Checkout an existing branch if name field is different from the name of the currently checked out branch.  Optionally specify a branch name, tag name or commit SHA to which the branch should be reset.   **DANGER** hard reset will be force pushed to the remote. Unsaved changes and commits may be permanently lost.  
+     * ### Checkout and/or reset --hard an existing Git Branch  Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Checkout an existing branch if name field is different from the name of the currently checked out branch.  Optionally specify a branch name, tag name or commit SHA to which the branch should be reset.   **DANGER** hard reset will be force pushed to the remote. Unsaved changes and commits may be permanently lost.
      * @param {String} projectId Project Id
      * @param {module:model/GitBranch} body Git Branch
      * @param {module:api/ProjectApi~updateGitBranchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1205,7 +1205,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = GitBranch;
@@ -1227,7 +1227,7 @@
 
     /**
      * Update Project
-     * ### Update Project Configuration  Apply changes to a project&#39;s configuration.   #### Configuring Git for a Project  To set up a Looker project with a remote git repository, follow these steps:  1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;create_git_deploy_key&#x60; to create a new deploy key for the project 1. Copy the deploy key text into the remote git repository&#39;s ssh key configuration 1. Call &#x60;update_project&#x60; to set project&#39;s &#x60;git_remote_url&#x60; ()and &#x60;git_service_name&#x60;, if necessary).  When you modify a project&#39;s &#x60;git_remote_url&#x60;, Looker connects to the remote repository to fetch metadata. The remote git repository MUST be configured with the Looker-generated deploy key for this project prior to setting the project&#39;s &#x60;git_remote_url&#x60;.  To set up a Looker project with a git repository residing on the Looker server (a &#39;bare&#39; git repo): 1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;update_project&#x60; setting &#x60;git_remote_url&#x60; to nil and &#x60;git_service_name&#x60; to \&quot;bare\&quot;.  
+     * ### Update Project Configuration  Apply changes to a project&#39;s configuration.   #### Configuring Git for a Project  To set up a Looker project with a remote git repository, follow these steps:  1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;create_git_deploy_key&#x60; to create a new deploy key for the project 1. Copy the deploy key text into the remote git repository&#39;s ssh key configuration 1. Call &#x60;update_project&#x60; to set project&#39;s &#x60;git_remote_url&#x60; ()and &#x60;git_service_name&#x60;, if necessary).  When you modify a project&#39;s &#x60;git_remote_url&#x60;, Looker connects to the remote repository to fetch metadata. The remote git repository MUST be configured with the Looker-generated deploy key for this project prior to setting the project&#39;s &#x60;git_remote_url&#x60;.  To set up a Looker project with a git repository residing on the Looker server (a &#39;bare&#39; git repo): 1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;update_project&#x60; setting &#x60;git_remote_url&#x60; to nil and &#x60;git_service_name&#x60; to \&quot;bare\&quot;.
      * @param {String} projectId Project Id
      * @param {module:model/Project} body Project
      * @param {Object} opts Optional parameters
@@ -1263,7 +1263,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Project;
@@ -1285,7 +1285,7 @@
 
     /**
      * Create Repository Credential
-     * ### Configure Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.  
+     * ### Configure Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.
      * @param {String} rootProjectId Root Project Id
      * @param {String} credentialId Credential Id
      * @param {module:model/RepositoryCredential} body Remote Project Information
@@ -1324,7 +1324,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = RepositoryCredential;
@@ -1346,7 +1346,7 @@
 
     /**
      * Validate Project
-     * ### Validate Project  Performs lint validation of all lookml files in the project. Returns a list of errors found, if any.  Validating the content of all the files in a project can be computationally intensive for large projects. For best performance, call &#x60;validate_project(project_id)&#x60; only when you really want to recompute project validation. To quickly display the results of the most recent project validation (without recomputing), use &#x60;project_validation_results(project_id)&#x60; 
+     * ### Validate Project  Performs lint validation of all lookml files in the project. Returns a list of errors found, if any.  Validating the content of all the files in a project can be computationally intensive for large projects. For best performance, call &#x60;validate_project(project_id)&#x60; only when you really want to recompute project validation. To quickly display the results of the most recent project validation (without recomputing), use &#x60;project_validation_results(project_id)&#x60;
      * @param {String} projectId Project Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -1376,7 +1376,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ProjectValidation;

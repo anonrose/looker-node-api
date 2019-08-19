@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new ScheduledPlanApi. 
+   * Constructs a new ScheduledPlanApi.
    * @alias module:api/ScheduledPlanApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Get All Scheduled Plans
-     * ### List All Scheduled Plans  Returns all scheduled plans which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.   
+     * ### List All Scheduled Plans  Returns all scheduled plans which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId Return scheduled plans belonging to this user_id. If not provided, returns scheduled plans owned by the caller.
      * @param {String} opts.fields Comma delimited list of field names. If provided, only the fields specified will be included in the response
@@ -85,7 +85,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ScheduledPlan];
@@ -107,7 +107,7 @@
 
     /**
      * Create Scheduled Plan
-     * ### Create a Scheduled Plan  Create a scheduled plan to render a Look or Dashboard on a recurring schedule.  The queries that provide the data for the look or dashboard are run in the context of user account that owns the scheduled plan.  Admins can create scheduled plans on behalf of other users by specifying a user id.  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.   
+     * ### Create a Scheduled Plan  Create a scheduled plan to render a Look or Dashboard on a recurring schedule.  The queries that provide the data for the look or dashboard are run in the context of user account that owns the scheduled plan.  Admins can create scheduled plans on behalf of other users by specifying a user id.  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.
      * @param {Object} opts Optional parameters
      * @param {module:model/ScheduledPlan} opts.body Scheduled Plan
      * @param {module:api/ScheduledPlanApi~createScheduledPlanCallback} callback The callback function, accepting three arguments: error, data, response
@@ -129,7 +129,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ScheduledPlan;
@@ -151,7 +151,7 @@
 
     /**
      * Delete Scheduled Plan
-     * ### Delete a Scheduled Plan  Normal users can only delete their own scheduled plans. Admins can delete other users&#39; scheduled plans. 
+     * ### Delete a Scheduled Plan  Normal users can only delete their own scheduled plans. Admins can delete other users&#39; scheduled plans.
      * @param {Number} scheduledPlanId Scheduled Plan Id
      * @param {module:api/ScheduledPlanApi~deleteScheduledPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -177,7 +177,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -199,7 +199,7 @@
 
     /**
      * Get Scheduled Plan
-     * ### Get Information About a Scheduled Plan  Admins can fetch information about other users&#39; Scheduled Plans. 
+     * ### Get Information About a Scheduled Plan  Admins can fetch information about other users&#39; Scheduled Plans.
      * @param {Number} scheduledPlanId Scheduled Plan Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -229,7 +229,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ScheduledPlan;
@@ -251,7 +251,7 @@
 
     /**
      * Run Scheduled Plan Once
-     * ### Run a Scheduled Plan Immediately  Create a scheduled plan that runs only once, and immediately.  This can be useful for testing a Scheduled Plan before committing to a production schedule.  Admins can create scheduled plans on behalf of other users by specifying a user id.  This API is rate limited to prevent it from being used for relay spam or DoS attacks  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.   
+     * ### Run a Scheduled Plan Immediately  Create a scheduled plan that runs only once, and immediately.  This can be useful for testing a Scheduled Plan before committing to a production schedule.  Admins can create scheduled plans on behalf of other users by specifying a user id.  This API is rate limited to prevent it from being used for relay spam or DoS attacks  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.
      * @param {Object} opts Optional parameters
      * @param {module:model/ScheduledPlan} opts.body Scheduled Plan
      * @param {module:api/ScheduledPlanApi~scheduledPlanRunOnceCallback} callback The callback function, accepting three arguments: error, data, response
@@ -273,7 +273,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ScheduledPlan;
@@ -295,7 +295,7 @@
 
     /**
      * Scheduled Plans for Dashboard
-     * ### Get Scheduled Plans for a Dashboard  Returns all scheduled plans for a dashboard which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.   
+     * ### Get Scheduled Plans for a Dashboard  Returns all scheduled plans for a dashboard which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.
      * @param {Number} dashboardId Dashboard Id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId User Id (default is requesting user if not specified)
@@ -329,7 +329,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ScheduledPlan];
@@ -351,7 +351,7 @@
 
     /**
      * Scheduled Plans for Look
-     * ### Get Scheduled Plans for a Look  Returns all scheduled plans for a look which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.   
+     * ### Get Scheduled Plans for a Look  Returns all scheduled plans for a look which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.
      * @param {Number} lookId Look Id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId User Id (default is requesting user if not specified)
@@ -385,7 +385,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ScheduledPlan];
@@ -407,7 +407,7 @@
 
     /**
      * Scheduled Plans for LookML Dashboard
-     * ### Get Scheduled Plans for a LookML Dashboard  Returns all scheduled plans for a LookML Dashboard which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.   
+     * ### Get Scheduled Plans for a LookML Dashboard  Returns all scheduled plans for a LookML Dashboard which belong to the caller or given user.  If no user_id is provided, this function returns the scheduled plans owned by the caller.   To list all schedules for all users, pass &#x60;all_users&#x3D;true&#x60;.   The caller must have &#x60;see_schedules&#x60; permission to see other users&#39; scheduled plans.
      * @param {Number} lookmlDashboardId LookML Dashboard Id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId User Id (default is requesting user if not specified)
@@ -441,7 +441,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ScheduledPlan];
@@ -463,7 +463,7 @@
 
     /**
      * Scheduled Plans for Space
-     * ### Get Scheduled Plans for a Space  Returns scheduled plans owned by the caller for a given space id. 
+     * ### Get Scheduled Plans for a Space  Returns scheduled plans owned by the caller for a given space id.
      * @param {Number} spaceId Space Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -493,7 +493,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [ScheduledPlan];
@@ -515,7 +515,7 @@
 
     /**
      * Update Scheduled Plan
-     * ### Update a Scheduled Plan  Admins can update other users&#39; Scheduled Plans.  Note: Any scheduled plan destinations specified in an update will **replace** all scheduled plan destinations currently defined for the scheduled plan.  For Example: If a scheduled plan has destinations A, B, and C, and you call update on this scheduled plan specifying only B in the destinations, then destinations A and C will be deleted by the update.  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.   
+     * ### Update a Scheduled Plan  Admins can update other users&#39; Scheduled Plans.  Note: Any scheduled plan destinations specified in an update will **replace** all scheduled plan destinations currently defined for the scheduled plan.  For Example: If a scheduled plan has destinations A, B, and C, and you call update on this scheduled plan specifying only B in the destinations, then destinations A and C will be deleted by the update.  Scheduled plan destinations must specify the data format to produce and send to the destination  Scheduled Plan Destination formats:  | format | Description | :-----------: | :--- | | json | A JSON object containing a &#x60;data&#x60; property which contains an array of JSON objects, one per row. No metadata. | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | inline_json | Same as the JSON format, except that the &#x60;data&#x60; property is a string containing JSON-escaped row data. Additional properties describe the data operation. This format is primarily used to send data to web hooks so that the web hook doesn&#39;t have to re-encode the JSON row data in order to pass it on to its ultimate destination. | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | xlsx | MS Excel spreadsheet | wysiwyg_pdf | Dashboard rendered in a tiled layout to produce a PDF document | assembled_pdf | Dashboard rendered in a single column layout to produce a PDF document | wysiwyg_png | Dashboard rendered in a tiled layout to produce a PNG image ||  Valid formats vary by destination type and source object. &#x60;wysiwyg_pdf&#x60; is only valid for dashboards, for example.
      * @param {Number} scheduledPlanId Scheduled Plan Id
      * @param {module:model/ScheduledPlan} body Scheduled Plan
      * @param {module:api/ScheduledPlanApi~updateScheduledPlanCallback} callback The callback function, accepting three arguments: error, data, response
@@ -547,7 +547,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ScheduledPlan;

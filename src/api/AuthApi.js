@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new AuthApi. 
+   * Constructs a new AuthApi.
    * @alias module:api/AuthApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Create OIDC Test Configuration
-     * ### Create a OIDC test configuration. 
+     * ### Create a OIDC test configuration.
      * @param {module:model/OIDCConfig} body OIDC test config
      * @param {module:api/AuthApi~createOidcTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OIDCConfig}
@@ -83,7 +83,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = OIDCConfig;
@@ -105,7 +105,7 @@
 
     /**
      * Create SAML Test Configuration
-     * ### Create a SAML test configuration. 
+     * ### Create a SAML test configuration.
      * @param {module:model/SamlConfig} body SAML test config
      * @param {module:api/AuthApi~createSamlTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlConfig}
@@ -130,7 +130,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SamlConfig;
@@ -152,7 +152,7 @@
 
     /**
      * Delete OIDC Test Configuration
-     * ### Delete a OIDC test configuration. 
+     * ### Delete a OIDC test configuration.
      * @param {String} testSlug Slug of test config
      * @param {module:api/AuthApi~deleteOidcTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -178,7 +178,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -200,7 +200,7 @@
 
     /**
      * Delete SAML Test Configuration
-     * ### Delete a SAML test configuration. 
+     * ### Delete a SAML test configuration.
      * @param {String} testSlug Slug of test config
      * @param {module:api/AuthApi~deleteSamlTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -226,7 +226,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -248,7 +248,7 @@
 
     /**
      * Parse SAML IdP Url
-     * ### Fetch the given url and parse it as a SAML IdP metadata document and return the result. Note that this requires that the url be public or at least at a location where the Looker instance can fetch it without requiring any special authentication. 
+     * ### Fetch the given url and parse it as a SAML IdP metadata document and return the result. Note that this requires that the url be public or at least at a location where the Looker instance can fetch it without requiring any special authentication.
      * @param {String} body SAML IdP metadata public url
      * @param {module:api/AuthApi~fetchAndParseSamlIdpMetadataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlMetadataParseResult}
@@ -273,7 +273,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['text/plain'];
       var accepts = ['application/json'];
       var returnType = SamlMetadataParseResult;
@@ -295,7 +295,7 @@
 
     /**
      * Force password reset
-     * ### Force all credentials_email users to reset their login passwords upon their next login. 
+     * ### Force all credentials_email users to reset their login passwords upon their next login.
      * @param {module:api/AuthApi~forcePasswordResetAtNextLoginForAllUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
      */
@@ -314,7 +314,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -336,7 +336,7 @@
 
     /**
      * Get LDAP Configuration
-     * ### Get the LDAP configuration.  Looker can be optionally configured to authenticate users against an Active Directory or other LDAP directory server. LDAP setup requires coordination with an administrator of that directory server.  Only Looker administrators can read and update the LDAP configuration.  Configuring LDAP impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single LDAP configuration. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  LDAP is enabled or disabled for Looker using the **enabled** field.  Looker will never return an **auth_password** field. That value can be set, but never retrieved.  See the [Looker LDAP docs](https://www.looker.com/docs/r/api/ldap_setup) for additional information. 
+     * ### Get the LDAP configuration.  Looker can be optionally configured to authenticate users against an Active Directory or other LDAP directory server. LDAP setup requires coordination with an administrator of that directory server.  Only Looker administrators can read and update the LDAP configuration.  Configuring LDAP impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single LDAP configuration. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  LDAP is enabled or disabled for Looker using the **enabled** field.  Looker will never return an **auth_password** field. That value can be set, but never retrieved.  See the [Looker LDAP docs](https://www.looker.com/docs/r/api/ldap_setup) for additional information.
      * @param {module:api/AuthApi~ldapConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfig}
      */
@@ -355,7 +355,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfig;
@@ -377,7 +377,7 @@
 
     /**
      * Get OIDC Configuration
-     * ### Get the OIDC configuration.  Looker can be optionally configured to authenticate users against an OpenID Connect (OIDC) authentication server. OIDC setup requires coordination with an administrator of that server.  Only Looker administrators can read and update the OIDC configuration.  Configuring OIDC impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single OIDC configuation. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  OIDC is enabled or disabled for Looker using the **enabled** field. 
+     * ### Get the OIDC configuration.  Looker can be optionally configured to authenticate users against an OpenID Connect (OIDC) authentication server. OIDC setup requires coordination with an administrator of that server.  Only Looker administrators can read and update the OIDC configuration.  Configuring OIDC impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single OIDC configuation. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  OIDC is enabled or disabled for Looker using the **enabled** field.
      * @param {module:api/AuthApi~oidcConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OIDCConfig}
      */
@@ -396,7 +396,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = OIDCConfig;
@@ -418,7 +418,7 @@
 
     /**
      * Get OIDC Test Configuration
-     * ### Get a OIDC test configuration by test_slug. 
+     * ### Get a OIDC test configuration by test_slug.
      * @param {String} testSlug Slug of test config
      * @param {module:api/AuthApi~oidcTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OIDCConfig}
@@ -444,7 +444,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = OIDCConfig;
@@ -466,7 +466,7 @@
 
     /**
      * Parse SAML IdP XML
-     * ### Parse the given xml as a SAML IdP metadata document and return the result. 
+     * ### Parse the given xml as a SAML IdP metadata document and return the result.
      * @param {String} body SAML IdP metadata xml
      * @param {module:api/AuthApi~parseSamlIdpMetadataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlMetadataParseResult}
@@ -491,7 +491,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['text/plain'];
       var accepts = ['application/json'];
       var returnType = SamlMetadataParseResult;
@@ -513,7 +513,7 @@
 
     /**
      * Get Password Config
-     * ### Get password config. 
+     * ### Get password config.
      * @param {module:api/AuthApi~passwordConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PasswordConfig}
      */
@@ -532,7 +532,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PasswordConfig;
@@ -554,7 +554,7 @@
 
     /**
      * Get SAML Configuration
-     * ### Get the SAML configuration.  Looker can be optionally configured to authenticate users against a SAML authentication server. SAML setup requires coordination with an administrator of that server.  Only Looker administrators can read and update the SAML configuration.  Configuring SAML impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single SAML configuation. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  SAML is enabled or disabled for Looker using the **enabled** field. 
+     * ### Get the SAML configuration.  Looker can be optionally configured to authenticate users against a SAML authentication server. SAML setup requires coordination with an administrator of that server.  Only Looker administrators can read and update the SAML configuration.  Configuring SAML impacts authentication for all users. This configuration should be done carefully.  Looker maintains a single SAML configuation. It can be read and updated.       Updates only succeed if the new state will be valid (in the sense that all required fields are populated);       it is up to you to ensure that the configuration is appropriate and correct).  SAML is enabled or disabled for Looker using the **enabled** field.
      * @param {module:api/AuthApi~samlConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlConfig}
      */
@@ -573,7 +573,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SamlConfig;
@@ -595,7 +595,7 @@
 
     /**
      * Get SAML Test Configuration
-     * ### Get a SAML test configuration by test_slug. 
+     * ### Get a SAML test configuration by test_slug.
      * @param {String} testSlug Slug of test config
      * @param {module:api/AuthApi~samlTestConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlConfig}
@@ -621,7 +621,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SamlConfig;
@@ -643,7 +643,7 @@
 
     /**
      * Get Session Config
-     * ### Get session config. 
+     * ### Get session config.
      * @param {module:api/AuthApi~sessionConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SessionConfig}
      */
@@ -662,7 +662,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SessionConfig;
@@ -684,7 +684,7 @@
 
     /**
      * Test LDAP Auth
-     * ### Test the connection authentication settings for an LDAP configuration.  This tests that the connection is possible and that a &#39;server&#39; account to be used by Looker can       authenticate to the LDAP server given connection and authentication information.  **connection_host**, **connection_port**, and **auth_username**, are required.       **connection_tls** and **auth_password** are optional.  Example: &#x60;&#x60;&#x60;json {   \&quot;connection_host\&quot;: \&quot;ldap.example.com\&quot;,   \&quot;connection_port\&quot;: \&quot;636\&quot;,   \&quot;connection_tls\&quot;: true,   \&quot;auth_username\&quot;: \&quot;cn&#x3D;looker,dc&#x3D;example,dc&#x3D;com\&quot;,   \&quot;auth_password\&quot;: \&quot;secret\&quot; } &#x60;&#x60;&#x60;  Looker will never return an **auth_password**. If this request omits the **auth_password** field, then       the **auth_password** value from the active config (if present) will be used for the test.  The active LDAP settings are not modified.  
+     * ### Test the connection authentication settings for an LDAP configuration.  This tests that the connection is possible and that a &#39;server&#39; account to be used by Looker can       authenticate to the LDAP server given connection and authentication information.  **connection_host**, **connection_port**, and **auth_username**, are required.       **connection_tls** and **auth_password** are optional.  Example: &#x60;&#x60;&#x60;json {   \&quot;connection_host\&quot;: \&quot;ldap.example.com\&quot;,   \&quot;connection_port\&quot;: \&quot;636\&quot;,   \&quot;connection_tls\&quot;: true,   \&quot;auth_username\&quot;: \&quot;cn&#x3D;looker,dc&#x3D;example,dc&#x3D;com\&quot;,   \&quot;auth_password\&quot;: \&quot;secret\&quot; } &#x60;&#x60;&#x60;  Looker will never return an **auth_password**. If this request omits the **auth_password** field, then       the **auth_password** value from the active config (if present) will be used for the test.  The active LDAP settings are not modified.
      * @param {module:model/LDAPConfig} body LDAP Config
      * @param {module:api/AuthApi~testLdapConfigAuthCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfigTestResult}
@@ -709,7 +709,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfigTestResult;
@@ -731,7 +731,7 @@
 
     /**
      * Test LDAP Connection
-     * ### Test the connection settings for an LDAP configuration.  This tests that the connection is possible given a connection_host and connection_port.  **connection_host** and **connection_port** are required. **connection_tls** is optional.  Example: &#x60;&#x60;&#x60;json {   \&quot;connection_host\&quot;: \&quot;ldap.example.com\&quot;,   \&quot;connection_port\&quot;: \&quot;636\&quot;,   \&quot;connection_tls\&quot;: true } &#x60;&#x60;&#x60;  No authentication to the LDAP server is attempted.  The active LDAP settings are not modified. 
+     * ### Test the connection settings for an LDAP configuration.  This tests that the connection is possible given a connection_host and connection_port.  **connection_host** and **connection_port** are required. **connection_tls** is optional.  Example: &#x60;&#x60;&#x60;json {   \&quot;connection_host\&quot;: \&quot;ldap.example.com\&quot;,   \&quot;connection_port\&quot;: \&quot;636\&quot;,   \&quot;connection_tls\&quot;: true } &#x60;&#x60;&#x60;  No authentication to the LDAP server is attempted.  The active LDAP settings are not modified.
      * @param {module:model/LDAPConfig} body LDAP Config
      * @param {module:api/AuthApi~testLdapConfigConnectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfigTestResult}
@@ -756,7 +756,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfigTestResult;
@@ -778,7 +778,7 @@
 
     /**
      * Test LDAP User Auth
-     * ### Test the user authentication settings for an LDAP configuration.  This test accepts a full LDAP configuration along with a username/password pair and attempts to       authenticate the user with the LDAP server. The configuration is validated before attempting the       authentication.  Looker will never return an **auth_password**. If this request omits the **auth_password** field, then       the **auth_password** value from the active config (if present) will be used for the test.  **test_ldap_user** and **test_ldap_password** are required.  The active LDAP settings are not modified.  
+     * ### Test the user authentication settings for an LDAP configuration.  This test accepts a full LDAP configuration along with a username/password pair and attempts to       authenticate the user with the LDAP server. The configuration is validated before attempting the       authentication.  Looker will never return an **auth_password**. If this request omits the **auth_password** field, then       the **auth_password** value from the active config (if present) will be used for the test.  **test_ldap_user** and **test_ldap_password** are required.  The active LDAP settings are not modified.
      * @param {module:model/LDAPConfig} body LDAP Config
      * @param {module:api/AuthApi~testLdapConfigUserAuthCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfigTestResult}
@@ -803,7 +803,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfigTestResult;
@@ -825,7 +825,7 @@
 
     /**
      * Test LDAP User Info
-     * ### Test the user authentication settings for an LDAP configuration without authenticating the user.  This test will let you easily test the mapping for user properties and roles for any user without      needing to authenticate as that user.  This test accepts a full LDAP configuration along with a username and attempts to find the full info      for the user from the LDAP server without actually authenticating the user. So, user password is not      required.The configuration is validated before attempting to contact the server.  **test_ldap_user** is required.  The active LDAP settings are not modified.  
+     * ### Test the user authentication settings for an LDAP configuration without authenticating the user.  This test will let you easily test the mapping for user properties and roles for any user without      needing to authenticate as that user.  This test accepts a full LDAP configuration along with a username and attempts to find the full info      for the user from the LDAP server without actually authenticating the user. So, user password is not      required.The configuration is validated before attempting to contact the server.  **test_ldap_user** is required.  The active LDAP settings are not modified.
      * @param {module:model/LDAPConfig} body LDAP Config
      * @param {module:api/AuthApi~testLdapConfigUserInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfigTestResult}
@@ -850,7 +850,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfigTestResult;
@@ -872,7 +872,7 @@
 
     /**
      * Update LDAP Configuration
-     * ### Update the LDAP configuration.  Configuring LDAP impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the LDAP configuration.  LDAP is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any LDAP setting changes be tested using the APIs below before being set globally.  See the [Looker LDAP docs](https://www.looker.com/docs/r/api/ldap_setup) for additional information. 
+     * ### Update the LDAP configuration.  Configuring LDAP impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the LDAP configuration.  LDAP is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any LDAP setting changes be tested using the APIs below before being set globally.  See the [Looker LDAP docs](https://www.looker.com/docs/r/api/ldap_setup) for additional information.
      * @param {module:model/LDAPConfig} body LDAP Config
      * @param {module:api/AuthApi~updateLdapConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LDAPConfig}
@@ -897,7 +897,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LDAPConfig;
@@ -919,7 +919,7 @@
 
     /**
      * Update OIDC Configuration
-     * ### Update the OIDC configuration.  Configuring OIDC impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the OIDC configuration.  OIDC is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any OIDC setting changes be tested using the APIs below before being set globally. 
+     * ### Update the OIDC configuration.  Configuring OIDC impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the OIDC configuration.  OIDC is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any OIDC setting changes be tested using the APIs below before being set globally.
      * @param {module:model/OIDCConfig} body OIDC Config
      * @param {module:api/AuthApi~updateOidcConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OIDCConfig}
@@ -944,7 +944,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = OIDCConfig;
@@ -966,7 +966,7 @@
 
     /**
      * Update Password Config
-     * ### Update password config. 
+     * ### Update password config.
      * @param {module:model/PasswordConfig} body Password Config
      * @param {module:api/AuthApi~updatePasswordConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PasswordConfig}
@@ -991,7 +991,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PasswordConfig;
@@ -1013,7 +1013,7 @@
 
     /**
      * Update SAML Configuration
-     * ### Update the SAML configuration.  Configuring SAML impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the SAML configuration.  SAML is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any SAML setting changes be tested using the APIs below before being set globally. 
+     * ### Update the SAML configuration.  Configuring SAML impacts authentication for all users. This configuration should be done carefully.  Only Looker administrators can read and update the SAML configuration.  SAML is enabled or disabled for Looker using the **enabled** field.  It is **highly** recommended that any SAML setting changes be tested using the APIs below before being set globally.
      * @param {module:model/SamlConfig} body SAML Config
      * @param {module:api/AuthApi~updateSamlConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SamlConfig}
@@ -1038,7 +1038,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SamlConfig;
@@ -1060,7 +1060,7 @@
 
     /**
      * Update Session Config
-     * ### Update session config. 
+     * ### Update session config.
      * @param {module:model/SessionConfig} body Session Config
      * @param {module:api/AuthApi~updateSessionConfigCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SessionConfig}
@@ -1085,7 +1085,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SessionConfig;

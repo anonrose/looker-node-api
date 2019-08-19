@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new DashboardApi. 
+   * Constructs a new DashboardApi.
    * @alias module:api/DashboardApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Get All Dashboards
-     * ### Get information about all active dashboards.  Returns an array of **abbreviated dashboard objects**. Dashboards marked as deleted are excluded from this list.  Get the **full details** of a specific dashboard by id with [Dashboard](#!/Dashboard/dashboard)  Find **deleted dashboards** with [Search Dashboards](#!/Dashboard/search_dashboards) 
+     * ### Get information about all active dashboards.  Returns an array of **abbreviated dashboard objects**. Dashboards marked as deleted are excluded from this list.  Get the **full details** of a specific dashboard by id with [Dashboard](#!/Dashboard/dashboard)  Find **deleted dashboards** with [Search Dashboards](#!/Dashboard/search_dashboards)
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {module:api/DashboardApi~allDashboardsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -81,7 +81,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardBase];
@@ -103,7 +103,7 @@
 
     /**
      * Create Dashboard
-     * ### Create a dashboard with the specified information  Creates a new dashboard object, returning the dashboard details, including the created id.  **Update** an existing dashboard with [Update Dashboard](#!/Dashboard/update_dashboard)  **Permanently delete** an existing dashboard with [Delete Dashboard](#!/Dashboard/delete_dashboard) 
+     * ### Create a dashboard with the specified information  Creates a new dashboard object, returning the dashboard details, including the created id.  **Update** an existing dashboard with [Update Dashboard](#!/Dashboard/update_dashboard)  **Permanently delete** an existing dashboard with [Delete Dashboard](#!/Dashboard/delete_dashboard)
      * @param {Object} opts Optional parameters
      * @param {module:model/Dashboard} opts.body Dashboard
      * @param {module:api/DashboardApi~createDashboardCallback} callback The callback function, accepting three arguments: error, data, response
@@ -125,7 +125,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -171,7 +171,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -222,7 +222,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -268,7 +268,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -290,7 +290,7 @@
 
     /**
      * Get Dashboard
-     * ### Get information about the dashboard with the specified id  Returns the full details of the identified dashboard object  Get a **summary list** of all active dashboards with [All Dashboards](#!/Dashboard/all_dashboards)  **Search** for dashboards with [Search Dashboards](#!/Dashboard/search_dashboards) 
+     * ### Get information about the dashboard with the specified id  Returns the full details of the identified dashboard object  Get a **summary list** of all active dashboards with [All Dashboards](#!/Dashboard/all_dashboards)  **Search** for dashboards with [Search Dashboards](#!/Dashboard/search_dashboards)
      * @param {String} dashboardId Id of dashboard
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -320,7 +320,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -372,7 +372,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardElement];
@@ -424,7 +424,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardFilter];
@@ -476,7 +476,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardLayout];
@@ -528,7 +528,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -580,7 +580,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -632,7 +632,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -684,7 +684,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayoutComponent;
@@ -736,7 +736,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardLayoutComponent];
@@ -758,7 +758,7 @@
 
     /**
      * Delete Dashboard
-     * ### Delete the dashboard with the specified id  Permanently **deletes** a dashboard. (The dashboard cannot be recovered after this operation.)  \&quot;Soft\&quot; delete or hide a dashboard by setting its &#x60;deleted&#x60; status to &#x60;True&#x60; with [Update Dashboard](#!/Dashboard/update_dashboard).  Note: When a dashboard is deleted in the UI, it is soft deleted. Use this API call to permanently remove it, if desired. 
+     * ### Delete the dashboard with the specified id  Permanently **deletes** a dashboard. (The dashboard cannot be recovered after this operation.)  \&quot;Soft\&quot; delete or hide a dashboard by setting its &#x60;deleted&#x60; status to &#x60;True&#x60; with [Update Dashboard](#!/Dashboard/update_dashboard).  Note: When a dashboard is deleted in the UI, it is soft deleted. Use this API call to permanently remove it, if desired.
      * @param {String} dashboardId Id of dashboard
      * @param {module:api/DashboardApi~deleteDashboardCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -784,7 +784,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -832,7 +832,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -880,7 +880,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -928,7 +928,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -950,7 +950,7 @@
 
     /**
      * Import LookML Dashboard
-     * ### Import a LookML dashboard to a space as a UDD Creates a UDD (a dashboard which exists in the Looker database rather than as a LookML file) from the LookML dashboard and puts it in the space specified. The created UDD will have a lookml_link_id which links to the original LookML dashboard.  To give the imported dashboard specify a (e.g. title: \&quot;my title\&quot;) in the body of your request, otherwise the imported dashboard will have the same title as the original LookML dashboard.  For this operation to succeed the user must have permission to see the LookML dashboard in question, and have permission to create content in the space the dashboard is being imported to.  **Sync** a linked UDD with [Sync LookML Dashboard] (#!/Dashboard/sync_lookml_dashboard) **Unlink** a linked UDD by setting lookml_link_id to null with [Update Dashboard](#!/Dashboard/update_dashboard) 
+     * ### Import a LookML dashboard to a space as a UDD Creates a UDD (a dashboard which exists in the Looker database rather than as a LookML file) from the LookML dashboard and puts it in the space specified. The created UDD will have a lookml_link_id which links to the original LookML dashboard.  To give the imported dashboard specify a (e.g. title: \&quot;my title\&quot;) in the body of your request, otherwise the imported dashboard will have the same title as the original LookML dashboard.  For this operation to succeed the user must have permission to see the LookML dashboard in question, and have permission to create content in the space the dashboard is being imported to.  **Sync** a linked UDD with [Sync LookML Dashboard] (#!/Dashboard/sync_lookml_dashboard) **Unlink** a linked UDD by setting lookml_link_id to null with [Update Dashboard](#!/Dashboard/update_dashboard)
      * @param {String} lookmlDashboardId Id of LookML dashboard
      * @param {String} spaceId Id of space to import the dashboard to
      * @param {Object} opts Optional parameters
@@ -988,7 +988,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -1010,7 +1010,7 @@
 
     /**
      * Search Dashboard Elements
-     * ### Search Dashboard Elements  Returns an **array of DashboardElement objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.  
+     * ### Search Dashboard Elements  Returns an **array of DashboardElement objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.dashboardId Select elements that refer to a given dashboard id
      * @param {Number} opts.lookId Select elements that refer to a given look id
@@ -1045,7 +1045,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [DashboardElement];
@@ -1067,7 +1067,7 @@
 
     /**
      * Search Dashboards
-     * ### Search Dashboards  Returns an **array of dashboard objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.  Get a **single dashboard** by id with [Dashboard](#!/Dashboard/dashboard) 
+     * ### Search Dashboards  Returns an **array of dashboard objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.  Get a **single dashboard** by id with [Dashboard](#!/Dashboard/dashboard)
      * @param {Object} opts Optional parameters
      * @param {Number} opts.id Match dashboard id.
      * @param {String} opts.slug Match dashboard slug.
@@ -1122,7 +1122,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Dashboard];
@@ -1144,7 +1144,7 @@
 
     /**
      * Sync LookML Dashboard
-     * ### Update all linked dashboards to match the specified LookML dashboard.  Any UDD (a dashboard which exists in the Looker database rather than as a LookML file) which has a &#x60;lookml_link_id&#x60; property value referring to a LookML dashboard&#39;s id (model::dashboardname) will be updated so that it matches the current state of the LookML dashboard.  For this operation to succeed the user must have permission to view the LookML dashboard, and only linked dashboards that the user has permission to update will be synced.  To **link** or **unlink** a UDD set the &#x60;lookml_link_id&#x60; property with [Update Dashboard](#!/Dashboard/update_dashboard) 
+     * ### Update all linked dashboards to match the specified LookML dashboard.  Any UDD (a dashboard which exists in the Looker database rather than as a LookML file) which has a &#x60;lookml_link_id&#x60; property value referring to a LookML dashboard&#39;s id (model::dashboardname) will be updated so that it matches the current state of the LookML dashboard.  For this operation to succeed the user must have permission to view the LookML dashboard, and only linked dashboards that the user has permission to update will be synced.  To **link** or **unlink** a UDD set the &#x60;lookml_link_id&#x60; property with [Update Dashboard](#!/Dashboard/update_dashboard)
      * @param {String} lookmlDashboardId Id of LookML dashboard, in the form &#39;model::dashboardname&#39;
      * @param {module:model/Dashboard} body Dashboard
      * @param {Object} opts Optional parameters
@@ -1180,7 +1180,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ['Number'];
@@ -1202,7 +1202,7 @@
 
     /**
      * Update Dashboard
-     * ### Update the dashboard with the specified id  Changes simple (scalar) properties of the dashboard. 
+     * ### Update the dashboard with the specified id  Changes simple (scalar) properties of the dashboard.
      * @param {String} dashboardId Id of dashboard
      * @param {module:model/Dashboard} body Dashboard
      * @param {module:api/DashboardApi~updateDashboardCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1234,7 +1234,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Dashboard;
@@ -1292,7 +1292,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardElement;
@@ -1350,7 +1350,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardFilter;
@@ -1408,7 +1408,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayout;
@@ -1466,7 +1466,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DashboardLayoutComponent;

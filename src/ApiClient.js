@@ -127,6 +127,7 @@
       path = '/' + path;
     }
     var url = this.basePath + path;
+    console.log(url, pathParams)
     var _this = this;
     url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
       var value;
@@ -293,6 +294,7 @@
    */
   exports.prototype.applyAuthToRequest = function(request, authNames) {
     var _this = this;
+    console.log(authNames);
     authNames.forEach(function(authName) {
       var auth = _this.authentications[authName];
       switch (auth.type) {

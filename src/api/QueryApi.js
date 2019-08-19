@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new QueryApi. 
+   * Constructs a new QueryApi.
    * @alias module:api/QueryApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -58,7 +58,7 @@
 
     /**
      * Get All Running Queries
-     * Get information about all running queries. 
+     * Get information about all running queries.
      * @param {module:api/QueryApi~allRunningQueriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/RunningQueries>}
      */
@@ -77,7 +77,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [RunningQueries];
@@ -99,7 +99,7 @@
 
     /**
      * Create Merge Query
-     * ### Create Merge Query  Creates a new merge query object.  A merge query takes the results of one or more queries and combines (merges) the results according to field mapping definitions. The result is similar to a SQL left outer join.  A merge query can merge results of queries from different SQL databases.  The order that queries are defined in the source_queries array property is significant. The first query in the array defines the primary key into which the results of subsequent queries will be merged.  Like model/view query objects, merge queries are immutable and have structural identity - if you make a request to create a new merge query that is identical to an existing merge query, the existing merge query will be returned instead of creating a duplicate. Conversely, any change to the contents of a merge query will produce a new object with a new id. 
+     * ### Create Merge Query  Creates a new merge query object.  A merge query takes the results of one or more queries and combines (merges) the results according to field mapping definitions. The result is similar to a SQL left outer join.  A merge query can merge results of queries from different SQL databases.  The order that queries are defined in the source_queries array property is significant. The first query in the array defines the primary key into which the results of subsequent queries will be merged.  Like model/view query objects, merge queries are immutable and have structural identity - if you make a request to create a new merge query that is identical to an existing merge query, the existing merge query will be returned instead of creating a duplicate. Conversely, any change to the contents of a merge query will produce a new object with a new id.
      * @param {Object} opts Optional parameters
      * @param {module:model/MergeQuery} opts.body Merge Query
      * @param {String} opts.fields Requested fields
@@ -123,7 +123,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = MergeQuery;
@@ -145,7 +145,7 @@
 
     /**
      * Create Query
-     * ### Create a query.  This allows you to create a new query that you can later run. Looker queries are immutable once created and are not deleted. If you create a query that is exactly like an existing query then the existing query will be returned and no new query will be created. Whether a new query is created or not, you can use the &#39;id&#39; in the returned query with the &#39;run&#39; method.  The query parameters are passed as json in the body of the request.  
+     * ### Create a query.  This allows you to create a new query that you can later run. Looker queries are immutable once created and are not deleted. If you create a query that is exactly like an existing query then the existing query will be returned and no new query will be created. Whether a new query is created or not, you can use the &#39;id&#39; in the returned query with the &#39;run&#39; method.  The query parameters are passed as json in the body of the request.
      * @param {Object} opts Optional parameters
      * @param {module:model/Query} opts.body Query
      * @param {String} opts.fields Requested fields.
@@ -169,7 +169,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Query;
@@ -191,7 +191,7 @@
 
     /**
      * Run Query Async
-     * ### Run a saved query asynchronously.  Runs a previously created query asynchronously. Returns a Query Task ID which can be used to fetch the results from the Query Tasks results endpoint. 
+     * ### Run a saved query asynchronously.  Runs a previously created query asynchronously. Returns a Query Task ID which can be used to fetch the results from the Query Tasks results endpoint.
      * @param {module:model/CreateQueryTask} body Query parameters
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Row limit (may override the limit in the saved query).
@@ -244,7 +244,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = QueryTask;
@@ -291,7 +291,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SqlQuery;
@@ -313,7 +313,7 @@
 
     /**
      * Kill Running Query
-     * Kill a query with a specific query_task_id. 
+     * Kill a query with a specific query_task_id.
      * @param {String} queryTaskId Query task id.
      * @param {module:api/QueryApi~killQueryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -339,7 +339,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -361,7 +361,7 @@
 
     /**
      * Get Merge Query
-     * ### Get Merge Query  Returns a merge query object given its id. 
+     * ### Get Merge Query  Returns a merge query object given its id.
      * @param {String} mergeQueryId Merge Query Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields
@@ -391,7 +391,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = MergeQuery;
@@ -413,7 +413,7 @@
 
     /**
      * Get Query
-     * ### Get a previously created query by id.  A Looker query object includes the various parameters that define a database query that has been run or could be run in the future. These parameters include: model, view, fields, filters, pivots, etc. Query *results* are not part of the query object.  Query objects are unique and immutable. Query objects are created automatically in Looker as users explore data. Looker does not delete them; they become part of the query history. When asked to create a query for any given set of parameters, Looker will first try to find an existing query object with matching parameters and will only create a new object when an appropriate object can not be found.  This &#39;get&#39; method is used to get the details about a query for a given id. See the other methods here to &#39;create&#39; and &#39;run&#39; queries.  Note that some fields like &#39;filter_config&#39; and &#39;vis_config&#39; etc are specific to how the Looker UI builds queries and visualizations and are not generally useful for API use. They are not required when creating new queries and can usually just be ignored.  
+     * ### Get a previously created query by id.  A Looker query object includes the various parameters that define a database query that has been run or could be run in the future. These parameters include: model, view, fields, filters, pivots, etc. Query *results* are not part of the query object.  Query objects are unique and immutable. Query objects are created automatically in Looker as users explore data. Looker does not delete them; they become part of the query history. When asked to create a query for any given set of parameters, Looker will first try to find an existing query object with matching parameters and will only create a new object when an appropriate object can not be found.  This &#39;get&#39; method is used to get the details about a query for a given id. See the other methods here to &#39;create&#39; and &#39;run&#39; queries.  Note that some fields like &#39;filter_config&#39; and &#39;vis_config&#39; etc are specific to how the Looker UI builds queries and visualizations and are not generally useful for API use. They are not required when creating new queries and can usually just be ignored.
      * @param {Number} queryId Id of query
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -443,7 +443,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Query;
@@ -465,7 +465,7 @@
 
     /**
      * Get Query for Slug
-     * ### Get the query for a given query slug.  This returns the query for the &#39;slug&#39; in a query share URL.  The &#39;slug&#39; is a randomly chosen short string that is used as an alternative to the query&#39;s id value for use in URLs etc. This method exists as a convenience to help you use the API to &#39;find&#39; queries that have been created using the Looker UI.  You can use the Looker explore page to build a query and then choose the &#39;Share&#39; option to show the share url for the query. Share urls generally look something like &#39;https://looker.yourcompany/x/vwGSbfc&#39;. The trailing &#39;vwGSbfc&#39; is the share slug. You can pass that string to this api method to get details about the query. Those details include the &#39;id&#39; that you can use to run the query. Or, you can copy the query body (perhaps with your own modification) and use that as the basis to make/run new queries.  This will also work with slugs from Looker explore urls like &#39;https://looker.yourcompany/explore/ecommerce/orders?qid&#x3D;aogBgL6o3cKK1jN3RoZl5s&#39;. In this case &#39;aogBgL6o3cKK1jN3RoZl5s&#39; is the slug. 
+     * ### Get the query for a given query slug.  This returns the query for the &#39;slug&#39; in a query share URL.  The &#39;slug&#39; is a randomly chosen short string that is used as an alternative to the query&#39;s id value for use in URLs etc. This method exists as a convenience to help you use the API to &#39;find&#39; queries that have been created using the Looker UI.  You can use the Looker explore page to build a query and then choose the &#39;Share&#39; option to show the share url for the query. Share urls generally look something like &#39;https://looker.yourcompany/x/vwGSbfc&#39;. The trailing &#39;vwGSbfc&#39; is the share slug. You can pass that string to this api method to get details about the query. Those details include the &#39;id&#39; that you can use to run the query. Or, you can copy the query body (perhaps with your own modification) and use that as the basis to make/run new queries.  This will also work with slugs from Looker explore urls like &#39;https://looker.yourcompany/explore/ecommerce/orders?qid&#x3D;aogBgL6o3cKK1jN3RoZl5s&#39;. In this case &#39;aogBgL6o3cKK1jN3RoZl5s&#39; is the slug.
      * @param {String} slug Slug of query
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -495,7 +495,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Query;
@@ -517,7 +517,7 @@
 
     /**
      * Get Async Query Info
-     * Returns information about a Query Task.  Query Tasks are generated by running queries asynchronously. They are represented by a GUID returned from one of the async query endpoints. 
+     * Returns information about a Query Task.  Query Tasks are generated by running queries asynchronously. They are represented by a GUID returned from one of the async query endpoints.
      * @param {String} queryTaskId ID of the Query Task
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -547,7 +547,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = QueryTask;
@@ -569,7 +569,7 @@
 
     /**
      * Get Multiple Async Query Results
-     * Fetch the results of multiple async Query Tasks in one response.  For Query Tasks that are not completed, the response will include the execution status of the Query Task but will not include query results. Query Tasks whose results have expired will have a status of &#39;expired&#39;. If the user making the API request does not have sufficient privileges to view a Query Task result, the result will have a status of &#39;missing&#39; 
+     * Fetch the results of multiple async Query Tasks in one response.  For Query Tasks that are not completed, the response will include the execution status of the Query Task but will not include query results. Query Tasks whose results have expired will have a status of &#39;expired&#39;. If the user making the API request does not have sufficient privileges to view a Query Task result, the result will have a status of &#39;missing&#39;
      * @param {Array.<String>} queryTaskIds List of Query Task IDs
      * @param {module:api/QueryApi~queryTaskMultiResultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {'String': 'String'}>}
@@ -598,7 +598,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = {'String': 'String'};
@@ -620,7 +620,7 @@
 
     /**
      * Get Async Query Results
-     * Returns the results of an async Query Task if the query has completed. 
+     * Returns the results of an async Query Task if the query has completed.
      * @param {String} queryTaskId ID of the Query Task
      * @param {module:api/QueryApi~queryTaskResultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {'String': 'String'}>}
@@ -646,7 +646,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json'];
       var returnType = {'String': 'String'};
@@ -668,7 +668,7 @@
 
     /**
      * Run Inline Query
-     * ### Run the query that is specified inline in the posted body.  This allows running a query as defined in json in the posted body. This combines the two actions of posting &amp; running a query into one step.  Here is an example body in json: &#x60;&#x60;&#x60; {   \&quot;model\&quot;:\&quot;thelook\&quot;,   \&quot;view\&quot;:\&quot;inventory_items\&quot;,   \&quot;fields\&quot;:[\&quot;category.name\&quot;,\&quot;inventory_items.days_in_inventory_tier\&quot;,\&quot;products.count\&quot;],   \&quot;filters\&quot;:{\&quot;category.name\&quot;:\&quot;socks\&quot;},   \&quot;sorts\&quot;:[\&quot;products.count desc 0\&quot;],   \&quot;limit\&quot;:\&quot;500\&quot;,   \&quot;query_timezone\&quot;:\&quot;America/Los_Angeles\&quot; } &#x60;&#x60;&#x60;  When using the Ruby SDK this would be passed as a Ruby hash like: &#x60;&#x60;&#x60; {  :model&#x3D;&gt;\&quot;thelook\&quot;,  :view&#x3D;&gt;\&quot;inventory_items\&quot;,  :fields&#x3D;&gt;   [\&quot;category.name\&quot;,    \&quot;inventory_items.days_in_inventory_tier\&quot;,    \&quot;products.count\&quot;],  :filters&#x3D;&gt;{:\&quot;category.name\&quot;&#x3D;&gt;\&quot;socks\&quot;},  :sorts&#x3D;&gt;[\&quot;products.count desc 0\&quot;],  :limit&#x3D;&gt;\&quot;500\&quot;,  :query_timezone&#x3D;&gt;\&quot;America/Los_Angeles\&quot;, } &#x60;&#x60;&#x60;  This will return the result of running the query in the format specified by the &#39;result_format&#39; parameter.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query   
+     * ### Run the query that is specified inline in the posted body.  This allows running a query as defined in json in the posted body. This combines the two actions of posting &amp; running a query into one step.  Here is an example body in json: &#x60;&#x60;&#x60; {   \&quot;model\&quot;:\&quot;thelook\&quot;,   \&quot;view\&quot;:\&quot;inventory_items\&quot;,   \&quot;fields\&quot;:[\&quot;category.name\&quot;,\&quot;inventory_items.days_in_inventory_tier\&quot;,\&quot;products.count\&quot;],   \&quot;filters\&quot;:{\&quot;category.name\&quot;:\&quot;socks\&quot;},   \&quot;sorts\&quot;:[\&quot;products.count desc 0\&quot;],   \&quot;limit\&quot;:\&quot;500\&quot;,   \&quot;query_timezone\&quot;:\&quot;America/Los_Angeles\&quot; } &#x60;&#x60;&#x60;  When using the Ruby SDK this would be passed as a Ruby hash like: &#x60;&#x60;&#x60; {  :model&#x3D;&gt;\&quot;thelook\&quot;,  :view&#x3D;&gt;\&quot;inventory_items\&quot;,  :fields&#x3D;&gt;   [\&quot;category.name\&quot;,    \&quot;inventory_items.days_in_inventory_tier\&quot;,    \&quot;products.count\&quot;],  :filters&#x3D;&gt;{:\&quot;category.name\&quot;&#x3D;&gt;\&quot;socks\&quot;},  :sorts&#x3D;&gt;[\&quot;products.count desc 0\&quot;],  :limit&#x3D;&gt;\&quot;500\&quot;,  :query_timezone&#x3D;&gt;\&quot;America/Los_Angeles\&quot;, } &#x60;&#x60;&#x60;  This will return the result of running the query in the format specified by the &#39;result_format&#39; parameter.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query
      * @param {String} resultFormat Format of result
      * @param {module:model/Query} body inline query
      * @param {Object} opts Optional parameters
@@ -726,7 +726,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json', 'image/png', 'image/jpg'];
       var returnType = 'String';
@@ -748,7 +748,7 @@
 
     /**
      * Run Query
-     * ### Run a saved query.  This runs a previously saved query. You can use this on a query that was generated in the Looker UI or one that you have explicitly created using the API. You can also use a query &#39;id&#39; from a saved &#39;Look&#39;.  The &#39;result_format&#39; parameter specifies the desired structure and format of the response.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query   
+     * ### Run a saved query.  This runs a previously saved query. You can use this on a query that was generated in the Looker UI or one that you have explicitly created using the API. You can also use a query &#39;id&#39; from a saved &#39;Look&#39;.  The &#39;result_format&#39; parameter specifies the desired structure and format of the response.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query
      * @param {Number} queryId Id of query
      * @param {String} resultFormat Format of result
      * @param {Object} opts Optional parameters
@@ -807,7 +807,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json', 'image/png', 'image/jpg'];
       var returnType = 'String';
@@ -866,7 +866,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json', 'image/png', 'image/jpg'];
       var returnType = 'String';
@@ -888,7 +888,7 @@
 
     /**
      * Run Url Encoded Query
-     * ### Run an URL encoded query.  This requires the caller to encode the specifiers for the query into the URL query part using Looker-specific syntax as explained below.  Generally, you would want to use one of the methods that takes the parameters as json in the POST body for creating and/or running queries. This method exists for cases where one really needs to encode the parameters into the URL of a single &#39;GET&#39; request. This matches the way that the Looker UI formats &#39;explore&#39; URLs etc.  The parameters here are very similar to the json body formatting except that the filter syntax is tricky. Unfortunately, this format makes this method not currently callible via the &#39;Try it out!&#39; button in this documentation page. But, this is callable  when creating URLs manually or when using the Looker SDK.  Here is an example inline query URL:  &#x60;&#x60;&#x60; https://looker.mycompany.com:19999/api/3.0/queries/models/thelook/views/inventory_items/run/json?fields&#x3D;category.name,inventory_items.days_in_inventory_tier,products.count&amp;f[category.name]&#x3D;socks&amp;sorts&#x3D;products.count+desc+0&amp;limit&#x3D;500&amp;query_timezone&#x3D;America/Los_Angeles &#x60;&#x60;&#x60;  When invoking this endpoint with the Ruby SDK, pass the query parameter parts as a hash. The hash to match the above would look like:  &#x60;&#x60;&#x60;ruby query_params &#x3D; {   :fields &#x3D;&gt; \&quot;category.name,inventory_items.days_in_inventory_tier,products.count\&quot;,   :\&quot;f[category.name]\&quot; &#x3D;&gt; \&quot;socks\&quot;,   :sorts &#x3D;&gt; \&quot;products.count desc 0\&quot;,   :limit &#x3D;&gt; \&quot;500\&quot;,   :query_timezone &#x3D;&gt; \&quot;America/Los_Angeles\&quot; } response &#x3D; ruby_sdk.run_url_encoded_query(&#39;thelook&#39;,&#39;inventory_items&#39;,&#39;json&#39;, query_params)  &#x60;&#x60;&#x60;  Again, it is generally easier to use the variant of this method that passes the full query in the POST body. This method is available for cases where other alternatives won&#39;t fit the need.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query   
+     * ### Run an URL encoded query.  This requires the caller to encode the specifiers for the query into the URL query part using Looker-specific syntax as explained below.  Generally, you would want to use one of the methods that takes the parameters as json in the POST body for creating and/or running queries. This method exists for cases where one really needs to encode the parameters into the URL of a single &#39;GET&#39; request. This matches the way that the Looker UI formats &#39;explore&#39; URLs etc.  The parameters here are very similar to the json body formatting except that the filter syntax is tricky. Unfortunately, this format makes this method not currently callible via the &#39;Try it out!&#39; button in this documentation page. But, this is callable  when creating URLs manually or when using the Looker SDK.  Here is an example inline query URL:  &#x60;&#x60;&#x60; https://looker.mycompany.com:19999/api/3.0/queries/models/thelook/views/inventory_items/run/json?fields&#x3D;category.name,inventory_items.days_in_inventory_tier,products.count&amp;f[category.name]&#x3D;socks&amp;sorts&#x3D;products.count+desc+0&amp;limit&#x3D;500&amp;query_timezone&#x3D;America/Los_Angeles &#x60;&#x60;&#x60;  When invoking this endpoint with the Ruby SDK, pass the query parameter parts as a hash. The hash to match the above would look like:  &#x60;&#x60;&#x60;ruby query_params &#x3D; {   :fields &#x3D;&gt; \&quot;category.name,inventory_items.days_in_inventory_tier,products.count\&quot;,   :\&quot;f[category.name]\&quot; &#x3D;&gt; \&quot;socks\&quot;,   :sorts &#x3D;&gt; \&quot;products.count desc 0\&quot;,   :limit &#x3D;&gt; \&quot;500\&quot;,   :query_timezone &#x3D;&gt; \&quot;America/Los_Angeles\&quot; } response &#x3D; ruby_sdk.run_url_encoded_query(&#39;thelook&#39;,&#39;inventory_items&#39;,&#39;json&#39;, query_params)  &#x60;&#x60;&#x60;  Again, it is generally easier to use the variant of this method that passes the full query in the POST body. This method is available for cases where other alternatives won&#39;t fit the need.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query
      * @param {String} modelName Model name
      * @param {String} viewName View name
      * @param {String} resultFormat Format of result
@@ -928,7 +928,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json', 'image/png', 'image/jpg'];
       var returnType = 'String';
@@ -976,7 +976,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SqlQuery;

@@ -1,6 +1,6 @@
 /**
  * Looker API 3.1 Reference
- * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.  
+ * ### Authorization  The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)  ### Client SDKs  The Looker API is a RESTful system that should be usable by any programming language capable of making HTTPS requests. Client SDKs for a variety of programming languages can be generated from the Looker API's Swagger JSON metadata to streamline use of the Looker API in your applications. A client SDK for Ruby is available as an example. For more information, see [Looker API Client SDKs](https://looker.com/docs/r/api/client_sdks)  ### Try It Out!  The 'api-docs' page served by the Looker instance includes 'Try It Out!' buttons for each API method. After logging in with API3 credentials, you can use the \"Try It Out!\" buttons to call the API directly from the documentation page to interactively explore API features and responses.  Note! With great power comes great responsibility: The \"Try It Out!\" button makes API calls to your live Looker instance. Be especially careful with destructive API operations such as `delete_user` or similar. There is no \"undo\" for API operations.  ### Versioning  Future releases of Looker will expand this API release-by-release to securely expose more and more of the core power of Looker to API client applications. API endpoints marked as \"beta\" may receive breaking changes without warning (but we will try to avoid doing that). Stable (non-beta) API endpoints should not receive breaking changes in future releases. For more information, see [Looker API Versioning](https://looker.com/docs/r/api/versioning)  This **API 3.1** is in active development. This is where support for new Looker features will appear as non-breaking additions - new functions, new optional parameters on existing functions, or new optional properties in existing types. Additive changes should not impact your existing application code that calls the Looker API. Your existing application code will not be aware of any new Looker API functionality until you choose to upgrade your app to use a newer Looker API client SDK release.  The following are a few examples of noteworthy items that have changed between API 3.0 and API 3.1. For more comprehensive coverage of API changes, please see the release notes for your Looker release.   ### Examples of new things added in API 3.1:  * Dashboard construction APIs * Themes and custom color collections APIs * Create and run SQL_runner queries * Create and run merged results queries * Create and modify dashboard filters * Create and modify password requirements   ### Deprecated in API 3.0  The following functions and properties have been deprecated in API 3.0.  They continue to exist and work in API 3.0 for the next several Looker releases but they have not been carried forward to API 3.1:  * Dashboard Prefetch functions * User access_filter functions * User API 1.0 credentials functions * Space.is_root and Space.is_user_root properties. Use Space.is_shared_root and Space.is_users_root instead.   ### Semantic changes in API 3.1:  * `all_looks` no longer includes soft-deleted looks, matching `all_dashboards` behavior. You can find soft-deleted looks using `search_looks` with the `deleted` param set to True. * `all_spaces` no longer includes duplicate items * `search_users` no longer accepts Y,y,1,0,N,n for Boolean params, only \"true\" and \"false\". * For greater client and network compatibility, `render_task_results` now returns HTTP status ***202 Accepted*** instead of HTTP status ***102 Processing*** * `all_running_queries` and `kill_query` functions have moved into the `Query` function group.   If you have application code which relies on the old behavior of the APIs above, you may continue using the API 3.0 functions in this Looker release. We strongly suggest you update your code to use API 3.1 analogs as soon as possible.
  *
  * OpenAPI spec version: 3.1.0
  * Contact: support@looker.com
@@ -38,7 +38,7 @@
    */
 
   /**
-   * Constructs a new UserApi. 
+   * Constructs a new UserApi.
    * @alias module:api/UserApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
@@ -88,7 +88,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [CredentialsApi3];
@@ -140,7 +140,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [CredentialsEmbed];
@@ -192,7 +192,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Session];
@@ -214,7 +214,7 @@
 
     /**
      * Get All Users
-     * ### Get information about all users. 
+     * ### Get information about all users.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {Number} opts.page Requested page.
@@ -248,7 +248,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [User];
@@ -270,7 +270,7 @@
 
     /**
      * Create User
-     * ### Create a user with the specified information. 
+     * ### Create a user with the specified information.
      * @param {Object} opts Optional parameters
      * @param {module:model/User} opts.body User
      * @param {String} opts.fields Requested fields.
@@ -294,7 +294,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = User;
@@ -347,7 +347,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsApi3;
@@ -400,7 +400,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsEmail;
@@ -422,7 +422,7 @@
 
     /**
      * Create Password Reset Token
-     * ### Create a password reset token. This will create a cryptographically secure random password reset token for the user. If the user already has a password reset token then this invalidates the old token and creates a new one. The token is expressed as the &#39;password_reset_url&#39; of the user&#39;s email/password credential object. This takes an optional &#39;expires&#39; param to indicate if the new token should be an expiring token. Tokens that expire are typically used for self-service password resets for existing users. Invitation emails for new users typically are not set to expire. The expire period is always 60 minutes when expires is enabled. This method can be called with an empty body. 
+     * ### Create a password reset token. This will create a cryptographically secure random password reset token for the user. If the user already has a password reset token then this invalidates the old token and creates a new one. The token is expressed as the &#39;password_reset_url&#39; of the user&#39;s email/password credential object. This takes an optional &#39;expires&#39; param to indicate if the new token should be an expiring token. Tokens that expire are typically used for self-service password resets for existing users. Invitation emails for new users typically are not set to expire. The expire period is always 60 minutes when expires is enabled. This method can be called with an empty body.
      * @param {Number} userId Id of user
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.expires Expiring token.
@@ -454,7 +454,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsEmail;
@@ -507,7 +507,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsTotp;
@@ -529,7 +529,7 @@
 
     /**
      * Delete User
-     * ### Delete the user with a specific id.  **DANGER** this will delete the user and all looks and other information owned by the user. 
+     * ### Delete the user with a specific id.  **DANGER** this will delete the user and all looks and other information owned by the user.
      * @param {Number} userId Id of user
      * @param {module:api/UserApi~deleteUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
@@ -555,7 +555,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -577,7 +577,7 @@
 
     /**
      * Delete User Attribute User Value
-     * ### Delete a user attribute value from a user&#39;s account settings.  After the user attribute value is deleted from the user&#39;s account settings, subsequent requests for the user attribute value for this user will draw from the user&#39;s groups or the default value of the user attribute. See [Get User Attribute Values](#!/User/user_attribute_user_values) for more information about how user attribute values are resolved. 
+     * ### Delete a user attribute value from a user&#39;s account settings.  After the user attribute value is deleted from the user&#39;s account settings, subsequent requests for the user attribute value for this user will draw from the user&#39;s groups or the default value of the user attribute. See [Get User Attribute Values](#!/User/user_attribute_user_values) for more information about how user attribute values are resolved.
      * @param {Number} userId Id of user
      * @param {Number} userAttributeId Id of user attribute
      * @param {module:api/UserApi~deleteUserAttributeUserValueCallback} callback The callback function, accepting three arguments: error, data, response
@@ -609,7 +609,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -664,7 +664,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -712,7 +712,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -767,7 +767,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -815,7 +815,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -863,7 +863,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -911,7 +911,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -959,7 +959,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1007,7 +1007,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1055,7 +1055,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1110,7 +1110,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = 'String';
@@ -1132,7 +1132,7 @@
 
     /**
      * Get Current User
-     * ### Get information about the current user; i.e. the user account currently calling the API. 
+     * ### Get information about the current user; i.e. the user account currently calling the API.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
      * @param {module:api/UserApi~meCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1155,7 +1155,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = User;
@@ -1177,7 +1177,7 @@
 
     /**
      * Search Users
-     * ### Search users  Returns all&lt;sup&gt;*&lt;/sup&gt; user records that match the given search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   (&lt;sup&gt;*&lt;/sup&gt;) Results are always filtered to the level of information the caller is permitted to view. Looker admins can see all user details; normal users in an open system can see names of other users but no details; normal users in a closed system can only see names of other users who are members of the same group as the user.  
+     * ### Search users  Returns all&lt;sup&gt;*&lt;/sup&gt; user records that match the given search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   (&lt;sup&gt;*&lt;/sup&gt;) Results are always filtered to the level of information the caller is permitted to view. Looker admins can see all user details; normal users in an open system can see names of other users but no details; normal users in a closed system can only see names of other users who are members of the same group as the user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Include only these fields in the response
      * @param {Number} opts.page Return only page N of paginated results
@@ -1224,7 +1224,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [User];
@@ -1246,7 +1246,7 @@
 
     /**
      * Search User Names
-     * ### Search for user accounts by name  Returns all user accounts where &#x60;first_name&#x60; OR &#x60;last_name&#x60; OR &#x60;email&#x60; field values match a pattern. The pattern can contain &#x60;%&#x60; and &#x60;_&#x60; wildcards as in SQL LIKE expressions.  Any additional search params will be combined into a logical AND expression. 
+     * ### Search for user accounts by name  Returns all user accounts where &#x60;first_name&#x60; OR &#x60;last_name&#x60; OR &#x60;email&#x60; field values match a pattern. The pattern can contain &#x60;%&#x60; and &#x60;_&#x60; wildcards as in SQL LIKE expressions.  Any additional search params will be combined into a logical AND expression.
      * @param {String} pattern Pattern to match
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Include only these fields in the response
@@ -1294,7 +1294,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [User];
@@ -1316,7 +1316,7 @@
 
     /**
      * Set User Attribute User Value
-     * ### Store a custom value for a user attribute in a user&#39;s account settings.  Per-user user attribute values take precedence over group or default values. 
+     * ### Store a custom value for a user attribute in a user&#39;s account settings.  Per-user user attribute values take precedence over group or default values.
      * @param {Number} userId Id of user
      * @param {Number} userAttributeId Id of user attribute
      * @param {module:model/UserAttributeWithValue} body New attribute value for user.
@@ -1355,7 +1355,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = UserAttributeWithValue;
@@ -1377,7 +1377,7 @@
 
     /**
      * Set User Roles
-     * ### Set roles of the user with a specific id. 
+     * ### Set roles of the user with a specific id.
      * @param {Number} userId id of user
      * @param {Array.<module:model/Number>} body array of roles ids for user
      * @param {Object} opts Optional parameters
@@ -1413,7 +1413,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Role];
@@ -1435,7 +1435,7 @@
 
     /**
      * Update User
-     * ### Update information about the user with a specific id. 
+     * ### Update information about the user with a specific id.
      * @param {Number} userId Id of user
      * @param {module:model/User} body User
      * @param {Object} opts Optional parameters
@@ -1471,7 +1471,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = User;
@@ -1529,7 +1529,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsEmail;
@@ -1551,7 +1551,7 @@
 
     /**
      * Get User by Id
-     * ### Get information about the user with a specific id.  If the caller is an admin or the caller is the user being specified, then full user information will be returned. Otherwise, a minimal &#39;public&#39; variant of the user information will be returned. This contains The user name and avatar url, but no sensitive information. 
+     * ### Get information about the user with a specific id.  If the caller is an admin or the caller is the user being specified, then full user information will be returned. Otherwise, a minimal &#39;public&#39; variant of the user information will be returned. This contains The user name and avatar url, but no sensitive information.
      * @param {Number} userId Id of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -1581,7 +1581,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = User;
@@ -1603,7 +1603,7 @@
 
     /**
      * Get User Attribute Values
-     * ### Get user attribute values for a given user.  Returns the values of specified user attributes (or all user attributes) for a certain user.  A value for each user attribute is searched for in the following locations, in this order: 1. in the user&#39;s account information 1. in groups that the user is a member of 1. the default value of the user attribute  If more than one group has a value defined for a user attribute, the group with the lowest rank wins.  The response will only include user attributes for which values were found. Use &#x60;include_unset&#x3D;true&#x60; to include empty records for user attributes with no value.  The value of all hidden user attributes will be blank. 
+     * ### Get user attribute values for a given user.  Returns the values of specified user attributes (or all user attributes) for a certain user.  A value for each user attribute is searched for in the following locations, in this order: 1. in the user&#39;s account information 1. in groups that the user is a member of 1. the default value of the user attribute  If more than one group has a value defined for a user attribute, the group with the lowest rank wins.  The response will only include user attributes for which values were found. Use &#x60;include_unset&#x3D;true&#x60; to include empty records for user attributes with no value.  The value of all hidden user attributes will be blank.
      * @param {Number} userId Id of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -1642,7 +1642,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [UserAttributeWithValue];
@@ -1701,7 +1701,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsApi3;
@@ -1753,7 +1753,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsEmail;
@@ -1812,7 +1812,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsEmbed;
@@ -1864,7 +1864,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsGoogle;
@@ -1916,7 +1916,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsLDAP;
@@ -1968,7 +1968,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsLookerOpenid;
@@ -2020,7 +2020,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsOIDC;
@@ -2072,7 +2072,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsSaml;
@@ -2124,7 +2124,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialsTotp;
@@ -2146,7 +2146,7 @@
 
     /**
      * Get User by Credential Id
-     * ### Get information about the user with a credential of given type with specific id.  This is used to do things like find users by their embed external_user_id. Or, find the user with a given api3 client_id, etc. The &#39;credential_type&#39; matchs the &#39;type&#39; name of the various credential types. It must be one of the values listed in the table below. The &#39;credential_id&#39; is your unique Id for the user and is specific to each type of credential.  An example using the Ruby sdk might look like:  &#x60;sdk.user_for_credential(&#39;embed&#39;, &#39;customer-4959425&#39;)&#x60;  This table shows the supported &#39;Credential Type&#39; strings. The right column is for reference; it shows which field in the given credential type is actually searched when finding a user with the supplied &#39;credential_id&#39;.  | Credential Types | Id Field Matched | | ---------------- | ---------------- | | email            | email            | | google           | google_user_id   | | saml             | saml_user_id     | | oidc             | oidc_user_id     | | ldap             | ldap_id          | | api              | token            | | api3             | client_id        | | embed            | external_user_id | | looker_openid    | email            |  NOTE: The &#39;api&#39; credential type was only used with the legacy Looker query API and is no longer supported. The credential type for API you are currently looking at is &#39;api3&#39;.  
+     * ### Get information about the user with a credential of given type with specific id.  This is used to do things like find users by their embed external_user_id. Or, find the user with a given api3 client_id, etc. The &#39;credential_type&#39; matchs the &#39;type&#39; name of the various credential types. It must be one of the values listed in the table below. The &#39;credential_id&#39; is your unique Id for the user and is specific to each type of credential.  An example using the Ruby sdk might look like:  &#x60;sdk.user_for_credential(&#39;embed&#39;, &#39;customer-4959425&#39;)&#x60;  This table shows the supported &#39;Credential Type&#39; strings. The right column is for reference; it shows which field in the given credential type is actually searched when finding a user with the supplied &#39;credential_id&#39;.  | Credential Types | Id Field Matched | | ---------------- | ---------------- | | email            | email            | | google           | google_user_id   | | saml             | saml_user_id     | | oidc             | oidc_user_id     | | ldap             | ldap_id          | | api              | token            | | api3             | client_id        | | embed            | external_user_id | | looker_openid    | email            |  NOTE: The &#39;api&#39; credential type was only used with the legacy Looker query API and is no longer supported. The credential type for API you are currently looking at is &#39;api3&#39;.
      * @param {String} credentialType Type name of credential
      * @param {String} credentialId Id of credential
      * @param {Object} opts Optional parameters
@@ -2183,7 +2183,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = User;
@@ -2205,7 +2205,7 @@
 
     /**
      * Get User Roles
-     * ### Get information about roles of a given user 
+     * ### Get information about roles of a given user
      * @param {Number} userId id of user
      * @param {Object} opts Optional parameters
      * @param {String} opts.fields Requested fields.
@@ -2237,7 +2237,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = [Role];
@@ -2296,7 +2296,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Session;
