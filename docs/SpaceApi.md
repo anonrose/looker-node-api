@@ -1,6 +1,6 @@
 # LookerApi31Reference.SpaceApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,11 +28,11 @@ Get All Spaces
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -50,7 +50,7 @@ apiInstance.allSpaces(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -71,15 +71,15 @@ No authorization required
 
 Create Space
 
-### Create a space with specified information.  Caller must have permission to edit the parent space and to create spaces, otherwise the request returns 404 Not Found. 
+### Create a space with specified information.  Caller must have permission to edit the parent space and to create spaces, otherwise the request returns 404 Not Found.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Space() // Space | Space
 };
 
@@ -97,7 +97,7 @@ apiInstance.createSpace(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Space**](Space.md)| Space | [optional] 
+ **body** | [**Space**](Space.md)| Space | [optional]
 
 ### Return type
 
@@ -118,11 +118,11 @@ No authorization required
 
 Delete Space
 
-### Delete the space with a specific id including any children spaces. **DANGER** this will delete all looks and dashboards in the space. 
+### Delete the space with a specific id including any children spaces. **DANGER** this will delete all looks and dashboards in the space.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
@@ -143,7 +143,7 @@ apiInstance.deleteSpace(spaceId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
+ **spaceId** | **String**| Id of space |
 
 ### Return type
 
@@ -164,15 +164,15 @@ No authorization required
 
 Search Spaces
 
-### Search Spaces    Returns an **array of space objects** that match the given search criteria.    If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.     The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.    Get a **single space** by id with [Space](#!/Space/space) 
+### Search Spaces    Returns an **array of space objects** that match the given search criteria.    If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.     The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.    Get a **single space** by id with [Space](#!/Space/space)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -200,17 +200,17 @@ apiInstance.searchSpaces(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional] 
- **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **name** | **String**| Match Space title. | [optional] 
- **id** | **Number**| Match Space id | [optional] 
- **parentId** | **String**| Filter on a children of a particular space. | [optional] 
- **creatorId** | **String**| Filter on spaces created by a particular user. | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional]
+ **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **name** | **String**| Match Space title. | [optional]
+ **id** | **Number**| Match Space id | [optional]
+ **parentId** | **String**| Filter on a children of a particular space. | [optional]
+ **creatorId** | **String**| Filter on spaces created by a particular user. | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -235,13 +235,13 @@ Get Space
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -259,8 +259,8 @@ apiInstance.space(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -285,13 +285,13 @@ Get Space Ancestors
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -309,8 +309,8 @@ apiInstance.spaceAncestors(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -335,13 +335,13 @@ Get Space Children
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -362,11 +362,11 @@ apiInstance.spaceChildren(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
 
 ### Return type
 
@@ -391,13 +391,13 @@ Search Space Children
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'sorts': "sorts_example", // String | Fields to sort by.
   'name': "name_example" // String | Match Space name.
@@ -417,10 +417,10 @@ apiInstance.spaceChildrenSearch(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **name** | **String**| Match Space name. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **name** | **String**| Match Space name. | [optional]
 
 ### Return type
 
@@ -445,13 +445,13 @@ Get Space Dashboards
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -469,8 +469,8 @@ apiInstance.spaceDashboards(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -495,13 +495,13 @@ Get Space Looks
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -519,8 +519,8 @@ apiInstance.spaceLooks(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -545,13 +545,13 @@ Get Space Parent
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
 var spaceId = "spaceId_example"; // String | Id of space
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -569,8 +569,8 @@ apiInstance.spaceParent(spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **fields** | **String**| Requested fields. | [optional] 
+ **spaceId** | **String**| Id of space |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -595,7 +595,7 @@ Update Space
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.SpaceApi();
 
@@ -618,8 +618,8 @@ apiInstance.updateSpace(spaceId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **spaceId** | **String**| Id of space | 
- **body** | [**Space**](Space.md)| Space | 
+ **spaceId** | **String**| Id of space |
+ **body** | [**Space**](Space.md)| Space |
 
 ### Return type
 

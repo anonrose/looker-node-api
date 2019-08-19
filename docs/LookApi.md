@@ -1,6 +1,6 @@
 # LookerApi31Reference.LookApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,15 +19,15 @@ Method | HTTP request | Description
 
 Get All Looks
 
-### Get information about all active Looks  Returns an array of **abbreviated Look objects** describing all the looks that the caller has access to. Soft-deleted Looks are **not** included.  Get the **full details** of a specific look by id with [Look](#!/Look/look)  Find **soft-deleted looks** with [Search Looks](#!/Looks/search_looks) 
+### Get information about all active Looks  Returns an array of **abbreviated Look objects** describing all the looks that the caller has access to. Soft-deleted Looks are **not** included.  Get the **full details** of a specific look by id with [Look](#!/Look/look)  Find **soft-deleted looks** with [Search Looks](#!/Looks/search_looks)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -45,7 +45,7 @@ apiInstance.allLooks(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -70,11 +70,11 @@ Create Look
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.LookWithQuery(), // LookWithQuery | Look
   'fields': "fields_example" // String | Requested fields.
 };
@@ -93,8 +93,8 @@ apiInstance.createLook(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LookWithQuery**](LookWithQuery.md)| Look | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**LookWithQuery**](LookWithQuery.md)| Look | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -119,7 +119,7 @@ Delete Look
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
@@ -140,7 +140,7 @@ apiInstance.deleteLook(lookId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookId** | **Number**| Id of look | 
+ **lookId** | **Number**| Id of look |
 
 ### Return type
 
@@ -161,17 +161,17 @@ No authorization required
 
 Get Look
 
-### Get a Look.  Returns detailed information about a Look and its associated Query.  
+### Get a Look.  Returns detailed information about a Look and its associated Query.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
 var lookId = 789; // Number | Id of look
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -189,8 +189,8 @@ apiInstance.look(lookId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookId** | **Number**| Id of look | 
- **fields** | **String**| Requested fields. | [optional] 
+ **lookId** | **Number**| Id of look |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -211,11 +211,11 @@ No authorization required
 
 Run Look
 
-### Run a Look.  Runs a given look&#39;s query and returns the results in the requested format.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query   
+### Run a Look.  Runs a given look&#39;s query and returns the results in the requested format.  Supported formats:  | result_format | Description | :-----------: | :--- | | json | Plain json | json_detail | Row data plus metadata describing the fields, pivots, table calcs, and other aspects of the query | csv | Comma separated values with a header | txt | Tab separated values with a header | html | Simple html | md | Simple markdown | xlsx | MS Excel spreadsheet | sql | Returns the generated SQL rather than running the query | png | A PNG image of the visualization of the query | jpg | A JPG image of the visualization of the query
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
@@ -223,7 +223,7 @@ var lookId = 789; // Number | Id of look
 
 var resultFormat = "resultFormat_example"; // String | Format of result
 
-var opts = { 
+var opts = {
   'limit': 789, // Number | Row limit (may override the limit in the saved query).
   'applyFormatting': true, // Boolean | Apply model-specified formatting to each result.
   'applyVis': true, // Boolean | Apply visualization options to results.
@@ -252,20 +252,20 @@ apiInstance.runLook(lookId, resultFormat, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookId** | **Number**| Id of look | 
- **resultFormat** | **String**| Format of result | 
- **limit** | **Number**| Row limit (may override the limit in the saved query). | [optional] 
- **applyFormatting** | **Boolean**| Apply model-specified formatting to each result. | [optional] 
- **applyVis** | **Boolean**| Apply visualization options to results. | [optional] 
- **cache** | **Boolean**| Get results from cache if available. | [optional] 
- **imageWidth** | **Number**| Render width for image formats. | [optional] 
- **imageHeight** | **Number**| Render height for image formats. | [optional] 
- **generateDrillLinks** | **Boolean**| Generate drill links (only applicable to &#39;json_detail&#39; format. | [optional] 
- **forceProduction** | **Boolean**| Force use of production models even if the user is in development mode. | [optional] 
- **cacheOnly** | **Boolean**| Retrieve any results from cache even if the results have expired. | [optional] 
- **pathPrefix** | **String**| Prefix to use for drill links (url encoded). | [optional] 
- **rebuildPdts** | **Boolean**| Rebuild PDTS used in query. | [optional] 
- **serverTableCalcs** | **Boolean**| Perform table calculations on query results | [optional] 
+ **lookId** | **Number**| Id of look |
+ **resultFormat** | **String**| Format of result |
+ **limit** | **Number**| Row limit (may override the limit in the saved query). | [optional]
+ **applyFormatting** | **Boolean**| Apply model-specified formatting to each result. | [optional]
+ **applyVis** | **Boolean**| Apply visualization options to results. | [optional]
+ **cache** | **Boolean**| Get results from cache if available. | [optional]
+ **imageWidth** | **Number**| Render width for image formats. | [optional]
+ **imageHeight** | **Number**| Render height for image formats. | [optional]
+ **generateDrillLinks** | **Boolean**| Generate drill links (only applicable to &#39;json_detail&#39; format. | [optional]
+ **forceProduction** | **Boolean**| Force use of production models even if the user is in development mode. | [optional]
+ **cacheOnly** | **Boolean**| Retrieve any results from cache even if the results have expired. | [optional]
+ **pathPrefix** | **String**| Prefix to use for drill links (url encoded). | [optional]
+ **rebuildPdts** | **Boolean**| Rebuild PDTS used in query. | [optional]
+ **serverTableCalcs** | **Boolean**| Perform table calculations on query results | [optional]
 
 ### Return type
 
@@ -286,15 +286,15 @@ No authorization required
 
 Search Looks
 
-### Search Looks  Returns an **array of Look objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   Get a **single look** by id with [Look](#!/Look/look) 
+### Search Looks  Returns an **array of Look objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   Get a **single look** by id with [Look](#!/Look/look)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
-var opts = { 
+var opts = {
   'title': "title_example", // String | Match Look title.
   'description': "description_example", // String | Match Look description.
   'contentFavoriteId': 789, // Number | Select looks with a particular content favorite id
@@ -326,21 +326,21 @@ apiInstance.searchLooks(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **title** | **String**| Match Look title. | [optional] 
- **description** | **String**| Match Look description. | [optional] 
- **contentFavoriteId** | **Number**| Select looks with a particular content favorite id | [optional] 
- **spaceId** | **String**| Select looks in a particular space. | [optional] 
- **userId** | **String**| Select looks created by a particular user. | [optional] 
- **viewCount** | **String**| Select looks with particular view_count value | [optional] 
- **deleted** | **Boolean**| Select soft-deleted looks | [optional] 
- **queryId** | **Number**| Select looks that reference a particular query by query_id | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional] 
- **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional] 
- **sorts** | **String**| One or more fields to sort results by. Sortable fields: [:title, :user_id, :id, :created_at, :space_id, :description, :updated_at, :last_updater_id, :view_count, :favorite_count, :content_favorite_id, :deleted, :deleted_at, :last_viewed_at, :query_id] | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **title** | **String**| Match Look title. | [optional]
+ **description** | **String**| Match Look description. | [optional]
+ **contentFavoriteId** | **Number**| Select looks with a particular content favorite id | [optional]
+ **spaceId** | **String**| Select looks in a particular space. | [optional]
+ **userId** | **String**| Select looks created by a particular user. | [optional]
+ **viewCount** | **String**| Select looks with particular view_count value | [optional]
+ **deleted** | **Boolean**| Select soft-deleted looks | [optional]
+ **queryId** | **Number**| Select looks that reference a particular query by query_id | [optional]
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional]
+ **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional]
+ **sorts** | **String**| One or more fields to sort results by. Sortable fields: [:title, :user_id, :id, :created_at, :space_id, :description, :updated_at, :last_updater_id, :view_count, :favorite_count, :content_favorite_id, :deleted, :deleted_at, :last_viewed_at, :query_id] | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -365,7 +365,7 @@ Update Look
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookApi();
 
@@ -373,7 +373,7 @@ var lookId = 789; // Number | Id of look
 
 var body = new LookerApi31Reference.LookWithQuery(); // LookWithQuery | Look
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -391,9 +391,9 @@ apiInstance.updateLook(lookId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookId** | **Number**| Id of look | 
- **body** | [**LookWithQuery**](LookWithQuery.md)| Look | 
- **fields** | **String**| Requested fields. | [optional] 
+ **lookId** | **Number**| Id of look |
+ **body** | [**LookWithQuery**](LookWithQuery.md)| Look |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 

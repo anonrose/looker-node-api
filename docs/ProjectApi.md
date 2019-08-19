@@ -1,6 +1,6 @@
 # LookerApi31Reference.ProjectApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,11 +38,11 @@ Method | HTTP request | Description
 
 Get All Git Branches
 
-### Get All Git Branches  Returns a list of git branches in the project repository 
+### Get All Git Branches  Returns a list of git branches in the project repository
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -63,7 +63,7 @@ apiInstance.allGitBranches(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
+ **projectId** | **String**| Project Id |
 
 ### Return type
 
@@ -84,17 +84,17 @@ No authorization required
 
 Get All Git Connection Tests
 
-### Get All Git Connection Tests  Returns a list of tests which can be run against a project&#39;s (or the dependency project for the provided remote_url) git connection. Call [Run Git Connection Test](#!/Project/run_git_connection_test) to execute each test in sequence.  Tests are ordered by increasing specificity. Tests should be run in the order returned because later tests require functionality tested by tests earlier in the test list.  For example, a late-stage test for write access is meaningless if connecting to the git server (an early test) is failing. 
+### Get All Git Connection Tests  Returns a list of tests which can be run against a project&#39;s (or the dependency project for the provided remote_url) git connection. Call [Run Git Connection Test](#!/Project/run_git_connection_test) to execute each test in sequence.  Tests are ordered by increasing specificity. Tests should be run in the order returned because later tests require functionality tested by tests earlier in the test list.  For example, a late-stage test for write access is meaningless if connecting to the git server (an early test) is failing.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'remoteUrl': "remoteUrl_example" // String | (Optional: leave blank for root project) The remote url for remote dependency to test.
 };
 
@@ -112,8 +112,8 @@ apiInstance.allGitConnectionTests(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **remoteUrl** | **String**| (Optional: leave blank for root project) The remote url for remote dependency to test. | [optional] 
+ **projectId** | **String**| Project Id |
+ **remoteUrl** | **String**| (Optional: leave blank for root project) The remote url for remote dependency to test. | [optional]
 
 ### Return type
 
@@ -134,17 +134,17 @@ No authorization required
 
 Get All Project Files
 
-### Get All Project Files  Returns a list of the files in the project 
+### Get All Project Files  Returns a list of the files in the project
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -162,8 +162,8 @@ apiInstance.allProjectFiles(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -184,15 +184,15 @@ No authorization required
 
 Get All Projects
 
-### Get All Projects  Returns all projects visible to the current user 
+### Get All Projects  Returns all projects visible to the current user
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -210,7 +210,7 @@ apiInstance.allProjects(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields | [optional] 
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -231,17 +231,17 @@ No authorization required
 
 Checkout New Git Branch
 
-### Create and Checkout a Git Branch  Creates and checks out a new branch in the given project repository Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Optionally specify a branch name, tag name or commit SHA as the start point in the ref field.   If no ref is specified, HEAD of the current branch will be used as the start point for the new branch.  
+### Create and Checkout a Git Branch  Creates and checks out a new branch in the given project repository Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Optionally specify a branch name, tag name or commit SHA as the start point in the ref field.   If no ref is specified, HEAD of the current branch will be used as the start point for the new branch.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.GitBranch() // GitBranch | Git Branch
 };
 
@@ -259,8 +259,8 @@ apiInstance.createGitBranch(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **body** | [**GitBranch**](GitBranch.md)| Git Branch | [optional] 
+ **projectId** | **String**| Project Id |
+ **body** | [**GitBranch**](GitBranch.md)| Git Branch | [optional]
 
 ### Return type
 
@@ -281,11 +281,11 @@ No authorization required
 
 Create Deploy Key
 
-### Create Git Deploy Key  Create a public/private key pair for authenticating ssh git requests from Looker to a remote git repository for a particular Looker project.  Returns the public key of the generated ssh key pair.  Copy this public key to your remote git repository&#39;s ssh keys configuration so that the remote git service can validate and accept git requests from the Looker server. 
+### Create Git Deploy Key  Create a public/private key pair for authenticating ssh git requests from Looker to a remote git repository for a particular Looker project.  Returns the public key of the generated ssh key pair.  Copy this public key to your remote git repository&#39;s ssh keys configuration so that the remote git service can validate and accept git requests from the Looker server.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -306,7 +306,7 @@ apiInstance.createGitDeployKey(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
+ **projectId** | **String**| Project Id |
 
 ### Return type
 
@@ -327,15 +327,15 @@ No authorization required
 
 Create Project
 
-### Create A Project  dev mode required. - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  &#x60;name&#x60; is required. &#x60;git_remote_url&#x60; is not allowed. To configure Git for the newly created project, follow the instructions in &#x60;update_project&#x60;.  
+### Create A Project  dev mode required. - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  &#x60;name&#x60; is required. &#x60;git_remote_url&#x60; is not allowed. To configure Git for the newly created project, follow the instructions in &#x60;update_project&#x60;.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Project() // Project | Project
 };
 
@@ -353,7 +353,7 @@ apiInstance.createProject(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Project**](Project.md)| Project | [optional] 
+ **body** | [**Project**](Project.md)| Project | [optional]
 
 ### Return type
 
@@ -374,11 +374,11 @@ No authorization required
 
 Delete a Git Branch
 
-### Delete the specified Git Branch  Delete git branch specified in branch_name path param from local and remote of specified project repository 
+### Delete the specified Git Branch  Delete git branch specified in branch_name path param from local and remote of specified project repository
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -401,8 +401,8 @@ apiInstance.deleteGitBranch(projectId, branchName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **branchName** | **String**| Branch Name | 
+ **projectId** | **String**| Project Id |
+ **branchName** | **String**| Branch Name |
 
 ### Return type
 
@@ -423,11 +423,11 @@ No authorization required
 
 Delete Repository Credential
 
-### Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required. 
+### Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -450,8 +450,8 @@ apiInstance.deleteRepositoryCredential(rootProjectId, credentialId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rootProjectId** | **String**| Root Project Id | 
- **credentialId** | **String**| Credential Id | 
+ **rootProjectId** | **String**| Root Project Id |
+ **credentialId** | **String**| Credential Id |
 
 ### Return type
 
@@ -472,11 +472,11 @@ No authorization required
 
 Deploy To Production
 
-### Deploy LookML from this Development Mode Project to Production  Git must have been configured, must be in dev mode and deploy permission required  Deploy is a two / three step process 1. Push commits in current branch of dev mode project to the production branch (origin/master).    Note a. This step is skipped in read-only projects.    Note b. If this step is unsuccessful for any reason (e.g. rejected non-fastforward because production branch has              commits not in current branch), subsequent steps will be skipped. 2. If this is the first deploy of this project, create the production project with git repository. 3. Pull the production branch into the production project.  
+### Deploy LookML from this Development Mode Project to Production  Git must have been configured, must be in dev mode and deploy permission required  Deploy is a two / three step process 1. Push commits in current branch of dev mode project to the production branch (origin/master).    Note a. This step is skipped in read-only projects.    Note b. If this step is unsuccessful for any reason (e.g. rejected non-fastforward because production branch has              commits not in current branch), subsequent steps will be skipped. 2. If this is the first deploy of this project, create the production project with git repository. 3. Pull the production branch into the production project.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -497,7 +497,7 @@ apiInstance.deployToProduction(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Id of project | 
+ **projectId** | **String**| Id of project |
 
 ### Return type
 
@@ -518,11 +518,11 @@ No authorization required
 
 Find a Git Branch
 
-### Get the specified Git Branch  Returns the git branch specified in branch_name path param if it exists in the given project repository 
+### Get the specified Git Branch  Returns the git branch specified in branch_name path param if it exists in the given project repository
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -545,8 +545,8 @@ apiInstance.findGitBranch(projectId, branchName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **branchName** | **String**| Branch Name | 
+ **projectId** | **String**| Project Id |
+ **branchName** | **String**| Branch Name |
 
 ### Return type
 
@@ -567,11 +567,11 @@ No authorization required
 
 Get All Repository Credentials
 
-### Get all Repository Credentials for a project  &#x60;root_project_id&#x60; is required. 
+### Get all Repository Credentials for a project  &#x60;root_project_id&#x60; is required.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -592,7 +592,7 @@ apiInstance.getAllRepositoryCredentials(rootProjectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rootProjectId** | **String**| Root Project Id | 
+ **rootProjectId** | **String**| Root Project Id |
 
 ### Return type
 
@@ -613,11 +613,11 @@ No authorization required
 
 Get Active Git Branch
 
-### Get the Current Git Branch  Returns the git branch currently checked out in the given project repository 
+### Get the Current Git Branch  Returns the git branch currently checked out in the given project repository
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -638,7 +638,7 @@ apiInstance.gitBranch(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
+ **projectId** | **String**| Project Id |
 
 ### Return type
 
@@ -659,11 +659,11 @@ No authorization required
 
 Git Deploy Key
 
-### Git Deploy Key  Returns the ssh public key previously created for a project&#39;s git repository. 
+### Git Deploy Key  Returns the ssh public key previously created for a project&#39;s git repository.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -684,7 +684,7 @@ apiInstance.gitDeployKey(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
+ **projectId** | **String**| Project Id |
 
 ### Return type
 
@@ -705,11 +705,11 @@ No authorization required
 
 Get Manifest
 
-### Get A Projects Manifest object  Returns the project with the given project id 
+### Get A Projects Manifest object  Returns the project with the given project id
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -730,7 +730,7 @@ apiInstance.manifest(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
+ **projectId** | **String**| Project Id |
 
 ### Return type
 
@@ -751,17 +751,17 @@ No authorization required
 
 Get Project
 
-### Get A Project  Returns the project with the given project id 
+### Get A Project  Returns the project with the given project id
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -779,8 +779,8 @@ apiInstance.project(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -801,11 +801,11 @@ No authorization required
 
 Get Project File
 
-### Get Project File Info  Returns information about a file in the project 
+### Get Project File Info  Returns information about a file in the project
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -813,7 +813,7 @@ var projectId = "projectId_example"; // String | Project Id
 
 var fileId = "fileId_example"; // String | File Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -831,9 +831,9 @@ apiInstance.projectFile(projectId, fileId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fileId** | **String**| File Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fileId** | **String**| File Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -854,17 +854,17 @@ No authorization required
 
 Cached Project Validation Results
 
-### Get Cached Project Validation Results  Returns the cached results of a previous project validation calculation, if any. Returns http status 204 No Content if no validation results exist.  Validating the content of all the files in a project can be computationally intensive for large projects. Use this API to simply fetch the results of the most recent project validation rather than revalidating the entire project from scratch.  A value of &#x60;\&quot;stale\&quot;: true&#x60; in the response indicates that the project has changed since the cached validation results were computed. The cached validation results may no longer reflect the current state of the project. 
+### Get Cached Project Validation Results  Returns the cached results of a previous project validation calculation, if any. Returns http status 204 No Content if no validation results exist.  Validating the content of all the files in a project can be computationally intensive for large projects. Use this API to simply fetch the results of the most recent project validation rather than revalidating the entire project from scratch.  A value of &#x60;\&quot;stale\&quot;: true&#x60; in the response indicates that the project has changed since the cached validation results were computed. The cached validation results may no longer reflect the current state of the project.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -882,8 +882,8 @@ apiInstance.projectValidationResults(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -904,17 +904,17 @@ No authorization required
 
 Get Project Workspace
 
-### Get Project Workspace  Returns information about the state of the project files in the currently selected workspace 
+### Get Project Workspace  Returns information about the state of the project files in the currently selected workspace
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -932,8 +932,8 @@ apiInstance.projectWorkspace(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -954,11 +954,11 @@ No authorization required
 
 Reset To Production
 
-### Reset a project to the revision of the project that is in production.  **DANGER** this will delete any changes that have not been pushed to a remote repository. 
+### Reset a project to the revision of the project that is in production.  **DANGER** this will delete any changes that have not been pushed to a remote repository.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -979,7 +979,7 @@ apiInstance.resetProjectToProduction(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Id of project | 
+ **projectId** | **String**| Id of project |
 
 ### Return type
 
@@ -1000,11 +1000,11 @@ No authorization required
 
 Reset To Remote
 
-### Reset a project development branch to the revision of the project that is on the remote.  **DANGER** this will delete any changes that have not been pushed to a remote repository. 
+### Reset a project development branch to the revision of the project that is on the remote.  **DANGER** this will delete any changes that have not been pushed to a remote repository.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -1025,7 +1025,7 @@ apiInstance.resetProjectToRemote(projectId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Id of project | 
+ **projectId** | **String**| Id of project |
 
 ### Return type
 
@@ -1046,11 +1046,11 @@ No authorization required
 
 Run Git Connection Test
 
-### Run a git connection test  Run the named test on the git service used by this project (or the dependency project for the provided remote_url) and return the result. This is intended to help debug git connections when things do not work properly, to give more helpful information about why a git url is not working with Looker.  Tests should be run in the order they are returned by [Get All Git Connection Tests](#!/Project/all_git_connection_tests). 
+### Run a git connection test  Run the named test on the git service used by this project (or the dependency project for the provided remote_url) and return the result. This is intended to help debug git connections when things do not work properly, to give more helpful information about why a git url is not working with Looker.  Tests should be run in the order they are returned by [Get All Git Connection Tests](#!/Project/all_git_connection_tests).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -1058,7 +1058,7 @@ var projectId = "projectId_example"; // String | Project Id
 
 var testId = "testId_example"; // String | Test Id
 
-var opts = { 
+var opts = {
   'remoteUrl': "remoteUrl_example" // String | (Optional: leave blank for root project) The remote url for remote dependency to test.
 };
 
@@ -1076,9 +1076,9 @@ apiInstance.runGitConnectionTest(projectId, testId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **testId** | **String**| Test Id | 
- **remoteUrl** | **String**| (Optional: leave blank for root project) The remote url for remote dependency to test. | [optional] 
+ **projectId** | **String**| Project Id |
+ **testId** | **String**| Test Id |
+ **remoteUrl** | **String**| (Optional: leave blank for root project) The remote url for remote dependency to test. | [optional]
 
 ### Return type
 
@@ -1099,11 +1099,11 @@ No authorization required
 
 Update Project Git Branch
 
-### Checkout and/or reset --hard an existing Git Branch  Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Checkout an existing branch if name field is different from the name of the currently checked out branch.  Optionally specify a branch name, tag name or commit SHA to which the branch should be reset.   **DANGER** hard reset will be force pushed to the remote. Unsaved changes and commits may be permanently lost.  
+### Checkout and/or reset --hard an existing Git Branch  Only allowed in development mode   - Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace.  Checkout an existing branch if name field is different from the name of the currently checked out branch.  Optionally specify a branch name, tag name or commit SHA to which the branch should be reset.   **DANGER** hard reset will be force pushed to the remote. Unsaved changes and commits may be permanently lost.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -1126,8 +1126,8 @@ apiInstance.updateGitBranch(projectId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **body** | [**GitBranch**](GitBranch.md)| Git Branch | 
+ **projectId** | **String**| Project Id |
+ **body** | [**GitBranch**](GitBranch.md)| Git Branch |
 
 ### Return type
 
@@ -1148,11 +1148,11 @@ No authorization required
 
 Update Project
 
-### Update Project Configuration  Apply changes to a project&#39;s configuration.   #### Configuring Git for a Project  To set up a Looker project with a remote git repository, follow these steps:  1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;create_git_deploy_key&#x60; to create a new deploy key for the project 1. Copy the deploy key text into the remote git repository&#39;s ssh key configuration 1. Call &#x60;update_project&#x60; to set project&#39;s &#x60;git_remote_url&#x60; ()and &#x60;git_service_name&#x60;, if necessary).  When you modify a project&#39;s &#x60;git_remote_url&#x60;, Looker connects to the remote repository to fetch metadata. The remote git repository MUST be configured with the Looker-generated deploy key for this project prior to setting the project&#39;s &#x60;git_remote_url&#x60;.  To set up a Looker project with a git repository residing on the Looker server (a &#39;bare&#39; git repo): 1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;update_project&#x60; setting &#x60;git_remote_url&#x60; to nil and &#x60;git_service_name&#x60; to \&quot;bare\&quot;.  
+### Update Project Configuration  Apply changes to a project&#39;s configuration.   #### Configuring Git for a Project  To set up a Looker project with a remote git repository, follow these steps:  1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;create_git_deploy_key&#x60; to create a new deploy key for the project 1. Copy the deploy key text into the remote git repository&#39;s ssh key configuration 1. Call &#x60;update_project&#x60; to set project&#39;s &#x60;git_remote_url&#x60; ()and &#x60;git_service_name&#x60;, if necessary).  When you modify a project&#39;s &#x60;git_remote_url&#x60;, Looker connects to the remote repository to fetch metadata. The remote git repository MUST be configured with the Looker-generated deploy key for this project prior to setting the project&#39;s &#x60;git_remote_url&#x60;.  To set up a Looker project with a git repository residing on the Looker server (a &#39;bare&#39; git repo): 1. Call &#x60;update_session&#x60; to select the &#39;dev&#39; workspace. 1. Call &#x60;update_project&#x60; setting &#x60;git_remote_url&#x60; to nil and &#x60;git_service_name&#x60; to \&quot;bare\&quot;.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -1160,7 +1160,7 @@ var projectId = "projectId_example"; // String | Project Id
 
 var body = new LookerApi31Reference.Project(); // Project | Project
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -1178,9 +1178,9 @@ apiInstance.updateProject(projectId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **body** | [**Project**](Project.md)| Project | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **body** | [**Project**](Project.md)| Project |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -1201,11 +1201,11 @@ No authorization required
 
 Create Repository Credential
 
-### Configure Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.  
+### Configure Repository Credential for a remote dependency  Admin required.  &#x60;root_project_id&#x60; is required. &#x60;credential_id&#x60; is required.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
@@ -1230,9 +1230,9 @@ apiInstance.updateRepositoryCredential(rootProjectId, credentialId, body, callba
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rootProjectId** | **String**| Root Project Id | 
- **credentialId** | **String**| Credential Id | 
- **body** | [**RepositoryCredential**](RepositoryCredential.md)| Remote Project Information | 
+ **rootProjectId** | **String**| Root Project Id |
+ **credentialId** | **String**| Credential Id |
+ **body** | [**RepositoryCredential**](RepositoryCredential.md)| Remote Project Information |
 
 ### Return type
 
@@ -1253,17 +1253,17 @@ No authorization required
 
 Validate Project
 
-### Validate Project  Performs lint validation of all lookml files in the project. Returns a list of errors found, if any.  Validating the content of all the files in a project can be computationally intensive for large projects. For best performance, call &#x60;validate_project(project_id)&#x60; only when you really want to recompute project validation. To quickly display the results of the most recent project validation (without recomputing), use &#x60;project_validation_results(project_id)&#x60; 
+### Validate Project  Performs lint validation of all lookml files in the project. Returns a list of errors found, if any.  Validating the content of all the files in a project can be computationally intensive for large projects. For best performance, call &#x60;validate_project(project_id)&#x60; only when you really want to recompute project validation. To quickly display the results of the most recent project validation (without recomputing), use &#x60;project_validation_results(project_id)&#x60;
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ProjectApi();
 
 var projectId = "projectId_example"; // String | Project Id
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -1281,8 +1281,8 @@ apiInstance.validateProject(projectId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **String**| Project Id | 
- **fields** | **String**| Requested fields | [optional] 
+ **projectId** | **String**| Project Id |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 

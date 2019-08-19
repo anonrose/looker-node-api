@@ -1,6 +1,6 @@
 # LookerApi31Reference.ConnectionApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,15 +21,15 @@ Method | HTTP request | Description
 
 Get All Connections
 
-### Get information about all connections. 
+### Get information about all connections.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -47,7 +47,7 @@ apiInstance.allConnections(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -68,15 +68,15 @@ No authorization required
 
 Get All Dialect Infos
 
-### Get information about all dialects. 
+### Get information about all dialects.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -94,7 +94,7 @@ apiInstance.allDialectInfos(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -115,17 +115,17 @@ No authorization required
 
 Get Connection
 
-### Get information about a connection. 
+### Get information about a connection.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
 var connectionName = "connectionName_example"; // String | Name of connection
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -143,8 +143,8 @@ apiInstance.connection(connectionName, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionName** | **String**| Name of connection | 
- **fields** | **String**| Requested fields. | [optional] 
+ **connectionName** | **String**| Name of connection |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -165,15 +165,15 @@ No authorization required
 
 Create Connection
 
-### Create a connection using the specified configuration. 
+### Create a connection using the specified configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.DBConnection() // DBConnection | Connection
 };
 
@@ -191,7 +191,7 @@ apiInstance.createConnection(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DBConnection**](DBConnection.md)| Connection | [optional] 
+ **body** | [**DBConnection**](DBConnection.md)| Connection | [optional]
 
 ### Return type
 
@@ -212,11 +212,11 @@ No authorization required
 
 Delete Connection
 
-### Delete a connection. 
+### Delete a connection.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
@@ -237,7 +237,7 @@ apiInstance.deleteConnection(connectionName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionName** | **String**| Name of connection | 
+ **connectionName** | **String**| Name of connection |
 
 ### Return type
 
@@ -258,11 +258,11 @@ No authorization required
 
 Delete Connection Override
 
-### Delete a connection override. 
+### Delete a connection override.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
@@ -285,8 +285,8 @@ apiInstance.deleteConnectionOverride(connectionName, overrideContext, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionName** | **String**| Name of connection | 
- **overrideContext** | **String**| Context of connection override | 
+ **connectionName** | **String**| Name of connection |
+ **overrideContext** | **String**| Context of connection override |
 
 ### Return type
 
@@ -307,17 +307,17 @@ No authorization required
 
 Test Connection
 
-### Test an existing connection.  Note that a connection&#39;s &#39;dialect&#39; property has a &#39;connection_tests&#39; property that lists the specific types of tests that the connection supports.  This API is rate limited.  Unsupported tests in the request will be ignored. 
+### Test an existing connection.  Note that a connection&#39;s &#39;dialect&#39; property has a &#39;connection_tests&#39; property that lists the specific types of tests that the connection supports.  This API is rate limited.  Unsupported tests in the request will be ignored.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
 var connectionName = "connectionName_example"; // String | Name of connection
 
-var opts = { 
+var opts = {
   'tests': ["tests_example"] // [String] | Array of names of tests to run
 };
 
@@ -335,8 +335,8 @@ apiInstance.testConnection(connectionName, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionName** | **String**| Name of connection | 
- **tests** | [**[String]**](String.md)| Array of names of tests to run | [optional] 
+ **connectionName** | **String**| Name of connection |
+ **tests** | [**[String]**](String.md)| Array of names of tests to run | [optional]
 
 ### Return type
 
@@ -357,15 +357,15 @@ No authorization required
 
 Test Connection Configuration
 
-### Test a connection configuration.  Note that a connection&#39;s &#39;dialect&#39; property has a &#39;connection_tests&#39; property that lists the specific types of tests that the connection supports.  This API is rate limited.  Unsupported tests in the request will be ignored. 
+### Test a connection configuration.  Note that a connection&#39;s &#39;dialect&#39; property has a &#39;connection_tests&#39; property that lists the specific types of tests that the connection supports.  This API is rate limited.  Unsupported tests in the request will be ignored.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.DBConnection(), // DBConnection | Connection
   'tests': ["tests_example"] // [String] | Array of names of tests to run
 };
@@ -384,8 +384,8 @@ apiInstance.testConnectionConfig(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DBConnection**](DBConnection.md)| Connection | [optional] 
- **tests** | [**[String]**](String.md)| Array of names of tests to run | [optional] 
+ **body** | [**DBConnection**](DBConnection.md)| Connection | [optional]
+ **tests** | [**[String]**](String.md)| Array of names of tests to run | [optional]
 
 ### Return type
 
@@ -406,11 +406,11 @@ No authorization required
 
 Update Connection
 
-### Update a connection using the specified configuration. 
+### Update a connection using the specified configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConnectionApi();
 
@@ -433,8 +433,8 @@ apiInstance.updateConnection(connectionName, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionName** | **String**| Name of connection | 
- **body** | [**DBConnection**](DBConnection.md)| Connection | 
+ **connectionName** | **String**| Name of connection |
+ **body** | [**DBConnection**](DBConnection.md)| Connection |
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # LookerApi31Reference.LookmlModelApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,15 +18,15 @@ Method | HTTP request | Description
 
 Get All LookML Models
 
-### Get information about all lookml models. 
+### Get information about all lookml models.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -44,7 +44,7 @@ apiInstance.allLookmlModels(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -65,15 +65,15 @@ No authorization required
 
 Create LookML Model
 
-### Create a lookml model using the specified configuration. 
+### Create a lookml model using the specified configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.LookmlModel() // LookmlModel | LookML Model
 };
 
@@ -91,7 +91,7 @@ apiInstance.createLookmlModel(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LookmlModel**](LookmlModel.md)| LookML Model | [optional] 
+ **body** | [**LookmlModel**](LookmlModel.md)| LookML Model | [optional]
 
 ### Return type
 
@@ -112,11 +112,11 @@ No authorization required
 
 Delete LookML Model
 
-### Delete a lookml model. 
+### Delete a lookml model.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
@@ -137,7 +137,7 @@ apiInstance.deleteLookmlModel(lookmlModelName, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlModelName** | **String**| Name of lookml model. | 
+ **lookmlModelName** | **String**| Name of lookml model. |
 
 ### Return type
 
@@ -158,17 +158,17 @@ No authorization required
 
 Get LookML Model
 
-### Get information about a lookml model. 
+### Get information about a lookml model.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
 var lookmlModelName = "lookmlModelName_example"; // String | Name of lookml model.
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -186,8 +186,8 @@ apiInstance.lookmlModel(lookmlModelName, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlModelName** | **String**| Name of lookml model. | 
- **fields** | **String**| Requested fields. | [optional] 
+ **lookmlModelName** | **String**| Name of lookml model. |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -208,11 +208,11 @@ No authorization required
 
 Get LookML Model Explore
 
-### Get information about a lookml model explore. 
+### Get information about a lookml model explore.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
@@ -220,7 +220,7 @@ var lookmlModelName = "lookmlModelName_example"; // String | Name of lookml mode
 
 var exploreName = "exploreName_example"; // String | Name of explore.
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -238,9 +238,9 @@ apiInstance.lookmlModelExplore(lookmlModelName, exploreName, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlModelName** | **String**| Name of lookml model. | 
- **exploreName** | **String**| Name of explore. | 
- **fields** | **String**| Requested fields. | [optional] 
+ **lookmlModelName** | **String**| Name of lookml model. |
+ **exploreName** | **String**| Name of explore. |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -261,11 +261,11 @@ No authorization required
 
 Update LookML Model
 
-### Update a lookml model using the specified configuration. 
+### Update a lookml model using the specified configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.LookmlModelApi();
 
@@ -288,8 +288,8 @@ apiInstance.updateLookmlModel(lookmlModelName, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlModelName** | **String**| Name of lookml model. | 
- **body** | [**LookmlModel**](LookmlModel.md)| LookML Model | 
+ **lookmlModelName** | **String**| Name of lookml model. |
+ **body** | [**LookmlModel**](LookmlModel.md)| LookML Model |
 
 ### Return type
 

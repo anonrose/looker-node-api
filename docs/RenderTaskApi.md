@@ -1,6 +1,6 @@
 # LookerApi31Reference.RenderTaskApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,11 +18,11 @@ Method | HTTP request | Description
 
 Create Dashboard Render Task
 
-### Create a new task to render a dashboard to a document or image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).  
+### Create a new task to render a dashboard to a document or image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
@@ -36,7 +36,7 @@ var width = 789; // Number | Output width in pixels
 
 var height = 789; // Number | Output height in pixels
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'pdfPaperSize': "pdfPaperSize_example", // String | Paper size for pdf
   'pdfLandscape': true // Boolean | Whether to render pdf in landscape
@@ -56,14 +56,14 @@ apiInstance.createDashboardRenderTask(dashboardId, resultFormat, body, width, he
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **Number**| Id of dashboard to render | 
- **resultFormat** | **String**| Output type: pdf, png, or jpg | 
- **body** | [**CreateDashboardRenderTask**](CreateDashboardRenderTask.md)| Dashboard render task parameters | 
- **width** | **Number**| Output width in pixels | 
- **height** | **Number**| Output height in pixels | 
- **fields** | **String**| Requested fields. | [optional] 
- **pdfPaperSize** | **String**| Paper size for pdf | [optional] 
- **pdfLandscape** | **Boolean**| Whether to render pdf in landscape | [optional] 
+ **dashboardId** | **Number**| Id of dashboard to render |
+ **resultFormat** | **String**| Output type: pdf, png, or jpg |
+ **body** | [**CreateDashboardRenderTask**](CreateDashboardRenderTask.md)| Dashboard render task parameters |
+ **width** | **Number**| Output width in pixels |
+ **height** | **Number**| Output height in pixels |
+ **fields** | **String**| Requested fields. | [optional]
+ **pdfPaperSize** | **String**| Paper size for pdf | [optional]
+ **pdfLandscape** | **Boolean**| Whether to render pdf in landscape | [optional]
 
 ### Return type
 
@@ -84,11 +84,11 @@ No authorization required
 
 Create Look Render Task
 
-### Create a new task to render a look to an image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).  
+### Create a new task to render a look to an image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
@@ -100,7 +100,7 @@ var width = 789; // Number | Output width in pixels
 
 var height = 789; // Number | Output height in pixels
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -118,11 +118,11 @@ apiInstance.createLookRenderTask(lookId, resultFormat, width, height, opts, call
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookId** | **Number**| Id of look to render | 
- **resultFormat** | **String**| Output type: png, or jpg | 
- **width** | **Number**| Output width in pixels | 
- **height** | **Number**| Output height in pixels | 
- **fields** | **String**| Requested fields. | [optional] 
+ **lookId** | **Number**| Id of look to render |
+ **resultFormat** | **String**| Output type: png, or jpg |
+ **width** | **Number**| Output width in pixels |
+ **height** | **Number**| Output height in pixels |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -143,11 +143,11 @@ No authorization required
 
 Create Lookml Dashboard Render Task
 
-### Create a new task to render a lookml dashboard to a document or image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).  
+### Create a new task to render a lookml dashboard to a document or image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
@@ -161,7 +161,7 @@ var width = 789; // Number | Output width in pixels
 
 var height = 789; // Number | Output height in pixels
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'pdfPaperSize': "pdfPaperSize_example", // String | Paper size for pdf
   'pdfLandscape': true // Boolean | Whether to render pdf in landscape
@@ -181,14 +181,14 @@ apiInstance.createLookmlDashboardRenderTask(dashboardId, resultFormat, body, wid
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of lookml dashboard to render | 
- **resultFormat** | **String**| Output type: pdf, png, or jpg | 
- **body** | [**CreateDashboardRenderTask**](CreateDashboardRenderTask.md)| Dashboard render task parameters | 
- **width** | **Number**| Output width in pixels | 
- **height** | **Number**| Output height in pixels | 
- **fields** | **String**| Requested fields. | [optional] 
- **pdfPaperSize** | **String**| Paper size for pdf | [optional] 
- **pdfLandscape** | **Boolean**| Whether to render pdf in landscape | [optional] 
+ **dashboardId** | **String**| Id of lookml dashboard to render |
+ **resultFormat** | **String**| Output type: pdf, png, or jpg |
+ **body** | [**CreateDashboardRenderTask**](CreateDashboardRenderTask.md)| Dashboard render task parameters |
+ **width** | **Number**| Output width in pixels |
+ **height** | **Number**| Output height in pixels |
+ **fields** | **String**| Requested fields. | [optional]
+ **pdfPaperSize** | **String**| Paper size for pdf | [optional]
+ **pdfLandscape** | **Boolean**| Whether to render pdf in landscape | [optional]
 
 ### Return type
 
@@ -209,11 +209,11 @@ No authorization required
 
 Create Query Render Task
 
-### Create a new task to render an existing query to an image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).  
+### Create a new task to render an existing query to an image.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
@@ -225,7 +225,7 @@ var width = 789; // Number | Output width in pixels
 
 var height = 789; // Number | Output height in pixels
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -243,11 +243,11 @@ apiInstance.createQueryRenderTask(queryId, resultFormat, width, height, opts, ca
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **queryId** | **Number**| Id of the query to render | 
- **resultFormat** | **String**| Output type: png or jpg | 
- **width** | **Number**| Output width in pixels | 
- **height** | **Number**| Output height in pixels | 
- **fields** | **String**| Requested fields. | [optional] 
+ **queryId** | **Number**| Id of the query to render |
+ **resultFormat** | **String**| Output type: png or jpg |
+ **width** | **Number**| Output width in pixels |
+ **height** | **Number**| Output height in pixels |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -268,17 +268,17 @@ No authorization required
 
 Get Render Task
 
-### Get information about a render task.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).  
+### Get information about a render task.  Returns a render task object. To check the status of a render task, pass the render_task.id to [Get Render Task](#!/RenderTask/get_render_task). Once the render task is complete, you can download the resulting document or image using [Get Render Task Results](#!/RenderTask/get_render_task_results).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
 var renderTaskId = "renderTaskId_example"; // String | Id of render task
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -296,8 +296,8 @@ apiInstance.renderTask(renderTaskId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **renderTaskId** | **String**| Id of render task | 
- **fields** | **String**| Requested fields. | [optional] 
+ **renderTaskId** | **String**| Id of render task |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -318,11 +318,11 @@ No authorization required
 
 Render Task Results
 
-### Get the document or image produced by a completed render task.  Note that the PDF or image result will be a binary blob in the HTTP response, as indicated by the Content-Type in the response headers. This may require specialized (or at least different) handling than text responses such as JSON. You may need to tell your HTTP client that the response is binary so that it does not attempt to parse the binary data as text.  If the render task exists but has not finished rendering the results, the response HTTP status will be **202 Accepted**, the response body will be empty, and the response will have a Retry-After header indicating that the caller should repeat the request at a later time.  Returns 404 if the render task cannot be found, if the cached result has expired, or if the caller does not have permission to view the results.  For detailed information about the status of the render task, use [Render Task](#!/RenderTask/render_task). Polling loops waiting for completion of a render task would be better served by polling **render_task(id)** until the task status reaches completion (or error) instead of polling **render_task_results(id)** alone. 
+### Get the document or image produced by a completed render task.  Note that the PDF or image result will be a binary blob in the HTTP response, as indicated by the Content-Type in the response headers. This may require specialized (or at least different) handling than text responses such as JSON. You may need to tell your HTTP client that the response is binary so that it does not attempt to parse the binary data as text.  If the render task exists but has not finished rendering the results, the response HTTP status will be **202 Accepted**, the response body will be empty, and the response will have a Retry-After header indicating that the caller should repeat the request at a later time.  Returns 404 if the render task cannot be found, if the cached result has expired, or if the caller does not have permission to view the results.  For detailed information about the status of the render task, use [Render Task](#!/RenderTask/render_task). Polling loops waiting for completion of a render task would be better served by polling **render_task(id)** until the task status reaches completion (or error) instead of polling **render_task_results(id)** alone.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RenderTaskApi();
 
@@ -343,7 +343,7 @@ apiInstance.renderTaskResults(renderTaskId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **renderTaskId** | **String**| Id of render task | 
+ **renderTaskId** | **String**| Id of render task |
 
 ### Return type
 

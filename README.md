@@ -1,6 +1,6 @@
-# looker_api_31_reference
+# looker-node-api
 
-LookerApi31Reference - JavaScript client for looker_api_31_reference
+LookerApi31Reference - JavaScript client for looker-node-api
 ### Authorization
 The Looker API uses Looker **API3** credentials for authorization and access control. Looker admins can create API3 credentials on Looker's **Admin/Users** page. Pass API3 credentials to the **_/login** endpoint to obtain a temporary access_token. Include that access_token in the Authorization header of Looker API requests. For details, see [Looker API Authorization](https://looker.com/docs/r/api/authorization)
 ### Client SDKs
@@ -48,7 +48,7 @@ please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.co
 Then install it via:
 
 ```shell
-npm install looker_api_31_reference --save
+npm install looker-node-api --save
 ```
 
 ##### Local development
@@ -66,23 +66,23 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-Finally, switch to the directory you want to use your looker_api_31_reference from, and run:
+Finally, switch to the directory you want to use your looker-node-api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('looker_api_31_reference')` in javascript files from the directory you ran the last
+You should now be able to `require('looker-node-api')` in javascript files from the directory you ran the last
 command above from.
 
 #### git
 #
 If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/looker_api_31_reference
+https://github.com/YOUR_USERNAME/looker-node-api
 then install it via:
 
 ```shell
-    npm install YOUR_USERNAME/looker_api_31_reference --save
+    npm install YOUR_USERNAME/looker-node-api --save
 ```
 
 ### For browser
@@ -121,7 +121,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var api = new LookerApi31Reference.ApiAuthApi()
 
@@ -143,7 +143,7 @@ api.login(opts, callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

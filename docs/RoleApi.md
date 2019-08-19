@@ -1,6 +1,6 @@
 # LookerApi31Reference.RoleApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,15 +32,15 @@ Method | HTTP request | Description
 
 Get All Model Sets
 
-### Get information about all model sets. 
+### Get information about all model sets.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -58,7 +58,7 @@ apiInstance.allModelSets(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -79,15 +79,15 @@ No authorization required
 
 Get All Permission Sets
 
-### Get information about all permission sets. 
+### Get information about all permission sets.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -105,7 +105,7 @@ apiInstance.allPermissionSets(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -126,11 +126,11 @@ No authorization required
 
 Get All Permissions
 
-### Get all supported permissions. 
+### Get all supported permissions.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -166,15 +166,15 @@ No authorization required
 
 Get All Roles
 
-### Get information about all roles. 
+### Get information about all roles.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'ids': [3.4] // [Number] | Optional list of ids to get specific roles.
 };
@@ -193,8 +193,8 @@ apiInstance.allRoles(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **ids** | [**[Number]**](Number.md)| Optional list of ids to get specific roles. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **ids** | [**[Number]**](Number.md)| Optional list of ids to get specific roles. | [optional]
 
 ### Return type
 
@@ -215,15 +215,15 @@ No authorization required
 
 Create Model Set
 
-### Create a model set with the specified information. Model sets are used by Roles. 
+### Create a model set with the specified information. Model sets are used by Roles.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.ModelSet() // ModelSet | ModelSet
 };
 
@@ -241,7 +241,7 @@ apiInstance.createModelSet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelSet**](ModelSet.md)| ModelSet | [optional] 
+ **body** | [**ModelSet**](ModelSet.md)| ModelSet | [optional]
 
 ### Return type
 
@@ -262,15 +262,15 @@ No authorization required
 
 Create Permission Set
 
-### Create a permission set with the specified information. Permission sets are used by Roles. 
+### Create a permission set with the specified information. Permission sets are used by Roles.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.PermissionSet() // PermissionSet | Permission Set
 };
 
@@ -288,7 +288,7 @@ apiInstance.createPermissionSet(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PermissionSet**](PermissionSet.md)| Permission Set | [optional] 
+ **body** | [**PermissionSet**](PermissionSet.md)| Permission Set | [optional]
 
 ### Return type
 
@@ -309,15 +309,15 @@ No authorization required
 
 Create Role
 
-### Create a role with the specified information. 
+### Create a role with the specified information.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Role() // Role | Role
 };
 
@@ -335,7 +335,7 @@ apiInstance.createRole(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Role**](Role.md)| Role | [optional] 
+ **body** | [**Role**](Role.md)| Role | [optional]
 
 ### Return type
 
@@ -356,11 +356,11 @@ No authorization required
 
 Delete Model Set
 
-### Delete the model set with a specific id. 
+### Delete the model set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -381,7 +381,7 @@ apiInstance.deleteModelSet(modelSetId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelSetId** | **Number**| id of model set | 
+ **modelSetId** | **Number**| id of model set |
 
 ### Return type
 
@@ -402,11 +402,11 @@ No authorization required
 
 Delete Permission Set
 
-### Delete the permission set with a specific id. 
+### Delete the permission set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -427,7 +427,7 @@ apiInstance.deletePermissionSet(permissionSetId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **permissionSetId** | **Number**| Id of permission set | 
+ **permissionSetId** | **Number**| Id of permission set |
 
 ### Return type
 
@@ -448,11 +448,11 @@ No authorization required
 
 Delete Role
 
-### Delete the role with a specific id. 
+### Delete the role with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -473,7 +473,7 @@ apiInstance.deleteRole(roleId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of role | 
+ **roleId** | **Number**| id of role |
 
 ### Return type
 
@@ -494,17 +494,17 @@ No authorization required
 
 Get Model Set
 
-### Get information about the model set with a specific id. 
+### Get information about the model set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
 var modelSetId = 789; // Number | Id of model set
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -522,8 +522,8 @@ apiInstance.modelSet(modelSetId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelSetId** | **Number**| Id of model set | 
- **fields** | **String**| Requested fields. | [optional] 
+ **modelSetId** | **Number**| Id of model set |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -544,17 +544,17 @@ No authorization required
 
 Get Permission Set
 
-### Get information about the permission set with a specific id. 
+### Get information about the permission set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
 var permissionSetId = 789; // Number | Id of permission set
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -572,8 +572,8 @@ apiInstance.permissionSet(permissionSetId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **permissionSetId** | **Number**| Id of permission set | 
- **fields** | **String**| Requested fields. | [optional] 
+ **permissionSetId** | **Number**| Id of permission set |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -594,11 +594,11 @@ No authorization required
 
 Get Role
 
-### Get information about the role with a specific id. 
+### Get information about the role with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -619,7 +619,7 @@ apiInstance.role(roleId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of role | 
+ **roleId** | **Number**| id of role |
 
 ### Return type
 
@@ -640,17 +640,17 @@ No authorization required
 
 Get Role Groups
 
-### Get information about all the groups with the role that has a specific id. 
+### Get information about all the groups with the role that has a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
 var roleId = 789; // Number | id of role
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -668,8 +668,8 @@ apiInstance.roleGroups(roleId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of role | 
- **fields** | **String**| Requested fields. | [optional] 
+ **roleId** | **Number**| id of role |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -690,17 +690,17 @@ No authorization required
 
 Get Role Users
 
-### Get information about all the users with the role that has a specific id. 
+### Get information about all the users with the role that has a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
 var roleId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'directAssociationOnly': true // Boolean | Get only users associated directly with the role: exclude those only associated through groups.
 };
@@ -719,9 +719,9 @@ apiInstance.roleUsers(roleId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
- **directAssociationOnly** | **Boolean**| Get only users associated directly with the role: exclude those only associated through groups. | [optional] 
+ **roleId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
+ **directAssociationOnly** | **Boolean**| Get only users associated directly with the role: exclude those only associated through groups. | [optional]
 
 ### Return type
 
@@ -742,11 +742,11 @@ No authorization required
 
 Update Role Groups
 
-### Set all groups for a role, removing all existing group associations from that role. 
+### Set all groups for a role, removing all existing group associations from that role.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -769,8 +769,8 @@ apiInstance.setRoleGroups(roleId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| Id of Role | 
- **body** | **[Number]**| Array of Group Ids | 
+ **roleId** | **Number**| Id of Role |
+ **body** | **[Number]**| Array of Group Ids |
 
 ### Return type
 
@@ -791,11 +791,11 @@ No authorization required
 
 Update Role Users
 
-### Set all the users of the role with a specific id. 
+### Set all the users of the role with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -818,8 +818,8 @@ apiInstance.setRoleUsers(roleId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of role | 
- **body** | **[Number]**| array of user ids for role | 
+ **roleId** | **Number**| id of role |
+ **body** | **[Number]**| array of user ids for role |
 
 ### Return type
 
@@ -840,11 +840,11 @@ No authorization required
 
 Update Model Set
 
-### Update information about the model set with a specific id. 
+### Update information about the model set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -867,8 +867,8 @@ apiInstance.updateModelSet(modelSetId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelSetId** | **Number**| id of model set | 
- **body** | [**ModelSet**](ModelSet.md)| ModelSet | 
+ **modelSetId** | **Number**| id of model set |
+ **body** | [**ModelSet**](ModelSet.md)| ModelSet |
 
 ### Return type
 
@@ -889,11 +889,11 @@ No authorization required
 
 Update Permission Set
 
-### Update information about the permission set with a specific id. 
+### Update information about the permission set with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -916,8 +916,8 @@ apiInstance.updatePermissionSet(permissionSetId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **permissionSetId** | **Number**| id of permission set | 
- **body** | [**PermissionSet**](PermissionSet.md)| Permission Set | 
+ **permissionSetId** | **Number**| id of permission set |
+ **body** | [**PermissionSet**](PermissionSet.md)| Permission Set |
 
 ### Return type
 
@@ -938,11 +938,11 @@ No authorization required
 
 Update Role
 
-### Update information about the role with a specific id. 
+### Update information about the role with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.RoleApi();
 
@@ -965,8 +965,8 @@ apiInstance.updateRole(roleId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleId** | **Number**| id of role | 
- **body** | [**Role**](Role.md)| Role | 
+ **roleId** | **Number**| id of role |
+ **body** | [**Role**](Role.md)| Role |
 
 ### Return type
 

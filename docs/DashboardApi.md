@@ -1,6 +1,6 @@
 # LookerApi31Reference.DashboardApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,15 +39,15 @@ Method | HTTP request | Description
 
 Get All Dashboards
 
-### Get information about all active dashboards.  Returns an array of **abbreviated dashboard objects**. Dashboards marked as deleted are excluded from this list.  Get the **full details** of a specific dashboard by id with [Dashboard](#!/Dashboard/dashboard)  Find **deleted dashboards** with [Search Dashboards](#!/Dashboard/search_dashboards) 
+### Get information about all active dashboards.  Returns an array of **abbreviated dashboard objects**. Dashboards marked as deleted are excluded from this list.  Get the **full details** of a specific dashboard by id with [Dashboard](#!/Dashboard/dashboard)  Find **deleted dashboards** with [Search Dashboards](#!/Dashboard/search_dashboards)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -65,7 +65,7 @@ apiInstance.allDashboards(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -86,15 +86,15 @@ No authorization required
 
 Create Dashboard
 
-### Create a dashboard with the specified information  Creates a new dashboard object, returning the dashboard details, including the created id.  **Update** an existing dashboard with [Update Dashboard](#!/Dashboard/update_dashboard)  **Permanently delete** an existing dashboard with [Delete Dashboard](#!/Dashboard/delete_dashboard) 
+### Create a dashboard with the specified information  Creates a new dashboard object, returning the dashboard details, including the created id.  **Update** an existing dashboard with [Update Dashboard](#!/Dashboard/update_dashboard)  **Permanently delete** an existing dashboard with [Delete Dashboard](#!/Dashboard/delete_dashboard)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Dashboard() // Dashboard | Dashboard
 };
 
@@ -112,7 +112,7 @@ apiInstance.createDashboard(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Dashboard**](Dashboard.md)| Dashboard | [optional] 
+ **body** | [**Dashboard**](Dashboard.md)| Dashboard | [optional]
 
 ### Return type
 
@@ -137,11 +137,11 @@ Create DashboardElement
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.DashboardElement(), // DashboardElement | DashboardElement
   'fields': "fields_example" // String | Requested fields.
 };
@@ -160,8 +160,8 @@ apiInstance.createDashboardElement(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DashboardElement**](DashboardElement.md)| DashboardElement | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**DashboardElement**](DashboardElement.md)| DashboardElement | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -186,13 +186,13 @@ Create Dashboard Filter
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var body = new LookerApi31Reference.CreateDashboardFilter(); // CreateDashboardFilter | Dashboard Filter
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields
 };
 
@@ -210,8 +210,8 @@ apiInstance.createDashboardFilter(body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDashboardFilter**](CreateDashboardFilter.md)| Dashboard Filter | 
- **fields** | **String**| Requested fields | [optional] 
+ **body** | [**CreateDashboardFilter**](CreateDashboardFilter.md)| Dashboard Filter |
+ **fields** | **String**| Requested fields | [optional]
 
 ### Return type
 
@@ -236,11 +236,11 @@ Create DashboardLayout
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.DashboardLayout(), // DashboardLayout | DashboardLayout
   'fields': "fields_example" // String | Requested fields.
 };
@@ -259,8 +259,8 @@ apiInstance.createDashboardLayout(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DashboardLayout**](DashboardLayout.md)| DashboardLayout | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**DashboardLayout**](DashboardLayout.md)| DashboardLayout | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -281,17 +281,17 @@ No authorization required
 
 Get Dashboard
 
-### Get information about the dashboard with the specified id  Returns the full details of the identified dashboard object  Get a **summary list** of all active dashboards with [All Dashboards](#!/Dashboard/all_dashboards)  **Search** for dashboards with [Search Dashboards](#!/Dashboard/search_dashboards) 
+### Get information about the dashboard with the specified id  Returns the full details of the identified dashboard object  Get a **summary list** of all active dashboards with [All Dashboards](#!/Dashboard/all_dashboards)  **Search** for dashboards with [Search Dashboards](#!/Dashboard/search_dashboards)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardId = "dashboardId_example"; // String | Id of dashboard
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -309,8 +309,8 @@ apiInstance.dashboard(dashboardId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardId** | **String**| Id of dashboard |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -335,13 +335,13 @@ Get All DashboardElements
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardId = "dashboardId_example"; // String | Id of dashboard
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -359,8 +359,8 @@ apiInstance.dashboardDashboardElements(dashboardId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardId** | **String**| Id of dashboard |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -385,13 +385,13 @@ Get All Dashboard Filters
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardId = "dashboardId_example"; // String | Id of dashboard
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -409,8 +409,8 @@ apiInstance.dashboardDashboardFilters(dashboardId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardId** | **String**| Id of dashboard |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -435,13 +435,13 @@ Get All DashboardLayouts
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardId = "dashboardId_example"; // String | Id of dashboard
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -459,8 +459,8 @@ apiInstance.dashboardDashboardLayouts(dashboardId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardId** | **String**| Id of dashboard |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -485,13 +485,13 @@ Get DashboardElement
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardElementId = "dashboardElementId_example"; // String | Id of dashboard element
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -509,8 +509,8 @@ apiInstance.dashboardElement(dashboardElementId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardElementId** | **String**| Id of dashboard element | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardElementId** | **String**| Id of dashboard element |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -535,13 +535,13 @@ Get Dashboard Filter
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardFilterId = "dashboardFilterId_example"; // String | Id of dashboard filters
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -559,8 +559,8 @@ apiInstance.dashboardFilter(dashboardFilterId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardFilterId** | **String**| Id of dashboard filters | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardFilterId** | **String**| Id of dashboard filters |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -585,13 +585,13 @@ Get DashboardLayout
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardLayoutId = "dashboardLayoutId_example"; // String | Id of dashboard layouts
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -609,8 +609,8 @@ apiInstance.dashboardLayout(dashboardLayoutId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutId** | **String**| Id of dashboard layouts | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardLayoutId** | **String**| Id of dashboard layouts |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -635,13 +635,13 @@ Get DashboardLayoutComponent
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardLayoutComponentId = "dashboardLayoutComponentId_example"; // String | Id of dashboard layout component
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -659,8 +659,8 @@ apiInstance.dashboardLayoutComponent(dashboardLayoutComponentId, opts, callback)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutComponentId** | **String**| Id of dashboard layout component | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardLayoutComponentId** | **String**| Id of dashboard layout component |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -685,13 +685,13 @@ Get All DashboardLayoutComponents
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
 var dashboardLayoutId = "dashboardLayoutId_example"; // String | Id of dashboard layout component
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -709,8 +709,8 @@ apiInstance.dashboardLayoutDashboardLayoutComponents(dashboardLayoutId, opts, ca
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutId** | **String**| Id of dashboard layout component | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardLayoutId** | **String**| Id of dashboard layout component |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -731,11 +731,11 @@ No authorization required
 
 Delete Dashboard
 
-### Delete the dashboard with the specified id  Permanently **deletes** a dashboard. (The dashboard cannot be recovered after this operation.)  \&quot;Soft\&quot; delete or hide a dashboard by setting its &#x60;deleted&#x60; status to &#x60;True&#x60; with [Update Dashboard](#!/Dashboard/update_dashboard).  Note: When a dashboard is deleted in the UI, it is soft deleted. Use this API call to permanently remove it, if desired. 
+### Delete the dashboard with the specified id  Permanently **deletes** a dashboard. (The dashboard cannot be recovered after this operation.)  \&quot;Soft\&quot; delete or hide a dashboard by setting its &#x60;deleted&#x60; status to &#x60;True&#x60; with [Update Dashboard](#!/Dashboard/update_dashboard).  Note: When a dashboard is deleted in the UI, it is soft deleted. Use this API call to permanently remove it, if desired.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -756,7 +756,7 @@ apiInstance.deleteDashboard(dashboardId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
+ **dashboardId** | **String**| Id of dashboard |
 
 ### Return type
 
@@ -781,7 +781,7 @@ Delete DashboardElement
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -802,7 +802,7 @@ apiInstance.deleteDashboardElement(dashboardElementId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardElementId** | **String**| Id of dashboard element | 
+ **dashboardElementId** | **String**| Id of dashboard element |
 
 ### Return type
 
@@ -827,7 +827,7 @@ Delete Dashboard Filter
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -848,7 +848,7 @@ apiInstance.deleteDashboardFilter(dashboardFilterId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardFilterId** | **String**| Id of dashboard filter | 
+ **dashboardFilterId** | **String**| Id of dashboard filter |
 
 ### Return type
 
@@ -873,7 +873,7 @@ Delete DashboardLayout
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -894,7 +894,7 @@ apiInstance.deleteDashboardLayout(dashboardLayoutId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutId** | **String**| Id of dashboard layout | 
+ **dashboardLayoutId** | **String**| Id of dashboard layout |
 
 ### Return type
 
@@ -915,11 +915,11 @@ No authorization required
 
 Import LookML Dashboard
 
-### Import a LookML dashboard to a space as a UDD Creates a UDD (a dashboard which exists in the Looker database rather than as a LookML file) from the LookML dashboard and puts it in the space specified. The created UDD will have a lookml_link_id which links to the original LookML dashboard.  To give the imported dashboard specify a (e.g. title: \&quot;my title\&quot;) in the body of your request, otherwise the imported dashboard will have the same title as the original LookML dashboard.  For this operation to succeed the user must have permission to see the LookML dashboard in question, and have permission to create content in the space the dashboard is being imported to.  **Sync** a linked UDD with [Sync LookML Dashboard] (#!/Dashboard/sync_lookml_dashboard) **Unlink** a linked UDD by setting lookml_link_id to null with [Update Dashboard](#!/Dashboard/update_dashboard) 
+### Import a LookML dashboard to a space as a UDD Creates a UDD (a dashboard which exists in the Looker database rather than as a LookML file) from the LookML dashboard and puts it in the space specified. The created UDD will have a lookml_link_id which links to the original LookML dashboard.  To give the imported dashboard specify a (e.g. title: \&quot;my title\&quot;) in the body of your request, otherwise the imported dashboard will have the same title as the original LookML dashboard.  For this operation to succeed the user must have permission to see the LookML dashboard in question, and have permission to create content in the space the dashboard is being imported to.  **Sync** a linked UDD with [Sync LookML Dashboard] (#!/Dashboard/sync_lookml_dashboard) **Unlink** a linked UDD by setting lookml_link_id to null with [Update Dashboard](#!/Dashboard/update_dashboard)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -927,7 +927,7 @@ var lookmlDashboardId = "lookmlDashboardId_example"; // String | Id of LookML da
 
 var spaceId = "spaceId_example"; // String | Id of space to import the dashboard to
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Dashboard(), // Dashboard | Dashboard
   'rawLocale': true // Boolean | If true, and this dashboard is localized, export it with the raw keys, not localized.
 };
@@ -946,10 +946,10 @@ apiInstance.importLookmlDashboard(lookmlDashboardId, spaceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlDashboardId** | **String**| Id of LookML dashboard | 
- **spaceId** | **String**| Id of space to import the dashboard to | 
- **body** | [**Dashboard**](Dashboard.md)| Dashboard | [optional] 
- **rawLocale** | **Boolean**| If true, and this dashboard is localized, export it with the raw keys, not localized. | [optional] 
+ **lookmlDashboardId** | **String**| Id of LookML dashboard |
+ **spaceId** | **String**| Id of space to import the dashboard to |
+ **body** | [**Dashboard**](Dashboard.md)| Dashboard | [optional]
+ **rawLocale** | **Boolean**| If true, and this dashboard is localized, export it with the raw keys, not localized. | [optional]
 
 ### Return type
 
@@ -970,15 +970,15 @@ No authorization required
 
 Search Dashboard Elements
 
-### Search Dashboard Elements  Returns an **array of DashboardElement objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.  
+### Search Dashboard Elements  Returns an **array of DashboardElement objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'dashboardId': 789, // Number | Select elements that refer to a given dashboard id
   'lookId': 789, // Number | Select elements that refer to a given look id
   'title': "title_example", // String | Match the title of element
@@ -1002,13 +1002,13 @@ apiInstance.searchDashboardElements(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **Number**| Select elements that refer to a given dashboard id | [optional] 
- **lookId** | **Number**| Select elements that refer to a given look id | [optional] 
- **title** | **String**| Match the title of element | [optional] 
- **deleted** | **Boolean**| Select soft-deleted dashboard elements | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
- **sorts** | **String**| Fields to sort by. Sortable fields: [:look_id, :dashboard_id, :deleted, :title] | [optional] 
+ **dashboardId** | **Number**| Select elements that refer to a given dashboard id | [optional]
+ **lookId** | **Number**| Select elements that refer to a given look id | [optional]
+ **title** | **String**| Match the title of element | [optional]
+ **deleted** | **Boolean**| Select soft-deleted dashboard elements | [optional]
+ **fields** | **String**| Requested fields. | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
+ **sorts** | **String**| Fields to sort by. Sortable fields: [:look_id, :dashboard_id, :deleted, :title] | [optional]
 
 ### Return type
 
@@ -1029,15 +1029,15 @@ No authorization required
 
 Search Dashboards
 
-### Search Dashboards  Returns an **array of dashboard objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.  Get a **single dashboard** by id with [Dashboard](#!/Dashboard/dashboard) 
+### Search Dashboards  Returns an **array of dashboard objects** that match the specified search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   The parameters &#x60;limit&#x60;, and &#x60;offset&#x60; are recommended for fetching results in page-size chunks.  Get a **single dashboard** by id with [Dashboard](#!/Dashboard/dashboard)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
-var opts = { 
+var opts = {
   'id': 789, // Number | Match dashboard id.
   'slug': "slug_example", // String | Match dashboard slug.
   'title': "title_example", // String | Match Dashboard title.
@@ -1071,23 +1071,23 @@ apiInstance.searchDashboards(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Match dashboard id. | [optional] 
- **slug** | **String**| Match dashboard slug. | [optional] 
- **title** | **String**| Match Dashboard title. | [optional] 
- **description** | **String**| Match Dashboard description. | [optional] 
- **contentFavoriteId** | **Number**| Filter on a content favorite id. | [optional] 
- **spaceId** | **String**| Filter on a particular space. | [optional] 
- **deleted** | **String**| Filter on dashboards deleted status. | [optional] 
- **userId** | **String**| Filter on dashboards created by a particular user. | [optional] 
- **viewCount** | **String**| Filter on a particular value of view_count | [optional] 
- **contentMetadataId** | **Number**| Filter on a content favorite id. | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional] 
- **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional] 
- **sorts** | **String**| One or more fields to sort by. Sortable fields: [:title, :user_id, :id, :created_at, :space_id, :description, :view_count, :favorite_count, :slug, :content_favorite_id, :content_metadata_id, :deleted, :deleted_at, :last_viewed_at] | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **id** | **Number**| Match dashboard id. | [optional]
+ **slug** | **String**| Match dashboard slug. | [optional]
+ **title** | **String**| Match Dashboard title. | [optional]
+ **description** | **String**| Match Dashboard description. | [optional]
+ **contentFavoriteId** | **Number**| Filter on a content favorite id. | [optional]
+ **spaceId** | **String**| Filter on a particular space. | [optional]
+ **deleted** | **String**| Filter on dashboards deleted status. | [optional]
+ **userId** | **String**| Filter on dashboards created by a particular user. | [optional]
+ **viewCount** | **String**| Filter on a particular value of view_count | [optional]
+ **contentMetadataId** | **Number**| Filter on a content favorite id. | [optional]
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional]
+ **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional]
+ **sorts** | **String**| One or more fields to sort by. Sortable fields: [:title, :user_id, :id, :created_at, :space_id, :description, :view_count, :favorite_count, :slug, :content_favorite_id, :content_metadata_id, :deleted, :deleted_at, :last_viewed_at] | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -1108,11 +1108,11 @@ No authorization required
 
 Sync LookML Dashboard
 
-### Update all linked dashboards to match the specified LookML dashboard.  Any UDD (a dashboard which exists in the Looker database rather than as a LookML file) which has a &#x60;lookml_link_id&#x60; property value referring to a LookML dashboard&#39;s id (model::dashboardname) will be updated so that it matches the current state of the LookML dashboard.  For this operation to succeed the user must have permission to view the LookML dashboard, and only linked dashboards that the user has permission to update will be synced.  To **link** or **unlink** a UDD set the &#x60;lookml_link_id&#x60; property with [Update Dashboard](#!/Dashboard/update_dashboard) 
+### Update all linked dashboards to match the specified LookML dashboard.  Any UDD (a dashboard which exists in the Looker database rather than as a LookML file) which has a &#x60;lookml_link_id&#x60; property value referring to a LookML dashboard&#39;s id (model::dashboardname) will be updated so that it matches the current state of the LookML dashboard.  For this operation to succeed the user must have permission to view the LookML dashboard, and only linked dashboards that the user has permission to update will be synced.  To **link** or **unlink** a UDD set the &#x60;lookml_link_id&#x60; property with [Update Dashboard](#!/Dashboard/update_dashboard)
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1120,7 +1120,7 @@ var lookmlDashboardId = "lookmlDashboardId_example"; // String | Id of LookML da
 
 var body = new LookerApi31Reference.Dashboard(); // Dashboard | Dashboard
 
-var opts = { 
+var opts = {
   'rawLocale': true // Boolean | If true, and this dashboard is localized, export it with the raw keys, not localized.
 };
 
@@ -1138,9 +1138,9 @@ apiInstance.syncLookmlDashboard(lookmlDashboardId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lookmlDashboardId** | **String**| Id of LookML dashboard, in the form &#39;model::dashboardname&#39; | 
- **body** | [**Dashboard**](Dashboard.md)| Dashboard | 
- **rawLocale** | **Boolean**| If true, and this dashboard is localized, export it with the raw keys, not localized. | [optional] 
+ **lookmlDashboardId** | **String**| Id of LookML dashboard, in the form &#39;model::dashboardname&#39; |
+ **body** | [**Dashboard**](Dashboard.md)| Dashboard |
+ **rawLocale** | **Boolean**| If true, and this dashboard is localized, export it with the raw keys, not localized. | [optional]
 
 ### Return type
 
@@ -1161,11 +1161,11 @@ No authorization required
 
 Update Dashboard
 
-### Update the dashboard with the specified id  Changes simple (scalar) properties of the dashboard. 
+### Update the dashboard with the specified id  Changes simple (scalar) properties of the dashboard.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1188,8 +1188,8 @@ apiInstance.updateDashboard(dashboardId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardId** | **String**| Id of dashboard | 
- **body** | [**Dashboard**](Dashboard.md)| Dashboard | 
+ **dashboardId** | **String**| Id of dashboard |
+ **body** | [**Dashboard**](Dashboard.md)| Dashboard |
 
 ### Return type
 
@@ -1214,7 +1214,7 @@ Update DashboardElement
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1222,7 +1222,7 @@ var dashboardElementId = "dashboardElementId_example"; // String | Id of dashboa
 
 var body = new LookerApi31Reference.DashboardElement(); // DashboardElement | DashboardElement
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1240,9 +1240,9 @@ apiInstance.updateDashboardElement(dashboardElementId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardElementId** | **String**| Id of dashboard element | 
- **body** | [**DashboardElement**](DashboardElement.md)| DashboardElement | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardElementId** | **String**| Id of dashboard element |
+ **body** | [**DashboardElement**](DashboardElement.md)| DashboardElement |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1267,7 +1267,7 @@ Update Dashboard Filter
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1275,7 +1275,7 @@ var dashboardFilterId = "dashboardFilterId_example"; // String | Id of dashboard
 
 var body = new LookerApi31Reference.DashboardFilter(); // DashboardFilter | Dashboard Filter
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1293,9 +1293,9 @@ apiInstance.updateDashboardFilter(dashboardFilterId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardFilterId** | **String**| Id of dashboard filter | 
- **body** | [**DashboardFilter**](DashboardFilter.md)| Dashboard Filter | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardFilterId** | **String**| Id of dashboard filter |
+ **body** | [**DashboardFilter**](DashboardFilter.md)| Dashboard Filter |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1320,7 +1320,7 @@ Update DashboardLayout
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1328,7 +1328,7 @@ var dashboardLayoutId = "dashboardLayoutId_example"; // String | Id of dashboard
 
 var body = new LookerApi31Reference.DashboardLayout(); // DashboardLayout | DashboardLayout
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1346,9 +1346,9 @@ apiInstance.updateDashboardLayout(dashboardLayoutId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutId** | **String**| Id of dashboard layout | 
- **body** | [**DashboardLayout**](DashboardLayout.md)| DashboardLayout | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardLayoutId** | **String**| Id of dashboard layout |
+ **body** | [**DashboardLayout**](DashboardLayout.md)| DashboardLayout |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1373,7 +1373,7 @@ Update DashboardLayoutComponent
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DashboardApi();
 
@@ -1381,7 +1381,7 @@ var dashboardLayoutComponentId = "dashboardLayoutComponentId_example"; // String
 
 var body = new LookerApi31Reference.DashboardLayoutComponent(); // DashboardLayoutComponent | DashboardLayoutComponent
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1399,9 +1399,9 @@ apiInstance.updateDashboardLayoutComponent(dashboardLayoutComponentId, body, opt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dashboardLayoutComponentId** | **String**| Id of dashboard layout component | 
- **body** | [**DashboardLayoutComponent**](DashboardLayoutComponent.md)| DashboardLayoutComponent | 
- **fields** | **String**| Requested fields. | [optional] 
+ **dashboardLayoutComponentId** | **String**| Id of dashboard layout component |
+ **body** | [**DashboardLayoutComponent**](DashboardLayoutComponent.md)| DashboardLayoutComponent |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 

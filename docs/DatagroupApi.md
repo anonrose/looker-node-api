@@ -1,6 +1,6 @@
 # LookerApi31Reference.DatagroupApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 Get All Datagroups
 
-### Get information about all datagroups. 
+### Get information about all datagroups.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DatagroupApi();
 
@@ -55,11 +55,11 @@ No authorization required
 
 Get Datagroup
 
-### Get information about a datagroup. 
+### Get information about a datagroup.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DatagroupApi();
 
@@ -80,7 +80,7 @@ apiInstance.datagroup(datagroupId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datagroupId** | **String**| ID of datagroup. | 
+ **datagroupId** | **String**| ID of datagroup. |
 
 ### Return type
 
@@ -101,11 +101,11 @@ No authorization required
 
 Update Datagroup
 
-### Update a datagroup using the specified params. 
+### Update a datagroup using the specified params.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DatagroupApi();
 
@@ -128,8 +128,8 @@ apiInstance.updateDatagroup(datagroupId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datagroupId** | **String**| ID of datagroup. | 
- **body** | [**Datagroup**](Datagroup.md)| Datagroup | 
+ **datagroupId** | **String**| ID of datagroup. |
+ **body** | [**Datagroup**](Datagroup.md)| Datagroup |
 
 ### Return type
 

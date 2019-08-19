@@ -1,6 +1,6 @@
 # LookerApi31Reference.IntegrationApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ Accepts the legal agreement for a given integration hub. This only works for int
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -48,7 +48,7 @@ apiInstance.acceptIntegrationHubLegalAgreement(integrationHubId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationHubId** | **Number**| Id of integration_hub | 
+ **integrationHubId** | **Number**| Id of integration_hub |
 
 ### Return type
 
@@ -69,15 +69,15 @@ No authorization required
 
 Get All Integration Hubs
 
-### Get information about all Integration Hubs. 
+### Get information about all Integration Hubs.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -95,7 +95,7 @@ apiInstance.allIntegrationHubs(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -116,15 +116,15 @@ No authorization required
 
 Get All Integrations
 
-### Get information about all Integrations. 
+### Get information about all Integrations.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'integrationHubId': "integrationHubId_example" // String | Filter to a specific provider
 };
@@ -143,8 +143,8 @@ apiInstance.allIntegrations(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **integrationHubId** | **String**| Filter to a specific provider | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **integrationHubId** | **String**| Filter to a specific provider | [optional]
 
 ### Return type
 
@@ -165,15 +165,15 @@ No authorization required
 
 Create Integration Hub
 
-### Create a new Integration Hub. 
+### Create a new Integration Hub.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.IntegrationHub(), // IntegrationHub | Integration Hub
   'fields': "fields_example" // String | Requested fields.
 };
@@ -192,8 +192,8 @@ apiInstance.createIntegrationHub(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**IntegrationHub**](IntegrationHub.md)| Integration Hub | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**IntegrationHub**](IntegrationHub.md)| Integration Hub | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -214,11 +214,11 @@ No authorization required
 
 Delete Integration Hub
 
-### Delete a Integration Hub. 
+### Delete a Integration Hub.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -239,7 +239,7 @@ apiInstance.deleteIntegrationHub(integrationHubId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationHubId** | **Number**| Id of integration_hub | 
+ **integrationHubId** | **Number**| Id of integration_hub |
 
 ### Return type
 
@@ -264,7 +264,7 @@ Returns the Integration form for presentation to the user.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -285,7 +285,7 @@ apiInstance.fetchIntegrationForm(integrationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **Number**| Id of Integration | 
+ **integrationId** | **Number**| Id of Integration |
 
 ### Return type
 
@@ -306,17 +306,17 @@ No authorization required
 
 Get Integration
 
-### Get information about a Integration. 
+### Get information about a Integration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
 var integrationId = 789; // Number | Id of Integration
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -334,8 +334,8 @@ apiInstance.integration(integrationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **Number**| Id of Integration | 
- **fields** | **String**| Requested fields. | [optional] 
+ **integrationId** | **Number**| Id of Integration |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -356,17 +356,17 @@ No authorization required
 
 Get Integration Hub
 
-### Get information about a Integration Hub. 
+### Get information about a Integration Hub.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
 var integrationHubId = 789; // Number | Id of Integration Hub
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -384,8 +384,8 @@ apiInstance.integrationHub(integrationHubId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationHubId** | **Number**| Id of Integration Hub | 
- **fields** | **String**| Requested fields. | [optional] 
+ **integrationHubId** | **Number**| Id of Integration Hub |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -410,7 +410,7 @@ Tests the integration to make sure all the settings are working.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -431,7 +431,7 @@ apiInstance.testIntegration(integrationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **Number**| Id of Integration | 
+ **integrationId** | **Number**| Id of Integration |
 
 ### Return type
 
@@ -452,11 +452,11 @@ No authorization required
 
 Update Integration
 
-### Update parameters on a Integration. 
+### Update parameters on a Integration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -464,7 +464,7 @@ var integrationId = 789; // Number | Id of Integration
 
 var body = new LookerApi31Reference.Integration(); // Integration | Integration
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -482,9 +482,9 @@ apiInstance.updateIntegration(integrationId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationId** | **Number**| Id of Integration | 
- **body** | [**Integration**](Integration.md)| Integration | 
- **fields** | **String**| Requested fields. | [optional] 
+ **integrationId** | **Number**| Id of Integration |
+ **body** | [**Integration**](Integration.md)| Integration |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -505,11 +505,11 @@ No authorization required
 
 Update Integration Hub
 
-### Update a Integration Hub definition. 
+### Update a Integration Hub definition.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.IntegrationApi();
 
@@ -517,7 +517,7 @@ var integrationHubId = 789; // Number | Id of Integration Hub
 
 var body = new LookerApi31Reference.IntegrationHub(); // IntegrationHub | Integration Hub
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -535,9 +535,9 @@ apiInstance.updateIntegrationHub(integrationHubId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integrationHubId** | **Number**| Id of Integration Hub | 
- **body** | [**IntegrationHub**](IntegrationHub.md)| Integration Hub | 
- **fields** | **String**| Requested fields. | [optional] 
+ **integrationHubId** | **Number**| Id of Integration Hub |
+ **body** | [**IntegrationHub**](IntegrationHub.md)| Integration Hub |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 

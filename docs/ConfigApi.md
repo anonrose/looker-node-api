@@ -1,6 +1,6 @@
 # LookerApi31Reference.ConfigApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,11 +22,11 @@ Method | HTTP request | Description
 
 Get All Legacy Features
 
-### Get all legacy features. 
+### Get all legacy features.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -62,11 +62,11 @@ No authorization required
 
 Get All Locales
 
-### Get a list of locales that Looker supports. 
+### Get a list of locales that Looker supports.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -102,11 +102,11 @@ No authorization required
 
 Get All Timezones
 
-### Get a list of timezones that Looker supports (e.g. useful for scheduling tasks). 
+### Get a list of timezones that Looker supports (e.g. useful for scheduling tasks).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -142,11 +142,11 @@ No authorization required
 
 Get Backup Configuration
 
-### Get the current Looker internal database backup configuration. 
+### Get the current Looker internal database backup configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -182,11 +182,11 @@ No authorization required
 
 Get Legacy Feature
 
-### Get information about the legacy feature with a specific id. 
+### Get information about the legacy feature with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -207,7 +207,7 @@ apiInstance.legacyFeature(legacyFeatureId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **legacyFeatureId** | **Number**| id of legacy feature | 
+ **legacyFeatureId** | **Number**| id of legacy feature |
 
 ### Return type
 
@@ -228,11 +228,11 @@ No authorization required
 
 Update Backup Configuration
 
-### Update the Looker internal database backup configuration. 
+### Update the Looker internal database backup configuration.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -253,7 +253,7 @@ apiInstance.updateBackupConfiguration(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BackupConfiguration**](BackupConfiguration.md)| Options for Backup Configuration | 
+ **body** | [**BackupConfiguration**](BackupConfiguration.md)| Options for Backup Configuration |
 
 ### Return type
 
@@ -274,11 +274,11 @@ No authorization required
 
 Update Legacy Feature
 
-### Update information about the legacy feature with a specific id. 
+### Update information about the legacy feature with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -301,8 +301,8 @@ apiInstance.updateLegacyFeature(legacyFeatureId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **legacyFeatureId** | **Number**| id of legacy feature | 
- **body** | [**LegacyFeature**](LegacyFeature.md)| Legacy Feature | 
+ **legacyFeatureId** | **Number**| id of legacy feature |
+ **body** | [**LegacyFeature**](LegacyFeature.md)| Legacy Feature |
 
 ### Return type
 
@@ -323,11 +323,11 @@ No authorization required
 
 Update Whitelabel configuration
 
-### Update the whitelabel configuration 
+### Update the whitelabel configuration
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
@@ -348,7 +348,7 @@ apiInstance.updateWhitelabelConfiguration(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WhitelabelConfiguration**](WhitelabelConfiguration.md)| Whitelabel configuration | 
+ **body** | [**WhitelabelConfiguration**](WhitelabelConfiguration.md)| Whitelabel configuration |
 
 ### Return type
 
@@ -369,15 +369,15 @@ No authorization required
 
 Get ApiVersion
 
-### Get information about all API versions supported by this Looker instance. 
+### Get information about all API versions supported by this Looker instance.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -395,7 +395,7 @@ apiInstance.versions(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -416,15 +416,15 @@ No authorization required
 
 Get Whitelabel configuration
 
-### This feature is enabled only by special license. ### Gets the whitelabel configuration, which includes hiding documentation links, custom favicon uploading, etc. 
+### This feature is enabled only by special license. ### Gets the whitelabel configuration, which includes hiding documentation links, custom favicon uploading, etc.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ConfigApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -442,7 +442,7 @@ apiInstance.whitelabelConfiguration(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 

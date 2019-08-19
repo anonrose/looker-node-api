@@ -1,6 +1,6 @@
 # LookerApi31Reference.FolderApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,11 +28,11 @@ Get All Folders
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -50,7 +50,7 @@ apiInstance.allFolders(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -71,15 +71,15 @@ No authorization required
 
 Create Folder
 
-### Create a folder with specified information.  Caller must have permission to edit the parent folder and to create folders, otherwise the request returns 404 Not Found. 
+### Create a folder with specified information.  Caller must have permission to edit the parent folder and to create folders, otherwise the request returns 404 Not Found.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Folder() // Folder | Folder
 };
 
@@ -97,7 +97,7 @@ apiInstance.createFolder(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Folder**](Folder.md)| Folder | [optional] 
+ **body** | [**Folder**](Folder.md)| Folder | [optional]
 
 ### Return type
 
@@ -118,11 +118,11 @@ No authorization required
 
 Delete Folder
 
-### Delete the folder with a specific id including any children folders. **DANGER** this will delete all looks and dashboards in the folder. 
+### Delete the folder with a specific id including any children folders. **DANGER** this will delete all looks and dashboards in the folder.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
@@ -143,7 +143,7 @@ apiInstance.deleteFolder(folderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
+ **folderId** | **String**| Id of folder |
 
 ### Return type
 
@@ -168,13 +168,13 @@ Get Folder
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -192,8 +192,8 @@ apiInstance.folder(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -218,13 +218,13 @@ Get Folder Ancestors
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -242,8 +242,8 @@ apiInstance.folderAncestors(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -268,13 +268,13 @@ Get Folder Children
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -295,11 +295,11 @@ apiInstance.folderChildren(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
 
 ### Return type
 
@@ -324,13 +324,13 @@ Search Folder Children
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'sorts': "sorts_example", // String | Fields to sort by.
   'name': "name_example" // String | Match folder name.
@@ -350,10 +350,10 @@ apiInstance.folderChildrenSearch(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **name** | **String**| Match folder name. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **name** | **String**| Match folder name. | [optional]
 
 ### Return type
 
@@ -378,13 +378,13 @@ Get Folder Dashboards
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -402,8 +402,8 @@ apiInstance.folderDashboards(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -428,13 +428,13 @@ Get Folder Looks
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -452,8 +452,8 @@ apiInstance.folderLooks(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -478,13 +478,13 @@ Get Folder Parent
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
 var folderId = "folderId_example"; // String | Id of folder
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -502,8 +502,8 @@ apiInstance.folderParent(folderId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **fields** | **String**| Requested fields. | [optional] 
+ **folderId** | **String**| Id of folder |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -528,11 +528,11 @@ Search for folders by creator id, parent id, name, etc
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -560,17 +560,17 @@ apiInstance.searchFolders(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional] 
- **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **name** | **String**| Match Space title. | [optional] 
- **id** | **Number**| Match Space id | [optional] 
- **parentId** | **String**| Filter on a children of a particular folder. | [optional] 
- **creatorId** | **String**| Filter on folder created by a particular user. | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **limit** | **Number**| Number of results to return. (used with offset and takes priority over page and per_page) | [optional]
+ **offset** | **Number**| Number of results to skip before returning any. (used with limit and takes priority over page and per_page) | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **name** | **String**| Match Space title. | [optional]
+ **id** | **Number**| Match Space id | [optional]
+ **parentId** | **String**| Filter on a children of a particular folder. | [optional]
+ **creatorId** | **String**| Filter on folder created by a particular user. | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -595,7 +595,7 @@ Update Folder
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.FolderApi();
 
@@ -618,8 +618,8 @@ apiInstance.updateFolder(folderId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **String**| Id of folder | 
- **body** | [**Folder**](Folder.md)| Folder | 
+ **folderId** | **String**| Id of folder |
+ **body** | [**Folder**](Folder.md)| Folder |
 
 ### Return type
 

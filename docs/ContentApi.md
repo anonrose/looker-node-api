@@ -1,6 +1,6 @@
 # LookerApi31Reference.ContentApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,17 +25,17 @@ Method | HTTP request | Description
 
 Get All Content Metadata Accesses
 
-### All content metadata access records for a content metadata item. 
+### All content metadata access records for a content metadata item.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
 var contentMetadataId = 789; // Number | Id of content metadata
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -53,8 +53,8 @@ apiInstance.allContentMetadataAccesses(contentMetadataId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentMetadataId** | **Number**| Id of content metadata | 
- **fields** | **String**| Requested fields. | [optional] 
+ **contentMetadataId** | **Number**| Id of content metadata |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -75,17 +75,17 @@ No authorization required
 
 Get All Content Metadatas
 
-### Get information about all content metadata in a space. 
+### Get information about all content metadata in a space.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
 var parentId = 789; // Number | Parent space of content.
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -103,8 +103,8 @@ apiInstance.allContentMetadatas(parentId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parentId** | **Number**| Parent space of content. | 
- **fields** | **String**| Requested fields. | [optional] 
+ **parentId** | **Number**| Parent space of content. |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -129,13 +129,13 @@ Get Favorite Content
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
 var contentFavoriteId = 789; // Number | Id of favorite content
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -153,8 +153,8 @@ apiInstance.contentFavorite(contentFavoriteId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentFavoriteId** | **Number**| Id of favorite content | 
- **fields** | **String**| Requested fields. | [optional] 
+ **contentFavoriteId** | **Number**| Id of favorite content |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -175,17 +175,17 @@ No authorization required
 
 Get Content Metadata
 
-### Get information about an individual content metadata record. 
+### Get information about an individual content metadata record.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
 var contentMetadataId = 789; // Number | Id of content metadata
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -203,8 +203,8 @@ apiInstance.contentMetadata(contentMetadataId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentMetadataId** | **Number**| Id of content metadata | 
- **fields** | **String**| Requested fields. | [optional] 
+ **contentMetadataId** | **Number**| Id of content metadata |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -225,15 +225,15 @@ No authorization required
 
 Validate Content
 
-### Validate All Content Requires Content Validation Labs Feature be enabled  Performs validation of all looks and dashboards Returns a list of errors found as well as metadata about the content validation run. 
+### Validate All Content Requires Content Validation Labs Feature be enabled  Performs validation of all looks and dashboards Returns a list of errors found as well as metadata about the content validation run.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -251,7 +251,7 @@ apiInstance.contentValidation(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -276,11 +276,11 @@ Create Favorite Content
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.ContentFavorite() // ContentFavorite | Favorite Content
 };
 
@@ -298,7 +298,7 @@ apiInstance.createContentFavorite(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFavorite**](ContentFavorite.md)| Favorite Content | [optional] 
+ **body** | [**ContentFavorite**](ContentFavorite.md)| Favorite Content | [optional]
 
 ### Return type
 
@@ -319,15 +319,15 @@ No authorization required
 
 Create Content Metadata Access
 
-### Create content metadata access. 
+### Create content metadata access.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.ContentMetaGroupUser() // ContentMetaGroupUser | Content Metadata Access
 };
 
@@ -345,7 +345,7 @@ apiInstance.createContentMetadataAccess(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentMetaGroupUser**](ContentMetaGroupUser.md)| Content Metadata Access | [optional] 
+ **body** | [**ContentMetaGroupUser**](ContentMetaGroupUser.md)| Content Metadata Access | [optional]
 
 ### Return type
 
@@ -370,7 +370,7 @@ Delete Favorite Content
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
@@ -391,7 +391,7 @@ apiInstance.deleteContentFavorite(contentFavoriteId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentFavoriteId** | **Number**| Id of favorite content | 
+ **contentFavoriteId** | **Number**| Id of favorite content |
 
 ### Return type
 
@@ -412,11 +412,11 @@ No authorization required
 
 Delete Content Metadata Access
 
-### Remove content metadata access. 
+### Remove content metadata access.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
@@ -437,7 +437,7 @@ apiInstance.deleteContentMetadataAccess(contentMetadataAccessId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentMetadataAccessId** | **Number**| Id of content metadata access | 
+ **contentMetadataAccessId** | **Number**| Id of content metadata access |
 
 ### Return type
 
@@ -458,15 +458,15 @@ No authorization required
 
 Search Favorite Contents
 
-### Search Favorite Content  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.  
+### Search Favorite Content  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
-var opts = { 
+var opts = {
   'id': 789, // Number | Match content favorite id(s)
   'userId': 789, // Number | Match user id(s)
   'contentMetadataId': 789, // Number | Match content metadata id(s)
@@ -493,16 +493,16 @@ apiInstance.searchContentFavorites(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| Match content favorite id(s) | [optional] 
- **userId** | **Number**| Match user id(s) | [optional] 
- **contentMetadataId** | **Number**| Match content metadata id(s) | [optional] 
- **dashboardId** | **Number**| Match dashboard id(s) | [optional] 
- **lookId** | **Number**| Match look id(s) | [optional] 
- **limit** | **Number**| Number of results to return. (used with offset) | [optional] 
- **offset** | **Number**| Number of results to skip before returning any. (used with limit) | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **id** | **Number**| Match content favorite id(s) | [optional]
+ **userId** | **Number**| Match user id(s) | [optional]
+ **contentMetadataId** | **Number**| Match content metadata id(s) | [optional]
+ **dashboardId** | **Number**| Match dashboard id(s) | [optional]
+ **lookId** | **Number**| Match look id(s) | [optional]
+ **limit** | **Number**| Number of results to return. (used with offset) | [optional]
+ **offset** | **Number**| Number of results to skip before returning any. (used with limit) | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **fields** | **String**| Requested fields. | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -523,15 +523,15 @@ No authorization required
 
 Search Content Views
 
-### Search Content Views  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.  
+### Search Content Views  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
-var opts = { 
+var opts = {
   'viewCount': 789, // Number | Match view count
   'groupId': 789, // Number | Match Group Id
   'lookId': "lookId_example", // String | Match look_id
@@ -561,19 +561,19 @@ apiInstance.searchContentViews(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **viewCount** | **Number**| Match view count | [optional] 
- **groupId** | **Number**| Match Group Id | [optional] 
- **lookId** | **String**| Match look_id | [optional] 
- **dashboardId** | **String**| Match dashboard_id | [optional] 
- **contentMetadataId** | **Number**| Match content metadata id | [optional] 
- **startOfWeekDate** | **String**| Match start of week date | [optional] 
- **allTime** | **Boolean**| True if only all time view records should be returned | [optional] 
- **userId** | **Number**| Match user id | [optional] 
- **fields** | **String**| Requested fields | [optional] 
- **limit** | **Number**| Number of results to return. Use with &#x60;offset&#x60; to manage pagination of results | [optional] 
- **offset** | **Number**| Number of results to skip before returning data | [optional] 
- **sorts** | **String**| Fields to sort by | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
+ **viewCount** | **Number**| Match view count | [optional]
+ **groupId** | **Number**| Match Group Id | [optional]
+ **lookId** | **String**| Match look_id | [optional]
+ **dashboardId** | **String**| Match dashboard_id | [optional]
+ **contentMetadataId** | **Number**| Match content metadata id | [optional]
+ **startOfWeekDate** | **String**| Match start of week date | [optional]
+ **allTime** | **Boolean**| True if only all time view records should be returned | [optional]
+ **userId** | **Number**| Match user id | [optional]
+ **fields** | **String**| Requested fields | [optional]
+ **limit** | **Number**| Number of results to return. Use with &#x60;offset&#x60; to manage pagination of results | [optional]
+ **offset** | **Number**| Number of results to skip before returning data | [optional]
+ **sorts** | **String**| Fields to sort by | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
 
 ### Return type
 
@@ -594,11 +594,11 @@ No authorization required
 
 Update Content Metadata
 
-### Move a piece of content. 
+### Move a piece of content.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
@@ -621,8 +621,8 @@ apiInstance.updateContentMetadata(contentMetadataId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentMetadataId** | **Number**| Id of content metadata | 
- **body** | [**ContentMeta**](ContentMeta.md)| Content Metadata | 
+ **contentMetadataId** | **Number**| Id of content metadata |
+ **body** | [**ContentMeta**](ContentMeta.md)| Content Metadata |
 
 ### Return type
 
@@ -643,11 +643,11 @@ No authorization required
 
 Update Content Metadata Access
 
-### Update type of access for content metadata. 
+### Update type of access for content metadata.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.ContentApi();
 
@@ -670,8 +670,8 @@ apiInstance.updateContentMetadataAccess(contentMetadataAccessId, body, callback)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentMetadataAccessId** | **Number**| Id of content metadata access | 
- **body** | [**ContentMetaGroupUser**](ContentMetaGroupUser.md)| Content Metadata Access | 
+ **contentMetadataAccessId** | **Number**| Id of content metadata access |
+ **body** | [**ContentMetaGroupUser**](ContentMetaGroupUser.md)| Content Metadata Access |
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # LookerApi31Reference.UserApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,13 +58,13 @@ Get All API 3 Credentials
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -82,8 +82,8 @@ apiInstance.allUserCredentialsApi3s(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -108,13 +108,13 @@ Get All Embedding Credentials
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -132,8 +132,8 @@ apiInstance.allUserCredentialsEmbeds(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -158,13 +158,13 @@ Get All Web Login Sessions
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -182,8 +182,8 @@ apiInstance.allUserSessions(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -204,15 +204,15 @@ No authorization required
 
 Get All Users
 
-### Get information about all users. 
+### Get information about all users.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -234,11 +234,11 @@ apiInstance.allUsers(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **ids** | [**[Number]**](Number.md)| Optional list of ids to get specific users. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **ids** | [**[Number]**](Number.md)| Optional list of ids to get specific users. | [optional]
 
 ### Return type
 
@@ -259,15 +259,15 @@ No authorization required
 
 Create User
 
-### Create a user with the specified information. 
+### Create a user with the specified information.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.User(), // User | User
   'fields': "fields_example" // String | Requested fields.
 };
@@ -286,8 +286,8 @@ apiInstance.createUser(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| User | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**User**](User.md)| User | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -312,13 +312,13 @@ Create API 3 Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.CredentialsApi3(), // CredentialsApi3 | API 3 Credential
   'fields': "fields_example" // String | Requested fields.
 };
@@ -337,9 +337,9 @@ apiInstance.createUserCredentialsApi3(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **body** | [**CredentialsApi3**](CredentialsApi3.md)| API 3 Credential | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **body** | [**CredentialsApi3**](CredentialsApi3.md)| API 3 Credential | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -364,13 +364,13 @@ Create Email/Password Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.CredentialsEmail(), // CredentialsEmail | Email/Password Credential
   'fields': "fields_example" // String | Requested fields.
 };
@@ -389,9 +389,9 @@ apiInstance.createUserCredentialsEmail(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **body** | [**CredentialsEmail**](CredentialsEmail.md)| Email/Password Credential | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **body** | [**CredentialsEmail**](CredentialsEmail.md)| Email/Password Credential | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -412,17 +412,17 @@ No authorization required
 
 Create Password Reset Token
 
-### Create a password reset token. This will create a cryptographically secure random password reset token for the user. If the user already has a password reset token then this invalidates the old token and creates a new one. The token is expressed as the &#39;password_reset_url&#39; of the user&#39;s email/password credential object. This takes an optional &#39;expires&#39; param to indicate if the new token should be an expiring token. Tokens that expire are typically used for self-service password resets for existing users. Invitation emails for new users typically are not set to expire. The expire period is always 60 minutes when expires is enabled. This method can be called with an empty body. 
+### Create a password reset token. This will create a cryptographically secure random password reset token for the user. If the user already has a password reset token then this invalidates the old token and creates a new one. The token is expressed as the &#39;password_reset_url&#39; of the user&#39;s email/password credential object. This takes an optional &#39;expires&#39; param to indicate if the new token should be an expiring token. Tokens that expire are typically used for self-service password resets for existing users. Invitation emails for new users typically are not set to expire. The expire period is always 60 minutes when expires is enabled. This method can be called with an empty body.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | Id of user
 
-var opts = { 
+var opts = {
   'expires': true, // Boolean | Expiring token.
   'fields': "fields_example" // String | Requested fields.
 };
@@ -441,9 +441,9 @@ apiInstance.createUserCredentialsEmailPasswordReset(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **expires** | **Boolean**| Expiring token. | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **expires** | **Boolean**| Expiring token. | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -468,13 +468,13 @@ Create Two-Factor Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.CredentialsTotp(), // CredentialsTotp | Two-Factor Credential
   'fields': "fields_example" // String | Requested fields.
 };
@@ -493,9 +493,9 @@ apiInstance.createUserCredentialsTotp(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **body** | [**CredentialsTotp**](CredentialsTotp.md)| Two-Factor Credential | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **body** | [**CredentialsTotp**](CredentialsTotp.md)| Two-Factor Credential | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -516,11 +516,11 @@ No authorization required
 
 Delete User
 
-### Delete the user with a specific id.  **DANGER** this will delete the user and all looks and other information owned by the user. 
+### Delete the user with a specific id.  **DANGER** this will delete the user and all looks and other information owned by the user.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -541,7 +541,7 @@ apiInstance.deleteUser(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
+ **userId** | **Number**| Id of user |
 
 ### Return type
 
@@ -562,11 +562,11 @@ No authorization required
 
 Delete User Attribute User Value
 
-### Delete a user attribute value from a user&#39;s account settings.  After the user attribute value is deleted from the user&#39;s account settings, subsequent requests for the user attribute value for this user will draw from the user&#39;s groups or the default value of the user attribute. See [Get User Attribute Values](#!/User/user_attribute_user_values) for more information about how user attribute values are resolved. 
+### Delete a user attribute value from a user&#39;s account settings.  After the user attribute value is deleted from the user&#39;s account settings, subsequent requests for the user attribute value for this user will draw from the user&#39;s groups or the default value of the user attribute. See [Get User Attribute Values](#!/User/user_attribute_user_values) for more information about how user attribute values are resolved.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -589,8 +589,8 @@ apiInstance.deleteUserAttributeUserValue(userId, userAttributeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **userAttributeId** | **Number**| Id of user attribute | 
+ **userId** | **Number**| Id of user |
+ **userAttributeId** | **Number**| Id of user attribute |
 
 ### Return type
 
@@ -615,7 +615,7 @@ Delete API 3 Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -638,8 +638,8 @@ apiInstance.deleteUserCredentialsApi3(userId, credentialsApi3Id, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **credentialsApi3Id** | **Number**| id of API 3 Credential | 
+ **userId** | **Number**| id of user |
+ **credentialsApi3Id** | **Number**| id of API 3 Credential |
 
 ### Return type
 
@@ -664,7 +664,7 @@ Delete Email/Password Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -685,7 +685,7 @@ apiInstance.deleteUserCredentialsEmail(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -710,7 +710,7 @@ Delete Embedding Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -733,8 +733,8 @@ apiInstance.deleteUserCredentialsEmbed(userId, credentialsEmbedId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **credentialsEmbedId** | **Number**| id of Embedding Credential | 
+ **userId** | **Number**| id of user |
+ **credentialsEmbedId** | **Number**| id of Embedding Credential |
 
 ### Return type
 
@@ -759,7 +759,7 @@ Delete Google Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -780,7 +780,7 @@ apiInstance.deleteUserCredentialsGoogle(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -805,7 +805,7 @@ Delete LDAP Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -826,7 +826,7 @@ apiInstance.deleteUserCredentialsLdap(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -851,7 +851,7 @@ Delete Looker OpenId Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -872,7 +872,7 @@ apiInstance.deleteUserCredentialsLookerOpenid(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -897,7 +897,7 @@ Delete OIDC Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -918,7 +918,7 @@ apiInstance.deleteUserCredentialsOidc(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -943,7 +943,7 @@ Delete Saml Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -964,7 +964,7 @@ apiInstance.deleteUserCredentialsSaml(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -989,7 +989,7 @@ Delete Two-Factor Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1010,7 +1010,7 @@ apiInstance.deleteUserCredentialsTotp(userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
+ **userId** | **Number**| id of user |
 
 ### Return type
 
@@ -1035,7 +1035,7 @@ Delete Web Login Session
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1058,8 +1058,8 @@ apiInstance.deleteUserSession(userId, sessionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **sessionId** | **Number**| id of Web Login Session | 
+ **userId** | **Number**| id of user |
+ **sessionId** | **Number**| id of Web Login Session |
 
 ### Return type
 
@@ -1080,15 +1080,15 @@ No authorization required
 
 Get Current User
 
-### Get information about the current user; i.e. the user account currently calling the API. 
+### Get information about the current user; i.e. the user account currently calling the API.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1106,7 +1106,7 @@ apiInstance.me(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1127,15 +1127,15 @@ No authorization required
 
 Search Users
 
-### Search users  Returns all&lt;sup&gt;*&lt;/sup&gt; user records that match the given search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   (&lt;sup&gt;*&lt;/sup&gt;) Results are always filtered to the level of information the caller is permitted to view. Looker admins can see all user details; normal users in an open system can see names of other users but no details; normal users in a closed system can only see names of other users who are members of the same group as the user.  
+### Search users  Returns all&lt;sup&gt;*&lt;/sup&gt; user records that match the given search criteria.  If multiple search params are given and &#x60;filter_or&#x60; is FALSE or not specified, search params are combined in a logical AND operation. Only rows that match *all* search param criteria will be returned.  If &#x60;filter_or&#x60; is TRUE, multiple search params are combined in a logical OR operation. Results will include rows that match **any** of the search criteria.  String search params use case-insensitive matching. String search params can contain &#x60;%&#x60; and &#39;_&#39; as SQL LIKE pattern match wildcard expressions. example&#x3D;\&quot;dan%\&quot; will match \&quot;danger\&quot; and \&quot;Danzig\&quot; but not \&quot;David\&quot; example&#x3D;\&quot;D_m%\&quot; will match \&quot;Damage\&quot; and \&quot;dump\&quot;  Integer search params can accept a single value or a comma separated list of values. The multiple values will be combined under a logical OR operation - results will match at least one of the given values.  Most search params can accept \&quot;IS NULL\&quot; and \&quot;NOT NULL\&quot; as special expressions to match or exclude (respectively) rows where the column is null.  Boolean search params accept only \&quot;true\&quot; and \&quot;false\&quot; as values.   (&lt;sup&gt;*&lt;/sup&gt;) Results are always filtered to the level of information the caller is permitted to view. Looker admins can see all user details; normal users in an open system can see names of other users but no details; normal users in a closed system can only see names of other users who are members of the same group as the user.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Include only these fields in the response
   'page': 789, // Number | Return only page N of paginated results
   'perPage': 789, // Number | Return N rows of data per page
@@ -1165,19 +1165,19 @@ apiInstance.searchUsers(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Include only these fields in the response | [optional] 
- **page** | **Number**| Return only page N of paginated results | [optional] 
- **perPage** | **Number**| Return N rows of data per page | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **id** | **Number**| Match User Id. | [optional] 
- **firstName** | **String**| Match First name. | [optional] 
- **lastName** | **String**| Match Last name. | [optional] 
- **verifiedLookerEmployee** | **Boolean**| Search for user accounts associated with Looker employees | [optional] 
- **email** | **String**| Search for the user with this email address | [optional] 
- **isDisabled** | **Boolean**| Search for disabled user accounts | [optional] 
- **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional] 
- **contentMetadataId** | **Number**| Search for users who have access to this content_metadata item | [optional] 
- **groupId** | **Number**| Search for users who are direct members of this group | [optional] 
+ **fields** | **String**| Include only these fields in the response | [optional]
+ **page** | **Number**| Return only page N of paginated results | [optional]
+ **perPage** | **Number**| Return N rows of data per page | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **id** | **Number**| Match User Id. | [optional]
+ **firstName** | **String**| Match First name. | [optional]
+ **lastName** | **String**| Match Last name. | [optional]
+ **verifiedLookerEmployee** | **Boolean**| Search for user accounts associated with Looker employees | [optional]
+ **email** | **String**| Search for the user with this email address | [optional]
+ **isDisabled** | **Boolean**| Search for disabled user accounts | [optional]
+ **filterOr** | **Boolean**| Combine given search criteria in a boolean OR expression | [optional]
+ **contentMetadataId** | **Number**| Search for users who have access to this content_metadata item | [optional]
+ **groupId** | **Number**| Search for users who are direct members of this group | [optional]
 
 ### Return type
 
@@ -1198,17 +1198,17 @@ No authorization required
 
 Search User Names
 
-### Search for user accounts by name  Returns all user accounts where &#x60;first_name&#x60; OR &#x60;last_name&#x60; OR &#x60;email&#x60; field values match a pattern. The pattern can contain &#x60;%&#x60; and &#x60;_&#x60; wildcards as in SQL LIKE expressions.  Any additional search params will be combined into a logical AND expression. 
+### Search for user accounts by name  Returns all user accounts where &#x60;first_name&#x60; OR &#x60;last_name&#x60; OR &#x60;email&#x60; field values match a pattern. The pattern can contain &#x60;%&#x60; and &#x60;_&#x60; wildcards as in SQL LIKE expressions.  Any additional search params will be combined into a logical AND expression.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var pattern = "pattern_example"; // String | Pattern to match
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Include only these fields in the response
   'page': 789, // Number | Return only page N of paginated results
   'perPage': 789, // Number | Return N rows of data per page
@@ -1235,17 +1235,17 @@ apiInstance.searchUsersNames(pattern, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pattern** | **String**| Pattern to match | 
- **fields** | **String**| Include only these fields in the response | [optional] 
- **page** | **Number**| Return only page N of paginated results | [optional] 
- **perPage** | **Number**| Return N rows of data per page | [optional] 
- **sorts** | **String**| Fields to sort by | [optional] 
- **id** | **Number**| Match User Id | [optional] 
- **firstName** | **String**| Match First name | [optional] 
- **lastName** | **String**| Match Last name | [optional] 
- **verifiedLookerEmployee** | **Boolean**| Match Verified Looker employee | [optional] 
- **email** | **String**| Match Email Address | [optional] 
- **isDisabled** | **Boolean**| Include or exclude disabled accounts in the results | [optional] 
+ **pattern** | **String**| Pattern to match |
+ **fields** | **String**| Include only these fields in the response | [optional]
+ **page** | **Number**| Return only page N of paginated results | [optional]
+ **perPage** | **Number**| Return N rows of data per page | [optional]
+ **sorts** | **String**| Fields to sort by | [optional]
+ **id** | **Number**| Match User Id | [optional]
+ **firstName** | **String**| Match First name | [optional]
+ **lastName** | **String**| Match Last name | [optional]
+ **verifiedLookerEmployee** | **Boolean**| Match Verified Looker employee | [optional]
+ **email** | **String**| Match Email Address | [optional]
+ **isDisabled** | **Boolean**| Include or exclude disabled accounts in the results | [optional]
 
 ### Return type
 
@@ -1266,11 +1266,11 @@ No authorization required
 
 Set User Attribute User Value
 
-### Store a custom value for a user attribute in a user&#39;s account settings.  Per-user user attribute values take precedence over group or default values. 
+### Store a custom value for a user attribute in a user&#39;s account settings.  Per-user user attribute values take precedence over group or default values.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1295,9 +1295,9 @@ apiInstance.setUserAttributeUserValue(userId, userAttributeId, body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **userAttributeId** | **Number**| Id of user attribute | 
- **body** | [**UserAttributeWithValue**](UserAttributeWithValue.md)| New attribute value for user. | 
+ **userId** | **Number**| Id of user |
+ **userAttributeId** | **Number**| Id of user attribute |
+ **body** | [**UserAttributeWithValue**](UserAttributeWithValue.md)| New attribute value for user. |
 
 ### Return type
 
@@ -1318,11 +1318,11 @@ No authorization required
 
 Set User Roles
 
-### Set roles of the user with a specific id. 
+### Set roles of the user with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1330,7 +1330,7 @@ var userId = 789; // Number | id of user
 
 var body = [new LookerApi31Reference.[Number]()]; // [Number] | array of roles ids for user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1348,9 +1348,9 @@ apiInstance.setUserRoles(userId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **body** | **[Number]**| array of roles ids for user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **body** | **[Number]**| array of roles ids for user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1371,11 +1371,11 @@ No authorization required
 
 Update User
 
-### Update information about the user with a specific id. 
+### Update information about the user with a specific id.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1383,7 +1383,7 @@ var userId = 789; // Number | Id of user
 
 var body = new LookerApi31Reference.User(); // User | User
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1401,9 +1401,9 @@ apiInstance.updateUser(userId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **body** | [**User**](User.md)| User | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **body** | [**User**](User.md)| User |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1428,7 +1428,7 @@ Update Email/Password Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1436,7 +1436,7 @@ var userId = 789; // Number | id of user
 
 var body = new LookerApi31Reference.CredentialsEmail(); // CredentialsEmail | Email/Password Credential
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1454,9 +1454,9 @@ apiInstance.updateUserCredentialsEmail(userId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **body** | [**CredentialsEmail**](CredentialsEmail.md)| Email/Password Credential | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **body** | [**CredentialsEmail**](CredentialsEmail.md)| Email/Password Credential |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1477,17 +1477,17 @@ No authorization required
 
 Get User by Id
 
-### Get information about the user with a specific id.  If the caller is an admin or the caller is the user being specified, then full user information will be returned. Otherwise, a minimal &#39;public&#39; variant of the user information will be returned. This contains The user name and avatar url, but no sensitive information. 
+### Get information about the user with a specific id.  If the caller is an admin or the caller is the user being specified, then full user information will be returned. Otherwise, a minimal &#39;public&#39; variant of the user information will be returned. This contains The user name and avatar url, but no sensitive information.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | Id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1505,8 +1505,8 @@ apiInstance.user(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1527,17 +1527,17 @@ No authorization required
 
 Get User Attribute Values
 
-### Get user attribute values for a given user.  Returns the values of specified user attributes (or all user attributes) for a certain user.  A value for each user attribute is searched for in the following locations, in this order: 1. in the user&#39;s account information 1. in groups that the user is a member of 1. the default value of the user attribute  If more than one group has a value defined for a user attribute, the group with the lowest rank wins.  The response will only include user attributes for which values were found. Use &#x60;include_unset&#x3D;true&#x60; to include empty records for user attributes with no value.  The value of all hidden user attributes will be blank. 
+### Get user attribute values for a given user.  Returns the values of specified user attributes (or all user attributes) for a certain user.  A value for each user attribute is searched for in the following locations, in this order: 1. in the user&#39;s account information 1. in groups that the user is a member of 1. the default value of the user attribute  If more than one group has a value defined for a user attribute, the group with the lowest rank wins.  The response will only include user attributes for which values were found. Use &#x60;include_unset&#x3D;true&#x60; to include empty records for user attributes with no value.  The value of all hidden user attributes will be blank.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | Id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'userAttributeIds': [3.4], // [Number] | Specific user attributes to request. Omit or leave blank to request all user attributes.
   'allValues': true, // Boolean | If true, returns all values in the search path instead of just the first value found. Useful for debugging group precedence.
@@ -1558,11 +1558,11 @@ apiInstance.userAttributeUserValues(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **fields** | **String**| Requested fields. | [optional] 
- **userAttributeIds** | [**[Number]**](Number.md)| Specific user attributes to request. Omit or leave blank to request all user attributes. | [optional] 
- **allValues** | **Boolean**| If true, returns all values in the search path instead of just the first value found. Useful for debugging group precedence. | [optional] 
- **includeUnset** | **Boolean**| If true, returns an empty record for each requested attribute that has no user, group, or default value. | [optional] 
+ **userId** | **Number**| Id of user |
+ **fields** | **String**| Requested fields. | [optional]
+ **userAttributeIds** | [**[Number]**](Number.md)| Specific user attributes to request. Omit or leave blank to request all user attributes. | [optional]
+ **allValues** | **Boolean**| If true, returns all values in the search path instead of just the first value found. Useful for debugging group precedence. | [optional]
+ **includeUnset** | **Boolean**| If true, returns an empty record for each requested attribute that has no user, group, or default value. | [optional]
 
 ### Return type
 
@@ -1587,7 +1587,7 @@ Get API 3 Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1595,7 +1595,7 @@ var userId = 789; // Number | Id of user
 
 var credentialsApi3Id = 789; // Number | Id of API 3 Credential
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1613,9 +1613,9 @@ apiInstance.userCredentialsApi3(userId, credentialsApi3Id, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **credentialsApi3Id** | **Number**| Id of API 3 Credential | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **credentialsApi3Id** | **Number**| Id of API 3 Credential |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1640,13 +1640,13 @@ Get Email/Password Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1664,8 +1664,8 @@ apiInstance.userCredentialsEmail(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1690,7 +1690,7 @@ Get Embedding Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -1698,7 +1698,7 @@ var userId = 789; // Number | Id of user
 
 var credentialsEmbedId = 789; // Number | Id of Embedding Credential
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1716,9 +1716,9 @@ apiInstance.userCredentialsEmbed(userId, credentialsEmbedId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **credentialsEmbedId** | **Number**| Id of Embedding Credential | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **credentialsEmbedId** | **Number**| Id of Embedding Credential |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1743,13 +1743,13 @@ Get Google Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1767,8 +1767,8 @@ apiInstance.userCredentialsGoogle(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1793,13 +1793,13 @@ Get LDAP Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1817,8 +1817,8 @@ apiInstance.userCredentialsLdap(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1843,13 +1843,13 @@ Get Looker OpenId Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1867,8 +1867,8 @@ apiInstance.userCredentialsLookerOpenid(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1893,13 +1893,13 @@ Get OIDC Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1917,8 +1917,8 @@ apiInstance.userCredentialsOidc(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1943,13 +1943,13 @@ Get Saml Auth Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -1967,8 +1967,8 @@ apiInstance.userCredentialsSaml(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -1993,13 +1993,13 @@ Get Two-Factor Credential
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -2017,8 +2017,8 @@ apiInstance.userCredentialsTotp(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -2039,11 +2039,11 @@ No authorization required
 
 Get User by Credential Id
 
-### Get information about the user with a credential of given type with specific id.  This is used to do things like find users by their embed external_user_id. Or, find the user with a given api3 client_id, etc. The &#39;credential_type&#39; matchs the &#39;type&#39; name of the various credential types. It must be one of the values listed in the table below. The &#39;credential_id&#39; is your unique Id for the user and is specific to each type of credential.  An example using the Ruby sdk might look like:  &#x60;sdk.user_for_credential(&#39;embed&#39;, &#39;customer-4959425&#39;)&#x60;  This table shows the supported &#39;Credential Type&#39; strings. The right column is for reference; it shows which field in the given credential type is actually searched when finding a user with the supplied &#39;credential_id&#39;.  | Credential Types | Id Field Matched | | ---------------- | ---------------- | | email            | email            | | google           | google_user_id   | | saml             | saml_user_id     | | oidc             | oidc_user_id     | | ldap             | ldap_id          | | api              | token            | | api3             | client_id        | | embed            | external_user_id | | looker_openid    | email            |  NOTE: The &#39;api&#39; credential type was only used with the legacy Looker query API and is no longer supported. The credential type for API you are currently looking at is &#39;api3&#39;.  
+### Get information about the user with a credential of given type with specific id.  This is used to do things like find users by their embed external_user_id. Or, find the user with a given api3 client_id, etc. The &#39;credential_type&#39; matchs the &#39;type&#39; name of the various credential types. It must be one of the values listed in the table below. The &#39;credential_id&#39; is your unique Id for the user and is specific to each type of credential.  An example using the Ruby sdk might look like:  &#x60;sdk.user_for_credential(&#39;embed&#39;, &#39;customer-4959425&#39;)&#x60;  This table shows the supported &#39;Credential Type&#39; strings. The right column is for reference; it shows which field in the given credential type is actually searched when finding a user with the supplied &#39;credential_id&#39;.  | Credential Types | Id Field Matched | | ---------------- | ---------------- | | email            | email            | | google           | google_user_id   | | saml             | saml_user_id     | | oidc             | oidc_user_id     | | ldap             | ldap_id          | | api              | token            | | api3             | client_id        | | embed            | external_user_id | | looker_openid    | email            |  NOTE: The &#39;api&#39; credential type was only used with the legacy Looker query API and is no longer supported. The credential type for API you are currently looking at is &#39;api3&#39;.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -2051,7 +2051,7 @@ var credentialType = "credentialType_example"; // String | Type name of credenti
 
 var credentialId = "credentialId_example"; // String | Id of credential
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -2069,9 +2069,9 @@ apiInstance.userForCredential(credentialType, credentialId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **credentialType** | **String**| Type name of credential | 
- **credentialId** | **String**| Id of credential | 
- **fields** | **String**| Requested fields. | [optional] 
+ **credentialType** | **String**| Type name of credential |
+ **credentialId** | **String**| Id of credential |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -2092,17 +2092,17 @@ No authorization required
 
 Get User Roles
 
-### Get information about roles of a given user 
+### Get information about roles of a given user
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
 var userId = 789; // Number | id of user
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'directAssociationOnly': true // Boolean | Get only roles associated directly with the user: exclude those only associated through groups.
 };
@@ -2121,9 +2121,9 @@ apiInstance.userRoles(userId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| id of user | 
- **fields** | **String**| Requested fields. | [optional] 
- **directAssociationOnly** | **Boolean**| Get only roles associated directly with the user: exclude those only associated through groups. | [optional] 
+ **userId** | **Number**| id of user |
+ **fields** | **String**| Requested fields. | [optional]
+ **directAssociationOnly** | **Boolean**| Get only roles associated directly with the user: exclude those only associated through groups. | [optional]
 
 ### Return type
 
@@ -2148,7 +2148,7 @@ Get Web Login Session
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.UserApi();
 
@@ -2156,7 +2156,7 @@ var userId = 789; // Number | Id of user
 
 var sessionId = 789; // Number | Id of Web Login Session
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -2174,9 +2174,9 @@ apiInstance.userSession(userId, sessionId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| Id of user | 
- **sessionId** | **Number**| Id of Web Login Session | 
- **fields** | **String**| Requested fields. | [optional] 
+ **userId** | **Number**| Id of user |
+ **sessionId** | **Number**| Id of Web Login Session |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 

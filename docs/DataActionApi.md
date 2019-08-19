@@ -1,6 +1,6 @@
 # LookerApi31Reference.DataActionApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ For some data actions, the remote server may supply a form requesting further us
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DataActionApi();
 
@@ -39,7 +39,7 @@ apiInstance.fetchRemoteDataActionForm(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| Data Action Request | 
+ **body** | **Object**| Data Action Request |
 
 ### Return type
 
@@ -64,7 +64,7 @@ Perform a data action. The data action object can be obtained from query results
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.DataActionApi();
 
@@ -85,7 +85,7 @@ apiInstance.performDataAction(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DataActionRequest**](DataActionRequest.md)| Data Action Request | 
+ **body** | [**DataActionRequest**](DataActionRequest.md)| Data Action Request |
 
 ### Return type
 

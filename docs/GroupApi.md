@@ -1,6 +1,6 @@
 # LookerApi31Reference.GroupApi
 
-All URIs are relative to *https://analytics.kollectivecd.com:20000/api/3.1*
+All URIs are relative to */api/3.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,17 +25,17 @@ Method | HTTP request | Description
 
 Add a Group to Group
 
-### Adds a new group to a group. 
+### Adds a new group to a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
 var groupId = 789; // Number | Id of group
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.GroupIdForGroupInclusion() // GroupIdForGroupInclusion | Group id to add
 };
 
@@ -53,8 +53,8 @@ apiInstance.addGroupGroup(groupId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **body** | [**GroupIdForGroupInclusion**](GroupIdForGroupInclusion.md)| Group id to add | [optional] 
+ **groupId** | **Number**| Id of group |
+ **body** | [**GroupIdForGroupInclusion**](GroupIdForGroupInclusion.md)| Group id to add | [optional]
 
 ### Return type
 
@@ -75,17 +75,17 @@ No authorization required
 
 Add a User to Group
 
-### Adds a new user to a group. 
+### Adds a new user to a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
 var groupId = 789; // Number | Id of group
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.GroupIdForGroupUserInclusion() // GroupIdForGroupUserInclusion | User id to add
 };
 
@@ -103,8 +103,8 @@ apiInstance.addGroupUser(groupId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **body** | [**GroupIdForGroupUserInclusion**](GroupIdForGroupUserInclusion.md)| User id to add | [optional] 
+ **groupId** | **Number**| Id of group |
+ **body** | [**GroupIdForGroupUserInclusion**](GroupIdForGroupUserInclusion.md)| User id to add | [optional]
 
 ### Return type
 
@@ -125,17 +125,17 @@ No authorization required
 
 Get All Groups in Group
 
-### Get information about all the groups in a group 
+### Get information about all the groups in a group
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
 var groupId = 789; // Number | Id of group
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -153,8 +153,8 @@ apiInstance.allGroupGroups(groupId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **fields** | **String**| Requested fields. | [optional] 
+ **groupId** | **Number**| Id of group |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -175,17 +175,17 @@ No authorization required
 
 Get All Users in Group
 
-### Get information about all the users directly included in a group. 
+### Get information about all the users directly included in a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
 var groupId = 789; // Number | Id of group
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -206,11 +206,11 @@ apiInstance.allGroupUsers(groupId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
+ **groupId** | **Number**| Id of group |
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
 
 ### Return type
 
@@ -231,15 +231,15 @@ No authorization required
 
 Get All Groups
 
-### Get information about all groups. 
+### Get information about all groups.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
-var opts = { 
+var opts = {
   'fields': "fields_example", // String | Requested fields.
   'page': 789, // Number | Requested page.
   'perPage': 789, // Number | Results per page.
@@ -263,13 +263,13 @@ apiInstance.allGroups(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **String**| Requested fields. | [optional] 
- **page** | **Number**| Requested page. | [optional] 
- **perPage** | **Number**| Results per page. | [optional] 
- **sorts** | **String**| Fields to sort by. | [optional] 
- **ids** | [**[Number]**](Number.md)| Optional of ids to get specific groups. | [optional] 
- **contentMetadataId** | **Number**| Id of content metadata to which groups must have access. | [optional] 
- **canAddToContentMetadata** | **Boolean**| Select only groups that either can/cannot be given access to content. | [optional] 
+ **fields** | **String**| Requested fields. | [optional]
+ **page** | **Number**| Requested page. | [optional]
+ **perPage** | **Number**| Results per page. | [optional]
+ **sorts** | **String**| Fields to sort by. | [optional]
+ **ids** | [**[Number]**](Number.md)| Optional of ids to get specific groups. | [optional]
+ **contentMetadataId** | **Number**| Id of content metadata to which groups must have access. | [optional]
+ **canAddToContentMetadata** | **Boolean**| Select only groups that either can/cannot be given access to content. | [optional]
 
 ### Return type
 
@@ -290,15 +290,15 @@ No authorization required
 
 Create Group
 
-### Creates a new group (admin only). 
+### Creates a new group (admin only).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
-var opts = { 
+var opts = {
   'body': new LookerApi31Reference.Group(), // Group | Group
   'fields': "fields_example" // String | Requested fields.
 };
@@ -317,8 +317,8 @@ apiInstance.createGroup(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Group**](Group.md)| Group | [optional] 
- **fields** | **String**| Requested fields. | [optional] 
+ **body** | [**Group**](Group.md)| Group | [optional]
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -339,11 +339,11 @@ No authorization required
 
 Delete Group
 
-### Deletes a group (admin only). 
+### Deletes a group (admin only).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -364,7 +364,7 @@ apiInstance.deleteGroup(groupId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
+ **groupId** | **Number**| Id of group |
 
 ### Return type
 
@@ -385,11 +385,11 @@ No authorization required
 
 Deletes a Group from Group
 
-### Removes a group from a group. 
+### Removes a group from a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -412,8 +412,8 @@ apiInstance.deleteGroupFromGroup(groupId, deletingGroupId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **deletingGroupId** | **Number**| Id of group to delete | 
+ **groupId** | **Number**| Id of group |
+ **deletingGroupId** | **Number**| Id of group to delete |
 
 ### Return type
 
@@ -434,11 +434,11 @@ No authorization required
 
 Remove a User from Group
 
-### Removes a user from a group. 
+### Removes a user from a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -461,8 +461,8 @@ apiInstance.deleteGroupUser(groupId, userId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **userId** | **Number**| Id of user to remove from group | 
+ **groupId** | **Number**| Id of group |
+ **userId** | **Number**| Id of user to remove from group |
 
 ### Return type
 
@@ -483,11 +483,11 @@ No authorization required
 
 Delete User Attribute Group Value
 
-### Remove a user attribute value from a group. 
+### Remove a user attribute value from a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -510,8 +510,8 @@ apiInstance.deleteUserAttributeGroupValue(groupId, userAttributeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **userAttributeId** | **Number**| Id of user attribute | 
+ **groupId** | **Number**| Id of group |
+ **userAttributeId** | **Number**| Id of user attribute |
 
 ### Return type
 
@@ -532,17 +532,17 @@ No authorization required
 
 Get Group
 
-### Get information about a group. 
+### Get information about a group.
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
 var groupId = 789; // Number | Id of group
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -560,8 +560,8 @@ apiInstance.group(groupId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **fields** | **String**| Requested fields. | [optional] 
+ **groupId** | **Number**| Id of group |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -586,7 +586,7 @@ Update Group
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -594,7 +594,7 @@ var groupId = 789; // Number | Id of group
 
 var body = new LookerApi31Reference.Group(); // Group | Group
 
-var opts = { 
+var opts = {
   'fields': "fields_example" // String | Requested fields.
 };
 
@@ -612,9 +612,9 @@ apiInstance.updateGroup(groupId, body, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **body** | [**Group**](Group.md)| Group | 
- **fields** | **String**| Requested fields. | [optional] 
+ **groupId** | **Number**| Id of group |
+ **body** | [**Group**](Group.md)| Group |
+ **fields** | **String**| Requested fields. | [optional]
 
 ### Return type
 
@@ -635,11 +635,11 @@ No authorization required
 
 Set User Attribute Group Value
 
-### Set the value of a user attribute for a group.  For information about how user attribute values are calculated, see [Set User Attribute Group Values](#!/UserAttribute/set_user_attribute_group_values). 
+### Set the value of a user attribute for a group.  For information about how user attribute values are calculated, see [Set User Attribute Group Values](#!/UserAttribute/set_user_attribute_group_values).
 
 ### Example
 ```javascript
-var LookerApi31Reference = require('looker_api_31_reference');
+var LookerApi31Reference = require('looker-node-api');
 
 var apiInstance = new LookerApi31Reference.GroupApi();
 
@@ -664,9 +664,9 @@ apiInstance.updateUserAttributeGroupValue(groupId, userAttributeId, body, callba
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Number**| Id of group | 
- **userAttributeId** | **Number**| Id of user attribute | 
- **body** | [**UserAttributeGroupValue**](UserAttributeGroupValue.md)| New value for group. | 
+ **groupId** | **Number**| Id of group |
+ **userAttributeId** | **Number**| Id of user attribute |
+ **body** | [**UserAttributeGroupValue**](UserAttributeGroupValue.md)| New value for group. |
 
 ### Return type
 
