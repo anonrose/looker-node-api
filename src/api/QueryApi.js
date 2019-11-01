@@ -726,7 +726,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2'];
       var contentTypes = ['application/json'];
       var accepts = ['text', 'application/json', 'image/png', 'image/jpg'];
       var returnType = 'String';
